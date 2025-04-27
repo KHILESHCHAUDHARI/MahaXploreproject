@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palgar Touism</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e7e6e6;
+        }
+        header {
+            background-color: #3366cc;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            background-image: url('https://img.freepik.com/premium-photo/close-up-plants-against-blue-sky_1048944-8938336.jpg?ga=GA1.1.625326605.1745432147&semt=ais_hybrid&w=740');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        nav {
+            background-color: #cbc7c7;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        nav a:hover {
+            background-color: #3366cc;
+            color: white;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .subpage {
+            display: none;
+        }
+        .subpage.active {
+            display: block;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .card h3 {
+            color: #3366cc;
+            margin-top: 0;
+        }
+        .chart-container {
+            width: 100%;
+            height: 400px;            margin: 20px 0;
+        }
+        .year-buttons {
+            text-align: center;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #3366cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Palghar Tourism Guide</h1>
+        <p>"Explore the Heartbeat of India"</p>
+    </header>
+
+    <nav>
+       <a href="#" data-page="overview">Overview</a>    <!-- Works if div id="overview" -->
+<a href="#" data-page="things">Things to Do</a>   <!-- Works if div id="things" -->
+<a href="#" data-page="when">When to Visit</a>    <!-- Works if div id="when" -->
+<a href="#" data-page="precautions">Precautions</a> <!-- Works if div id="precautions" -->
+
+    </nav>
+
+    <div class="container">
+        <!-- Overview Subpage -->
+        <div id="overview" class="subpage active">
+            <div class="card">
+                <h3>Geography and Climate:</h3>
+                <ul>
+                    <li>Palghar has a varied topography consisting of beaches, hills, forests, rivers, and farmlands.</li>
+                    <li>Palghar has a tropical monsoon climate with three distinct seasons:</li>
+      <li>Rivers and waterfalls are at their peak.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Historical Significance</h3>
+            <ul>
+                    <li>Vasai Fort – Portuguese-era fort with stunning sea views
+
+</li>
+                    <li>Shirgaon Fort – Linked to Chhatrapati Shivaji’s reign
+
+</li>
+      <li>Jivdani Devi Mandir – Pilgrimage site on a hilltop
+
+</li>
+            </ul>
+          </div>
+
+            <div class="card">
+                <h3>Economy :</h3>
+            <ul>
+                    <li>One of the largest chemical and textile industrial hubs
+
+</li>
+                    <li>Home to pharmaceutical, engineering, and plastic industries.</li>
+               <li>Palghar has several industrial areas, contributing significantly to Maharashtra’s economy.
+
+</li>
+            </ul>
+            </div>
+            <div class="card">
+                <h3>Culture and Society:</h3>
+            <ul>
+                    <li>One of Maharashtra’s largest tribal communities</li>
+                    <li>Famous for Warli painting, an ancient folk art.</li>
+               <li>Traditional fishing community along the coast
+
+</li>
+            </ul>
+            </div>
+                     
+
+
+        </div>
+
+        <!-- Things to Do Subpage -->
+        <div id="things" class="subpage">
+            <div class="card">
+                <h3> Cultural and Heritage Experiences:
+</h3>
+                <ul>
+                    <li>Buy authentic Warli paintings, bamboo crafts, and tribal jewelry.
+
+</li>
+                    <li>Visit art villages in Jawhar and Dahanu to see artisans at work.</li>
+                    <li>Guided Vasai Fort Heritage Walk exploring Portuguese ruins.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Wildlife & Nature Reserves</h3>
+                <ul>
+                    <li>Home to leopards, sloth bears, and various bird species</li>
+                    <li>Ideal for birdwatching and trekking
+
+ </li>
+                    <li>Rich biodiversity with over 600 plant species
+
+</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3> Food and Dining:</h3>
+                <ul>
+                    <li>Street Food Tour: Indulge in Mumbai’s iconic street food like vada pav, pav bhaji, bhel puri, pani puri, and more in areas like Juhu Beach, Girgaon Chowpatty, or Byculla.</li>
+                    <li>Bamboo Garden – A unique attraction showcasing various species of bamboo and eco-friendly practices.</li>
+                  
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Adventure & Trekking</h3>
+                <ul>
+                    <li>Trek to Kohoj Fort for a scenic challenge</li>
+                    <li>Jawhar trekking trails through lush landscapes
+.</li>
+                  
+                </ul>
+          
+            </div>
+
+
+        </div>
+
+        <!-- When to Visit Subpage -->
+        <div id="when" class="subpage">
+    <div class="card">
+        <h3>Tourist Patterns</h3>
+        <div class="year-buttons">
+            <button onclick="updateCharts('2020')">2020</button>
+            <button onclick="updateCharts('2021')">2021</button>
+            <button onclick="updateCharts('2022')">2022</button>
+            <button onclick="updateCharts('2023')">2023</button>
+        </div>
+        <div class="chart-container">
+            <canvas id="visitsChart"></canvas>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Temperature Trends</h3>
+        <div class="chart-container">
+            <canvas id="temperatureChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Move this section inside the 'when' subpage -->
+    <div class="card">
+        <h3>Insights from the Data</h3>
+        <p>The tourist visits chart shows fluctuations in visitor numbers throughout the year. Typically, the highest number of tourists visit palghar in <span id="best-month"></span>, indicating it as the best time to explore the city.</p>
+        <p>The temperature chart helps travelers plan their visit based on weather conditions. The summer months (April - June) generally experience higher temperatures, while the winter months (November - February) offer a cooler and more comfortable climate for sightseeing.</p>
+    </div>
+</div>
+
+        <!-- Precautions Subpage -->
+        <div id="precautions" class="subpage">
+            <div class="card">
+                <h3>Weather Precautions</h3>
+                <ul>
+                    <li>Summer (March–June): Temperatures can rise above 45°C. Wear light, breathable clothes, stay hydrated, and avoid outdoor activities during peak afternoon hours.</li>
+                    <li> Monsoon (July–September): Heavy rainfall can cause waterlogging. Carry an umbrella, raincoat, and waterproof footwear. Be cautious while traveling on slippery roads.</li>
+                    <li>Winter (November–February): Nights can get chilly. Carry warm clothes, especially if visiting rural areas.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Safety Precautions:</h3>
+                <ul>
+                    <li>Crowded Areas: Be cautious in busy places like markets and public gatherings to prevent pickpocketing.</li>
+                    <li>Solo Travelers: Avoid isolated areas after dark and always inform someone about your whereabouts.</li>
+                    <li>Local Transport: Prefer registered taxis or ridesharing apps over unregulated auto-rickshaws.
+</li>
+                </ul>
+            </div>
+            
+
+            <div class="card">
+                <h3>Cultural Etiquette</h3>
+                <ul>
+                    <li>Dress modestly at temples</li>
+                    <li>Ask before taking photos</li>
+                    <li>Respect local customs</li>
+                </ul>
+            </div>
+           <div class="card">
+                <h3>Food and Water Safety:</h3>
+                <ul>
+                    <li>Street Food: While Amravati offers tasty street food, ensure it's freshly prepared and served hot.</li>
+
+ <li>Water: Avoid tap water. Always prefer bottled or filtered water to prevent waterborne diseases.
+</li>
+                </ul>
+            </div>
+
+        </div>
+    <script>
+        // Chart Data
+        const dataByYear = {
+    "2020": [2216585, 4553112, 4480934, 3003842, 2406706, 2826933, 2305991, 1883889, 2850954, 2651189, 2219348, 2978789],
+    "2021": [4134507, 4271350, 3464678, 2990819, 2311848, 2113195, 2959885, 1171933, 2440897, 2714961, 2266834, 3784765],
+    "2022": [4447671, 4301633, 3591327, 2674752, 2558712, 2880789, 2609610, 1391731, 2995146, 1951379, 2675453, 4576813],
+    "2023": [4448577, 5877936, 4930310, 4065802, 2801545, 2334859, 2132227, 2142012, 3850264, 2909633, 3735400, 5003100]
+};
+
+        const temperatureDataByYear = {
+    "2020": {
+        "max": [25.1, 35.2, 38.5, 42.1, 46.7, 40.3, 37.1, 25.3, 27.8, 30.2, 34.5, 36.1],
+        "min": [11.2, 18.1, 17.3, 21.0, 18.5, 20.2, 26.5, 7.4, 8.9, 10.1, 22.7, 14.1]
+    },
+    "2021": {
+        "max": [24.8, 34.9, 37.9, 43.0, 47.2, 41.0, 36.8, 24.9, 27.1, 29.9, 35.6, 36.8],
+        "min": [11.0, 17.5, 16.9, 20.2, 19.1, 19.4, 26.1, 7.0, 8.5, 9.7, 22.8, 13.9]
+    },
+    "2022": {
+        "max": [24.9, 34.5, 37.6, 44.2, 47.5, 41.8, 37.6, 26.1, 27.0, 30.8, 35.4, 35.7],
+        "min": [12.2, 17.8, 15.7, 21.3, 18.0, 19.9, 26.6, 6.7, 10.2, 10.3, 22.3, 13.4]
+    },
+    "2023": {
+        "max": [26.2, 35.0, 38.6, 43.3, 48.0, 42.0, 39.2, 26.3, 26.9, 30.7, 36.5, 36.9],
+        "min": [13.1, 17.6, 17.2, 21.0, 19.5, 20.7, 26.2, 6.9, 9.8, 10.1, 23.8, 14.6]
+    }
+
+
+};
+        // Initialize Charts
+        let visitsChart = new Chart(document.getElementById('visitsChart'), {
+            type: 'line',
+            data: {
+                labels: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+                datasets: [{
+                    label: 'Tourist Visits',
+                    data: dataByYear["2023"],
+                    borderColor: '#3366cc',
+                    backgroundColor: 'rgba(51, 102, 204, 0.1)',
+                    fill: true
+                }]
+            }
+        });
+
+        let tempChart = new Chart(document.getElementById('temperatureChart'), {
+            type: 'line',
+            data: {
+                labels: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+                datasets: [{
+                    label: 'Max Temp (°C)',
+                    data: temperatureDataByYear["2023"].max,
+                    borderColor: '#ff6384',
+                    backgroundColor: 'rgba(255, 99, 132, 0.1)',
+                    fill: true
+                }, {
+                    label: 'Min Temp (°C)',
+                    data: temperatureDataByYear["2023"].min,
+                    borderColor: '#4bc0c0',
+                    backgroundColor: 'rgba(75, 192, 192, 0.1)',
+                    fill: true
+                }]
+            }
+        });
+
+        // Update Charts
+function updateCharts(year) {
+    const visitData = dataByYear[year];
+    const maxVisits = Math.max(...visitData);
+    const bestMonthIndex = visitData.indexOf(maxVisits);
+    const bestMonth = ["January","February","March","April","May","June","July","August","September","October","November","December"][bestMonthIndex];
+
+    document.getElementById("best-month").textContent = bestMonth;
+
+    visitsChart.options.plugins = {
+        title: {
+            display: true,
+            text: `Best Month to Visit: ${bestMonth}`,
+            font: {
+                size: 16
+            }        }
+
+    };
+
+    visitsChart.data.datasets[0].data = visitData;
+    tempChart.data.datasets[0].data = temperatureDataByYear[year].max;
+    tempChart.data.datasets[1].data = temperatureDataByYear[year].min;
+
+    visitsChart.update();
+    tempChart.update();
+}
+        // Navigation
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const page = e.target.dataset.page;
+                document.querySelectorAll('.subpage').forEach(div => div.classList.remove('active'));
+                document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+                document.getElementById(page).classList.add('active');
+                e.target.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
+

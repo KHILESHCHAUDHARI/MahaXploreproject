@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Washim Tourism</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        header {
+            background-color: #3366cc;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            background-image: url('https://img.freepik.com/premium-photo/close-up-plants-against-blue-sky_1048944-8938336.jpg?ga=GA1.1.625326605.1745432147&semt=ais_hybrid&w=740');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        nav {
+            background-color: #cbc7c7;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        nav a:hover {
+            background-color: #3366cc;
+            color: white;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .subpage {
+            display: none;
+        }
+        .subpage.active {
+            display: block;
+        }
+        .card {
+            background-color:   rgb(247, 246, 246);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .card h3 {
+            color: #3366cc;
+            margin-top: 0;
+        }
+        .chart-container {
+            width: 100%;
+            height: 400px;
+            margin: 20px 0;
+        }
+        .year-buttons {
+            text-align: center;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #3366cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Washim Tourism Guide</h1>
+        <p> “Land of Temples and Tranquility!”</p>
+    </header>
+
+    <nav>
+        <a href="#" data-page="overview" class="active">Overview</a>
+        <a href="#" data-page="things">Things to Do</a>
+        <a href="#" data-page="when">When to Visit</a>
+        <a href="#" data-page="precautions">Precautions</a>
+    </nav>
+
+    <div class="container">
+        <!-- Overview Subpage -->
+        <div id="overview" class="subpage active">
+            <div class="card">
+                <h3> Historical Significance</h3>
+                <ul>
+                    <li> Ancient Roots: Mentions in Skanda Purana and association with Saint Vatsa. </li>
+                    <li> Rishi Tradition: Hub for saints and sages like Vatsa Rishi and Agastya Muni.</li>
+                    <li> Maratha and Nizam Rule: Later came under the rule of the Nizam of Hyderabad until the integration into Maharashtra.</li>
+                   
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Religious and Spiritual Sites</h3>
+                <ul>
+                    <li> Balaji Temple (Washim): Known for its rich heritage and attracts devotees year-round. </li>
+                    <li> Shri Nrusinha Saraswati Temple: Dedicated to the second avatar of Lord Dattatreya, a significant pilgrimage spot.</li>
+                    <li> Ghanti Baba Hill – Known for scenic views, trekking, and spiritual importance.</li>
+                    <li> Ram Mandir: Temple believed to have been visited by Lord Rama during his exile.</li>
+                    <li> Padmatirtha: Sacred water body believed to have purifying qualities, often visited by pilgrims.</li>
+                   <li> Antariksha Parshwanath Jain Temple: An important Jain pilgrimage site.</li>
+               </ul>
+            </div>
+
+            <div class="card">
+                <h3>Economy and Agriculture:</h3>
+                
+                <ul>
+                    <li> Major Crops: Cotton, soybeans, tur (pigeon pea), and sorghum (jowar).</li>
+                    <li>Horticulture Growth: Increasing production of fruits such as pomegranates and oranges.</li>
+                    <li>Agro-based Industries: Presence of cotton ginning, oil extraction, and seed processing units.</li>
+                   <li>Dairy and Poultry Farming: A growing sector contributing to the district’s economy.</li>
+
+
+                </ul>
+            </div>
+                       <div class="card">
+                <h3>Connectivity and Transportation</h3>
+                
+                <ul>
+                    <li> Road Network: Connected by National Highway 161 (Akola-Nanded), providing easy access.</li>
+                    <li>Washim Railway Station: Part of the South Central Railway, connecting to major cities.</li>
+                    <li>Nearest Airports:
+Dr. Babasaheb Ambedkar International Airport, Nagpur (~200 km away).
+,Nanded Airport (~150 km away).  </li>
+<li>Local Transport: Availability of auto-rickshaws, private taxis, and buses.</li>
+
+
+                </ul>
+            </div>
+           <div class="card">
+                <h3>Art and Cultural Heritage</h3>
+                
+                <ul>
+                    <li>Folk Dances: Lavani and Tamasha performed during festivals and local fairs.</li>
+                    <li>Traditional Music: Devotional songs and bhajans performed during religious events.</li>
+                  <li>Local Art Forms: Preservation of tribal art and rural craft traditions.
+</li>
+
+                </ul>
+            </div>
+           </div>
+
+        <!-- Things to Do Subpage -->
+        <div id="things" class="subpage">
+            <div class="card">
+                <h3>Adventure and Outdoor Activities</h3>
+                <ul>
+                    <li>Trekking near Yelgaon Dam – Explore scenic routes and nature trails.</li>
+                    <li>Birdwatching at Mangrul Lake – Spot migratory and native bird species.</li>
+                    <li>Cycling Around Rural Landscapes – Enjoy a refreshing ride through village roads. </li>
+
+                  
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Photography and Sightseeing</h3>
+                <ul>
+                    <li>Capture Sunrise at Moti Talav – Ideal for nature and landscape photographers.<li>
+                    <li>Photograph Wildlife and Birds – Perfect for capturing natural beauty.</li>
+      <li>Explore Local Villages and Rural Life – Document the rich culture and simplicity of life.</li>
+      <li>Capture the Festive Spirit During Local Fairs – Witness vibrant colors and traditions.</li>
+
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Art and Cultural Experiences</h3>
+                <ul>
+                    <li>Explore Tribal and Rural Handicrafts – Learn about local craftsmanship.<li>
+                    <li>Participate in Cultural Workshops – Engage in hands-on learning about folk art.</li>
+       <li>Experience Local Folklore and Storytelling – Enjoy traditional tales from local elders.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Religious and Spiritual Activities</h3>
+                <ul>
+                    <li>  Visit Shri Balaji Temple – Seek blessings at this ancient and revered temple.</li>
+                    <li>Offer Prayers at Nrusinha Saraswati Temple – A pilgrimage site dedicated to Lord Dattatreya’s incarnation.</li>
+                   <li>Take a Holy Dip at Padmatirtha Tank – Believed to purify the soul and wash away sins.
+</li>
+                  <li>Attend Shri Balaji Yatra – Participate in the grand annual fair celebrated with devotion.</li>
+
+
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Unique Experiences</h3>
+                
+                <ul>
+                    <li> Participate in Balaji Yatra – Be part of the grand annual celebration.</li>
+                    <li>Explore Village Tourism – Engage in rural lifestyle and traditional farming practices.</li>
+                    <li>Experience Rural Homestays – Enjoy authentic Maharashtrian hospitality. </li>
+
+                </ul>
+            </div>
+           </div>
+
+        <!-- When to Visit Subpage -->
+        <div id="when" class="subpage">
+    <div class="card">
+        <h3>Tourist Patterns</h3>
+        <div class="year-buttons">
+            <button onclick="updateCharts('2020')">2020</button>
+            <button onclick="updateCharts('2021')">2021</button>
+            <button onclick="updateCharts('2022')">2022</button>
+            <button onclick="updateCharts('2023')">2023</button>
+        </div>
+        <div class="chart-container">
+            <canvas id="visitsChart"></canvas>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Temperature Trends</h3>
+        <div class="chart-container">
+            <canvas id="temperatureChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Move this section inside the 'when' subpage -->
+    <div class="card">
+        <h3>Insights from the Data</h3>
+        <p>The tourist visits chart shows fluctuations in visitor numbers throughout the year. Typically, the highest number of tourists visit Washim in <span id="best-month"></span>, indicating it as the best time to explore the city.</p>
+        <p>The temperature chart helps travelers plan their visit based on weather conditions. The summer months (April - June) generally experience higher temperatures, while the winter months (November - February) offer a cooler and more comfortable climate for sightseeing.</p>
+    </div>
+</div>
+
+        <!-- Precautions Subpage -->
+        <div id="precautions" class="subpage">
+            <div class="card">
+                <h3>General Safety</h3>
+                <ul>
+                    <li>Summers (March–June) are extremely hot, with temperatures reaching 45°C. Carry light cotton clothes, sunscreen, sunglasses, and stay hydrated.</li>
+                    <li>Monsoons (July–September) can cause waterlogging in some areas. Check weather updates before traveling</li>
+                    <li>Winters (November–February) are pleasant, but mornings and nights can be slightly chilly, so carry light woolens.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Health Precautions</h3>
+                <ul>
+                    <li>Drink bottled or filtered water to avoid waterborne diseases.</li>
+                    <li>Be cautious of street food hygiene; choose clean, well-reviewed places for local delicacies</li>
+                    <li>Wear sunscreen</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Cultural Etiquette</h3>
+                <ul>
+                    <li>Dress modestly at temples</li>
+                    <li>Ask before taking photos</li>
+                    <li>Respect local customs</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Wildlife & Outdoor Precautions </h3>
+                <ul>
+                    <li>Do not feed or disturb animals—maintain a safe distance.</li>
+                    <li>Wear trekking shoes and avoid visiting during heavy rains</li>
+                    <li>Avoid venturing alone at night.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Travel & Transportation Safety</h3>
+                <ul>
+                    <li>Drive cautiously as rural roads can have potholes.</li>
+                    <li>Avoid night travel on highways due to limited lighting</li>
+                    <li>Auto-rickshaws & buses are available, but confirm fares in advance.</li>
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Navigation
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const page = e.target.dataset.page;
+                document.querySelectorAll('.subpage').forEach(div => div.classList.remove('active'));
+                document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+                document.getElementById(page).classList.add('active');
+                e.target.classList.add('active');
+            });
+        });
+
+        // Chart Data
+        const dataByYear = {
+    "2020": [24084, 16913, 24385, 8999, 13214, 18049, 5366, 3108, 6122, 29393, 15281, 16109],
+    "2021": [18843, 19038, 19491, 11735, 15157, 18057, 7992, 3750, 5500, 23617, 22038, 24106],
+    "2022": [28408, 22074, 17836, 11131, 11864, 17414, 6386, 4131, 5454, 21116, 25328, 24867],
+    "2023": [24783, 20001, 21910, 10840, 14929, 19645, 5995, 3774, 9996, 30257, 22888, 24487]
+};
+        const temperatureDataByYear = {
+
+    "2020": {
+        "max": [23.95, 31.41, 33.51, 28.18, 36.24, 32.83, 35.49, 33.87, 40.7, 43.67, 34.57, 35.24],
+        "min": [14.75, 6.9, 12.02, 26.1, 26.73, 22.26, 10.62, 14.69, 24.1, 8.09, 19.48, 7.14]
+    },
+    "2021": {
+        "max": [26.23, 32.62, 34.99, 30.73, 34.9, 34.4, 37.5, 35.73, 40.86, 43.29, 33.97, 35.85],
+        "min": [16.63, 6.38, 12.08, 25.51, 26.25, 23.76, 9.94, 15.48, 24.62, 9.73, 20.1, 5.55]
+    },
+    "2022": {
+        "max": [26.62, 32.26, 33.58, 29.73, 37.14, 33.85, 36.88, 34.63, 39.67, 44.79, 33.27, 37.31],
+        "min": [15.36, 8.22, 11.85, 26.45, 27.89, 24.3, 11.66, 16.04, 24.34, 10.19, 19.69, 7.32]
+    },
+    "2023": {
+        "max": [25.6, 33.8, 34.53, 30.15, 36.85, 35.35, 36.63, 34.97, 40.03, 45.14, 35.84, 38.19],
+        "min": [15.96, 7.58, 13.94, 25.78, 27.03, 24.17, 11.14, 16.9, 25.27, 9.19, 21.71, 8.18]
+    }
+};
+        // Initialize Charts
+        let visitsChart = new Chart(document.getElementById('visitsChart'), {
+            type: 'line',
+            data: {
+                labels: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+                datasets: [{
+                    label: 'Tourist Visits',
+                    data: dataByYear["2023"],
+                    borderColor: '#3366cc',
+                    backgroundColor: 'rgba(51, 102, 204, 0.1)',
+                    fill: true
+                }]
+            }
+        });
+
+        let tempChart = new Chart(document.getElementById('temperatureChart'), {
+            type: 'line',
+            data: {
+                labels: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+                datasets: [{
+                    label: 'Max Temp (°C)',
+                    data: temperatureDataByYear["2023"].max,
+                    borderColor: '#ff6384',
+                    backgroundColor: 'rgba(255, 99, 132, 0.1)',
+                    fill: true
+                }, {
+                    label: 'Min Temp (°C)',
+                    data: temperatureDataByYear["2023"].min,
+                    borderColor: '#4bc0c0',
+                    backgroundColor: 'rgba(75, 192, 192, 0.1)',
+                    fill: true
+                }]
+            }
+        });
+
+        // Expose updateCharts globally
+        window.updateCharts = function(year) {
+            const visitData = dataByYear[year];
+            const maxVisits = Math.max(...visitData);
+            const bestMonthIndex = visitData.indexOf(maxVisits);
+            const bestMonth = ["January","February","March","April","May","June","July","August","September","October","November","December"][bestMonthIndex];
+
+            document.getElementById("best-month").textContent = bestMonth;
+
+            visitsChart.options.plugins = {
+                title: {
+                    display: true,
+                    text: `Best Month to Visit: ${bestMonth}`,
+                    font: {
+                        size: 16
+                    }
+                }
+            };
+
+            visitsChart.data.datasets[0].data = visitData;
+            tempChart.data.datasets[0].data = temperatureDataByYear[year].max;
+            tempChart.data.datasets[1].data = temperatureDataByYear[year].min;
+
+            visitsChart.update();
+            tempChart.update();
+        };
+
+        // Add event listeners to buttons
+        document.querySelectorAll('.year-buttons button').forEach(button => {
+            button.addEventListener('click', () => {
+                updateCharts(button.textContent);
+            });
+        });
+
+    });
+</script>
+
+</body>
+</html>

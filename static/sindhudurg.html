@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sindhudurg Tourism</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e7e6e6;
+        }
+        header {
+            background-color: #3366cc;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            background-image: url('https://img.freepik.com/premium-photo/close-up-plants-against-blue-sky_1048944-8938336.jpg?ga=GA1.1.625326605.1745432147&semt=ais_hybrid&w=740');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        nav {
+            background-color: #cbc7c7;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        nav a:hover {
+            background-color: #3366cc;
+            color: white;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .subpage {
+            display: none;
+        }
+        .subpage.active {
+            display: block;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .card h3 {
+            color: #3366cc;
+            margin-top: 0;
+        }
+        .chart-container {
+            width: 100%;
+            height: 400px;
+            margin: 20px 0;
+        }
+        .year-buttons {
+            text-align: center;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #3366cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sindhudurg Tourism Guide</h1>
+        <p>Explore the Coastal Beauty and Cultural Heritage of Sindhudurg</p>
+    </header>
+
+    <nav>
+        <a href="#" data-page="overview" class="active">Overview</a>
+        <a href="#" data-page="things">Things to Do</a>
+        <a href="#" data-page="when">When to Visit</a>
+        <a href="#" data-page="precautions">Precautions</a>
+    </nav>
+
+    <div class="container">
+        <div id="overview" class="subpage active">
+            <div class="card">
+                <h3>Geographical Regions</h3>
+                <ul>
+                    <li><strong>Konkan Coast:</strong> Sindhudurg is located along the Konkan coast of Maharashtra, with beautiful beaches like Tarkarli and Malvan.</li>
+                    <li><strong>Western Ghats:</strong> The district is home to the Western Ghats, offering lush green landscapes, waterfalls, and diverse flora and fauna.</li>
+                    <li><strong>Rivers:</strong> The district has several rivers like the Terekhol and the Vashishti, which are vital to its agricultural economy.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Water Resources</h3>
+                <p>Prominent rivers in Sindhudurg include the Terekhol, Vashishti, and Shastri, which provide water for irrigation and sustenance to the region.</p>
+            </div>
+
+            <div class="card">
+                <h3>Urban Development</h3>
+                <p>Sindhudurg is gradually developing as a tourism hotspot. Infrastructure improvements, including road and transport connectivity, are expected to boost the economy and tourist inflow.</p>
+            </div>
+        </div>
+
+        <div id="things" class="subpage">
+            <div class="card">
+                <h3>Cultural Experiences</h3>
+                <ul>
+                    <li><strong>Sindhudurg Fort:</strong> A historic sea fort built by Chhatrapati Shivaji Maharaj located on an island near Malvan.</li>
+                    <li><strong>Malvan Market:</strong> A vibrant local market famous for its spices, seafood, and handicrafts.</li>
+                    <li><strong>Vijayadurg Fort:</strong> A historic fort that offers a glimpse of Sindhudurg’s rich maritime heritage.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Outdoor Adventures</h3>
+                <ul>
+                    <li><strong>Scuba Diving in Tarkarli:</strong> Famous for its crystal-clear waters, Tarkarli is ideal for scuba diving and water sports.</li>
+                    <li><strong>Safari in Kumbharli Ghat:</strong> A nature reserve perfect for trekkers and wildlife enthusiasts.</li>
+                    <li><strong>Beach Activities:</strong> Relax on the serene beaches of Sindhudurg like Malvan, Tarkarli, and Devbagh.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Food & Entertainment</h3>
+                <ul>
+                    <li><strong>Malvani Cuisine:</strong> Savor local seafood dishes like fish curry rice, prawn fry, and kombdi vade.</li>
+                    <li><strong>Coastal Delights:</strong> Enjoy Konkani food prepared using local ingredients, including coconut and spices.</li>
+                    <li><strong>Local Craft Markets:</strong> Explore local handicrafts, including Konkani-style jewelry, pottery, and textiles.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="when" class="subpage">
+            <div class="card">
+                <h3>Tourist Patterns</h3>
+                <div class="year-buttons">
+                    <button onclick="updateCharts('2020')">2020</button>
+                    <button onclick="updateCharts('2021')">2021</button>
+                    <button onclick="updateCharts('2022')">2022</button>
+                    <button onclick="updateCharts('2023')">2023</button>
+                </div>
+                <div class="chart-container">
+                    <canvas id="visitsChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Temperature Trends</h3>
+                <div class="chart-container">
+                    <canvas id="temperatureChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Insights from the Data</h3>
+                <p>The tourist visits chart indicates a steady increase in the number of visitors, particularly during the winter months (November to February) when the weather is ideal for sightseeing.</p>
+                <p>The temperature chart shows that the region experiences mild and pleasant temperatures throughout the year, with cooler months from November to February being most popular for tourism.</p>
+            </div>
+        </div>
+
+        <div id="precautions" class="subpage">
+            <div class="card">
+                <h3>General Safety</h3>
+                <ul>
+                    <li>Use registered boats for island visits and water activities.</li>
+                    <li>Keep your personal belongings safe, especially on crowded beaches.</li>
+                    <li>Carry a first-aid kit for outdoor adventures.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Health Precautions</h3>
+                <ul>
+                    <li>Carry any required medication, especially if you have allergies or specific health conditions.</li>
+                    <li>Use sunscreen and wear a hat while on the beach.</li>
+                    <li>Drink plenty of water, especially during the hot months (March to June).</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Cultural Etiquette</h3>
+                <ul>
+                    <li>Dress modestly when visiting temples or local cultural sites.</li>
+                    <li>Respect local customs and traditions, especially in rural areas.</li>
+                    <li>Seek permission before taking photos in sensitive areas.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Chart Data
+const dataByYear = {
+    "2020": [165597,104264,164536,127879,104542,101908,1260,52356,42850,69380,60809,61930],
+    "2021": [183098,140362,164275,145680,144686,82831,1717,37407,48475,52159,54285,66447],
+    "2022": [185325,149920,150174,148264,94639,105208, 1846,47449,56473,51093,77065,68037],
+    "2023": [169810,115955,200143,129549,127027,152168, 1598,57908,56669,55652,88333,114583]
+};
+
+const temperatureDataByYear = {
+    "2020": { max: [40.96,43.08,39.83,35.25,29.23,28.94,26.24,35.05,38.12,36.6,38.49,38.23], min: [3.22,12.83,22.71,19.11,19.35,21.77,24.4,13.97,11.34,17.67,10.21,14.51] },
+    "2021": { max: [42,41.73,40.65,35.27,28.32,30.53,27.52,35.66,38.46,37.35,38.06,37.62], min: [4.64,14.22,21.61,18.94,19.36,20.11,24.18,13.9,12.15,19.38,11.09,15.58] },
+    "2022": { max: [40.71,43.57,39.82,35.75,28.36,29.8,27.96,34.38,40.08,39.54,39.56,39.24], min: [5.04,13.33,21.46,19.79,20.3,21.47,24.7,14.75,12.3,18.23,10.96,16.73] },
+    "2023": { max: [42.62,43.78,40.91,35.19,30.83,31.38,28.84,35.55,41.11,38.8,40.88,39.35], min: [5.75,14.58,23.74,20.97,20.95,22.3,26.16,15.74,12.97,19.44,10.31,16.6] }
+};
+
+// Initialize Charts
+let visitsChart = new Chart(document.getElementById('visitsChart').getContext('2d'), {
+    type: 'line',
+    data: {
+        labels: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+        datasets: [{
+            label: 'Tourist Visits',
+            data: dataByYear["2023"],
+            borderColor: '#3366cc',
+            backgroundColor: 'rgba(51, 102, 204, 0.1)',
+            fill: true
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false
+    }
+});
+
+let tempChart = new Chart(document.getElementById('temperatureChart').getContext('2d'), {
+    type: 'line',
+    data: {
+        labels: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+        datasets: [{
+            label: 'Max Temp (°C)',
+            data: temperatureDataByYear["2023"].max,
+            borderColor: '#ff6384',
+            backgroundColor: 'rgba(255, 99, 132, 0.1)',
+            fill: true
+        }, {
+            label: 'Min Temp (°C)',
+            data: temperatureDataByYear["2023"].min,
+            borderColor: '#4bc0c0',
+            backgroundColor: 'rgba(75, 192, 192, 0.1)',
+            fill: true
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false
+    }
+});
+
+// Function to update charts dynamically when clicking on year buttons
+function updateCharts(year) {
+    // Update Tourist Visits Chart
+    visitsChart.data.datasets[0].data = dataByYear[year];
+    visitsChart.update();  // Refresh the chart
+
+    // Update Temperature Chart
+    tempChart.data.datasets[0].data = temperatureDataByYear[year].max;
+    tempChart.data.datasets[1].data = temperatureDataByYear[year].min;
+    tempChart.update();  // Refresh the chart
+}
+
+// Navigation Tabs
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const page = e.target.dataset.page;
+
+        // Hide all subpages
+        document.querySelectorAll('.subpage').forEach(div => div.classList.remove('active'));
+
+        // Remove active class from all tabs
+        document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+
+        // Show selected page
+        document.getElementById(page).classList.add('active');
+        e.target.classList.add('active');
+    });
+});
+
+    </script>
+</body>
+</html>

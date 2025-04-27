@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sangli Tourism</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #e7e6e6;;
+    }
+
+    header {
+      background-color: #3366cc;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      background-image: url('https://img.freepik.com/premium-photo/close-up-plants-against-blue-sky_1048944-8938336.jpg?ga=GA1.1.625326605.1745432147&semt=ais_hybrid&w=740');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+    }
+
+    nav {
+      background-color:  #cbc7c7;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      padding: 10px;
+      border-radius: 5px;
+      transition: all 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #3366cc;
+      color: white;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+
+    .subpage {
+      display: none;
+    }
+
+    .subpage.active {
+      display: block;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 15px 0;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h3 {
+      color: #3366cc;
+      margin-top: 0;
+    }
+
+    .chart-container {
+      width: 100%;
+      height: 400px;
+      margin: 20px 0;
+    }
+
+    .year-buttons {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      background-color: #3366cc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Kolhapur Tourism Guide</h1>
+    <p>Explore the Traditional Footweaqr Capital Maharashtra</p>
+  </header>
+
+  <nav>
+    <a href="#" data-page="overview" class="active">Overview</a>
+    <a href="#" data-page="things">Things to Do</a>
+    <a href="#" data-page="when">When to Visit</a>
+    <a href="#" data-page="precautions">Precautions</a>
+  </nav>
+
+  <div class="container">
+    <div id="overview" class="subpage active">
+      <div class="card">
+        <h3>Historical & Cultural Significance</h3>
+Kolhapur was a princely state under the rule of the Bhosale dynasty, related to Chhatrapati Shivaji Maharaj.
+
+The city has a deep connection with Maratha history and was an important center of power.
+
+The Mahalaxmi Temple, dedicated to Goddess Mahalaxmi (Ambabai), is one of the Shakti Peethas and attracts thousands of devotees.
+
+ </div><div class="card"><h3> Economy & Industry</h3>
+Known for Kolhapuri chappals (handcrafted leather sandals) that are popular in India and abroad.
+
+Famous for Kolhapuri jaggery (Gul), which is made from high-quality sugarcane.
+
+A growing hub for the automobile and foundry industries.
+
+Textile industry is also significant, with products like Kolhapuri sarees and traditional jewellery.
+
+</div> <div class="card"><h3> Tourism & Attractions</h3>
+Mahalaxmi Temple – One of the most visited religious sites in Maharashtra.
+
+New Palace (Shahu Palace) – A royal palace showcasing artifacts of the Kolhapur royal family.
+
+Rankala Lake – A beautiful lake ideal for evening strolls and boating.
+
+Jyotiba Temple – A sacred temple located on a hill near Kolhapur.
+
+Panhala Fort – A historic fort associated with Chhatrapati Shivaji Maharaj.
+
+Dajipur Wildlife Sanctuary – Known for the Indian bison (Gaur) and rich biodiversity.
+
+ </div><div class="card"><h3> Food & Cuisine</h3>
+Kolhapuri Misal – A spicy dish made of sprouted lentils, topped with farsan, and served with pav.
+
+Tambada Rassa & Pandhara Rassa – Spicy red and white mutton gravies, famous among food lovers.
+
+Kolhapuri Bhel – A unique version of bhel puri with a spicy twist.
+
+</div><div class="card"><h3>Sports & Culture</h3>
+Kolhapur is known as the wrestling capital of Maharashtra, with many traditional akhadas (wrestling arenas).
+
+The city has a strong tradition in Marathi theatre, music, and folk arts.
+
+</div> <div class="card"><h3> Connectivity & Transport</h3>
+Well-connected by road (NH4), rail, and air.
+
+The Kolhapur Airport (Chhatrapati Rajaram Maharaj Airport) offers flights to major cities.
+
+The city is a major stop on the Mumbai-Bangalore railway route.</p>
+      </div>
+
+    </div>
+
+    <div id="things" class="subpage">
+      <div class="card">
+        <h3> Visit Mahalaxmi Temple (Ambabai Temple)</h3>
+Location: Central Kolhapur
+Timings: 4:00 AM – 10:00 PM
+Entry Fee: Free
+
+One of the most revered temples in India, dedicated to Goddess Mahalaxmi, the presiding deity of Kolhapur. It is considered one of the Shakti Peethas, making it a significant pilgrimage site. The temple, built in the 7th century by the Chalukyas, features stunning stone carvings and intricate Hoysala architecture. Devotees believe that visiting this temple blesses them with prosperity and happiness.
+
+Must-Do:
+
+Witness the grand Aarti in the evening.
+
+Visit during Navratri for an incredible spiritual experience.
+
+      </div><div class="card"><h3>Explore Panhala Fort</h3>
+Location: 20 km from Kolhapur
+Timings: Open 24/7
+Entry Fee: Free
+
+A historical marvel that was once the stronghold of Chhatrapati Shivaji Maharaj. It is the largest fort in the Deccan region and offers panoramic views of the Sahyadri Hills. The fort features important structures like Teen Darwaza, Andhar Bavadi, Sajja Kothi, and Ambarkhana.
+
+Must-Do:
+
+Ideal for trekking and nature photography.
+
+Visit during monsoons for mist-covered landscapes.
+
+      </div><div class="card"><h3>Enjoy Serenity at Rankala Lake</h3>
+Location: Near Mahalaxmi Temple
+Timings: Open all day
+Entry Fee: Free
+
+A beautiful lake surrounded by gardens and street food stalls. The lake was originally a stone quarry and later converted into a lake by Chhatrapati Shivaji Maharaj. It is a perfect spot for an evening stroll, enjoying local snacks like bhel puri or vada pav, and watching the sunset.
+
+Must-Do:
+
+Try boating on the lake.
+
+Walk along the chowpatty for street food.
+
+      </div><div class="card"><h3>Visit the New Palace & Chhatrapati Shahu Museum</h3>
+Location: Shalini Palace Road, Kolhapur
+Timings: 9:30 AM – 5:30 PM (Closed on Mondays)
+Entry Fee: ₹20 per person
+
+A stunning Indo-Saracenic palace built in 1877 by Chhatrapati Shahu Maharaj. It features a museum with royal artifacts, hunting weapons, paintings, and jewelry. The palace architecture, with Belgian glass windows, stained-glass designs, and carved pillars, is a treat for history lovers.
+
+Must-Do:
+
+Explore the weapon gallery showcasing historic arms.
+
+Visit the Royal Darbar Hall with grand chandeliers.
+
+      </div><div class="card"><h3>Shop for Kolhapuri Chappals & Jewelry</h3>
+Location: Shivaji Market, Bindu Chowk
+Timings: 10:00 AM – 9:00 PM
+
+Kolhapur is famous for its handmade leather chappals that are durable, stylish, and comfortable. These chappals are available in various designs, including modern and traditional patterns.
+
+Must-Do:
+
+Buy authentic Kolhapuri chappals from government-approved stores.
+
+Explore Kolhapuri saaj (traditional jewelry) for a royal touch.
+
+      </div><div class="card"><h3>Taste the Authentic Kolhapuri Cuisine</h3>
+Best Places: Hotel Opal, Dehaati, Padma Guest House
+
+Kolhapur is a paradise for spicy food lovers. Some of the must-try dishes include:
+
+Misal Pav – A spicy sprout curry served with pav.
+
+Tambada Rassa – A fiery red mutton curry.
+
+Pandhara Rassa – A flavorful white mutton broth.
+
+Kolhapuri Bhadang – A spicy, crispy puffed rice snack.
+
+Kolhapuri Jaggery (Gul) – Famous for its unique sweetness.
+
+Must-Do:
+
+Try the authentic Kolhapuri thali at Hotel Opal.
+
+Spice lovers should try extra spicy Misal Pav.
+
+      </div><div class="card"><h3>Witness Traditional Wrestling (Kusti) at Akhadas</h3>
+Location: Motibag Talim, Phulewadi Talim
+Timings: Early mornings & evenings
+
+Kolhapur is known as the wrestling capital of Maharashtra, and its traditional mud wrestling akhadas (training schools) attract wrestlers from across India. Kusti (wrestling) is deeply rooted in Kolhapur’s culture, and watching a match is a thrilling experience.
+
+Must-Do:
+
+Visit in the morning to see wrestlers practicing.
+
+Learn about the diet and lifestyle of traditional wrestlers.
+
+      </div><div class="card"><h3>Visit the Jyotiba Temple</h3>
+Location: 17 km from Kolhapur
+Timings: 5:30 AM – 10:30 PM
+Entry Fee: Free
+
+Located on a hill at 3124 feet, this temple is dedicated to Lord Jyotiba, believed to be an incarnation of Lord Shiva, Vishnu, and Brahma. The temple offers stunning panoramic views and is painted in pink, giving it a unique charm.
+
+Must-Do:
+
+Visit during the Chaitra Yatra (March-April) for a grand festival.
+
+Enjoy the trek up to the temple for an adventurous experience.
+
+      </div><div class="card"><h3>Explore Radhanagari Wildlife Sanctuary</h3>
+Location: 50 km from Kolhapur
+Timings: 7:00 AM – 5:00 PM
+Entry Fee: ₹30 per person
+
+A UNESCO-recognized wildlife sanctuary, home to the Indian bison (Gaur), deer, leopards, and diverse bird species. It is a great place for nature lovers and wildlife photographers.
+
+Must-Do:
+
+Take a jeep safari for wildlife spotting.
+
+Visit Radhanagari Dam for scenic views.
+
+      </div><div class="card"><h3>Experience History at Bhavani Mandap</h3>
+Location: Near Mahalaxmi Temple----
+Timings: 8:00 AM – 8:00 PM
+Entry Fee: Free
+
+This was once the royal court of Chhatrapati Shahu Maharaj and is now a historical monument displaying weapons, trophies, and a life-sized statue of the king.
+
+Must-Do:
+
+Explore the antique weapons on display.
+
+Enjoy the local shopping around the area.
+
+      </div><div class="card"><h3>Bonus: Hidden Gems in Kolhapur</h3>
+Palsambe Waterfall – A lesser-known monsoon getaway.
+
+Khasbag Wrestling Arena – The biggest wrestling arena in Maharashtra.
+
+Narsobawadi (Narasimha Temple) – A sacred place near the Krishna River.
+
+</p>
+      </div>
+    </div>
+
+    <div id="when" class="subpage">
+      <div class="card">
+        <h3>Tourist Patterns</h3>
+        <div class="year-buttons">
+          <button onclick="updateCharts('2020')">2020</button>
+          <button onclick="updateCharts('2021')">2021</button>
+          <button onclick="updateCharts('2022')">2022</button>
+          <button onclick="updateCharts('2023')">2023</button>
+        </div>
+        <div class="chart-container">
+          <canvas id="visitsChart"></canvas>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Temperature Trends</h3>
+        <div class="chart-container">
+          <canvas id="temperatureChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div id="precautions" class="subpage">
+      <div class="card">
+        <h3>Weather Awareness</h3>
+Kolhapur experiences a hot and humid climate, especially in the summer months (March to June). The monsoon season (June to September) can bring heavy rainfall.
+Precautions:
+
+Wear light, breathable clothing, especially during the summer.
+
+Carry sunscreen, sunglasses, and a hat for sun protection.
+
+Stay hydrated and drink plenty of water.
+
+If visiting during monsoon, carry an umbrella or raincoat, and watch out for slippery roads and trails.
+
+ </div><div class="card"><h3> Health and Safety</h3>
+Like any other travel destination, taking care of your health is crucial.
+Precautions:
+
+Carry a basic first-aid kit with essentials like band-aids, antiseptic cream, pain relievers, etc.
+
+Avoid drinking tap water. Stick to bottled or filtered water.
+
+Be cautious about street food; while Kolhapur’s food is tempting, make sure to eat from clean, reputable places to avoid foodborne illnesses.
+
+If you have any allergies or health conditions, carry any prescribed medication and a copy of the prescription.
+
+ </div><div class="card"><h3> Respect Local Culture and Traditions</h3>
+Kolhapur is a culturally rich city, and respecting local customs is important.
+Precautions:
+
+When visiting temples, dress modestly. Avoid wearing shorts or sleeveless tops, especially at religious sites like the Mahalaxmi Temple or Jyotiba Temple.
+
+Always remove your shoes before entering temples or sacred places.
+
+Be respectful during religious ceremonies and avoid disturbing worshippers.
+
+ </div><div class="card"><h3> Road and Traffic Safety</h3>
+The roads in and around Kolhapur can be busy, and traffic conditions may vary, especially during peak hours or festival seasons.
+Precautions:
+
+Follow traffic rules, and always wear a seatbelt when driving.
+
+If you're not familiar with local roads, consider hiring a local driver or using ride-sharing services to avoid the hassle.
+
+Be cautious while crossing streets, as traffic can sometimes be chaotic.
+
+If you're going for a trek or visiting Panhala Fort, ensure you have appropriate footwear and be careful on uneven paths.
+
+ </div><div class="card"><h3> Wildlife Safety</h3>
+Kolhapur is home to wildlife sanctuaries and natural reserves, such as the Radhanagari Wildlife Sanctuary.
+Precautions:
+
+If visiting wildlife sanctuaries, always go with a certified guide and follow the park's safety guidelines.
+
+Keep a safe distance from wild animals and do not feed them.
+
+Be cautious while trekking in forested areas, and inform someone about your plans before heading into the wild.
+
+ </div><div class="card"><h3> Local Markets and Shopping</h3>
+Kolhapur is famous for its markets, especially for Kolhapuri chappals and jewelry. However, be cautious while shopping to avoid counterfeit products or overpricing.
+Precautions:
+
+Buy Kolhapuri chappals and souvenirs from reputable shops or government-approved outlets.
+
+Bargain politely in local markets to avoid paying inflated prices.
+
+Check the quality of products before purchasing, especially leather goods.
+
+ </div><div class="card"><h3> Avoid Late-Night Walks in Unfamiliar Areas</h3>
+While Kolhapur is generally considered safe, it's always a good idea to be cautious when walking around at night, especially in unfamiliar areas.
+Precautions:
+
+Stick to well-lit, crowded areas after dark.
+
+Avoid isolated or poorly lit spots, especially near the outskirts of the city or in remote places like forests or quiet beaches.
+
+Always travel in a group or with a trusted companion at night.
+
+ </div><div class="card"><h3> Festivals and Crowded Places</h3>
+Kolhapur celebrates several major festivals, especially during Navratri and Ganesh Chaturthi, which can lead to large crowds and some disruption in daily routines.
+Precautions:
+
+Be prepared for crowded places, especially during festival seasons. Keep your belongings secure to avoid pickpocketing.
+
+Follow any local safety instructions or guidelines issued during festivals or public events.
+
+ </div><div class="card"><h3> Respect for Local Wildlife and Environment</h3>
+If you're visiting natural sites like Panhala Fort or the wildlife sanctuaries, remember to respect the environment.
+Precautions:
+
+Do not litter or disturb the natural surroundings.
+
+Stick to marked paths while trekking to protect yourself and the environment.
+
+ </div><div class="card"><h3> Emergency Numbers</h3>
+Always have local emergency numbers handy:
+
+Police: 100
+
+Ambulance: 108
+
+Fire: 101
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Chart Data
+    const dataByYear = {
+      "2020": [625960,	694696,	378137,	707793,	689298,	685567,	80381,	632540,	562247,	417326,	546054,	501510],
+      "2021": [1076935,	522285,	658351,	594959,	590433,	722112,	109369,	500748,	731274,	782507,	482166,	368847],
+      "2022": [1112585,	987335,	685794,	685588,	674169,	904409,	111757,	686795,	522967,	795903,	606031,	416706],
+      "2023": [880395,	700539,	641401,	923040,	790506,	605466,	90738,	548507,	484151,	564122,	481865,	388895]
+    };
+
+    const temperatureDataByYear = {
+      "2020": {
+        max: [36.95,27.73,33,36.63,35.35,26.66,26.44,31.02,41.18,36.44,27.81,29.44],
+        min: [13.49,14.54,18.69,25.02,9.26,15.48,25.38,22.5,19.16,19.14,13.22,23.22]
+      },
+      "2021": {
+        max: [37.15,27.13,32.89,34.98,34.53,27.64,27.33,31.7,41.73,35.92,27.84,29.29],
+        min: [14.68,15.57,18.4,25.07,10.73,14.88,24.48,21.22,19.19,19.5,12.97,23.97]
+      },
+      "2022": {
+        max: [37.46,27.15,33.04,35.47,36.07,27.58,26.46,32.1,42.87,35.21,27.43,29.35],
+        min: [15.08,14.53,18.57,25.56,10.04,15.65,25.64,23.13,19.19,19.49,12.66,23]
+      },
+      "2023": {
+        max: [38.68,27.75,35.68,37.04,37.58,27.89,28.31,33.34,43.04,35.91,27.57,31.18],
+        min: [14.26,16.52,18.22,25.74,12.2,16.89,26.81,22.93,20.71,19.94,14.06,24.62]
+      }
+    };
+
+    // Initialize Charts
+    let visitsChart = new Chart(document.getElementById('visitsChart'), {
+      type: 'line',
+      data: {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        datasets: [{
+          label: 'Tourist Visits',
+          data: dataByYear["2023"],
+          borderColor: '#3366cc',
+          backgroundColor: 'rgba(51, 102, 204, 0.1)',
+          fill: true
+        }]
+      }
+    });
+
+    let tempChart = new Chart(document.getElementById('temperatureChart'), {
+      type: 'line',
+      data: {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        datasets: [{
+          label: 'Max Temp (°C)',
+          data: temperatureDataByYear["2023"].max,
+          borderColor: '#ff6384',
+          backgroundColor: 'rgba(255, 99, 132, 0.1)',
+          fill: true
+        }, {
+          label: 'Min Temp (°C)',
+          data: temperatureDataByYear["2023"].min,
+          borderColor: '#4bc0c0',
+          backgroundColor: 'rgba(75, 192, 192, 0.1)',
+          fill: true
+        }]
+      }
+    });
+
+    // Update Charts
+    function updateCharts(year) {
+      visitsChart.data.datasets[0].data = dataByYear[year];
+      tempChart.data.datasets[0].data = temperatureDataByYear[year].max;
+      tempChart.data.datasets[1].data = temperatureDataByYear[year].min;
+      visitsChart.update();
+      tempChart.update();
+    }
+
+    // Navigation
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const page = e.target.dataset.page;
+        document.querySelectorAll('.subpage').forEach(div => div.classList.remove('active'));
+        document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+        document.getElementById(page).classList.add('active');
+        e.target.classList.add('active');
+      });
+    });
+  </script>
+</body>
+
+</html>
+
+
+

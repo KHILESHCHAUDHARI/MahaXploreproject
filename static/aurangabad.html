@@ -1,0 +1,370 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aurangabad Tourism</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #e7e6e6;;
+    }
+
+    header {
+      background-color: #3366cc;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      background-image: url('https://img.freepik.com/premium-photo/close-up-plants-against-blue-sky_1048944-8938336.jpg?ga=GA1.1.625326605.1745432147&semt=ais_hybrid&w=740');
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+    }
+
+    nav {
+      background-color:  #cbc7c7;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      padding: 10px;
+      border-radius: 5px;
+      transition: all 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #3366cc;
+      color: white;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+
+    .subpage {
+      display: none;
+    }
+
+    .subpage.active {
+      display: block;
+    }
+
+    .card {
+      background: rgb(247, 246, 246);
+      border-radius: 10px;
+      padding: 20px;
+      margin: 15px 0;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h3 {
+      color: #3366cc;
+      margin-top: 0;
+    }
+
+    .chart-container {
+      width: 100%;
+      height: 400px;
+      margin: 20px 0;
+    }
+
+    .year-buttons {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      background-color: #3366cc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Aurangabad Tourism Guide</h1>
+    <p>Explore the Ancient Cave Capital Maharashtra</p>
+  </header>
+
+  <nav>
+    <a href="#" data-page="overview" class="active">Overview</a>
+    <a href="#" data-page="things">Things to Do</a>
+    <a href="#" data-page="when">When to Visit</a>
+    <a href="#" data-page="precautions">Precautions</a>
+  </nav>
+
+  <div class="container">
+    <div id="overview" class="subpage active">
+      <div class="card">
+        <h3> Location and Geography:</h3>
+
+Situated on a hilly upland terrain within the Deccan Traps.
+Located in the Marathwada region of Maharashtra.
+The city lies on the Godavari River Basin and the Tapti River Basin.
+Surrounded by hills.
+Features a semi-arid climate with temperatures ranging from 17 to 33 °C annually. The most pleasant time to visit is during the winter (October to February).
+Most rainfall occurs during the monsoon season (June to September).
+</div><div class="card"><h3>Demographics:</h3>
+
+As of 2011, the metropolitan population was 1,175,116, making it the fifth-most populous urban area in Maharashtra.
+Predominantly Hindu, with a significant Muslim population.
+</div><div class="card"><h3>History:</h3>
+
+Founded in 1610 by Malik Ambar, the Prime Minister of Murtaza Nizam Shah II of Ahmadnagar, on the site of a village called 'Khidki'.
+Initially named Khadki, it was later renamed Fatehnagar by Malik Ambar's son, Fateh Khan.
+In 1636, it was annexed into the Mughal Empire.
+In 1653, Aurangzeb, the Mughal viceroy of the Deccan, made it his capital and renamed it Aurangabad.
+Served as a significant military outpost for the Mughals, becoming a center for trade and the manufacture of embroidered silks.
+In 1724, the Nizam Asaf Jah I founded the Asaf Jahi dynasty, establishing Hyderabad State with Aurangabad as its initial capital. The capital later moved to Hyderabad in 1763.
+Nicknamed the "City of Gates" due to the historical presence of 52 gates, some of which still exist.
+Played a role in the Indian Rebellion of 1857.
+After India's independence, it was part of Hyderabad State until 1956, then part of Bombay State, and finally, in 1960, became part of Maharashtra.
+In 2023, the city was officially renamed Chhatrapati Sambhajinagar.
+</div><div class="card"><h3>Economy and Industry:</h3>
+
+A major production center for cotton textiles and artistic silk fabrics, including Paithani sarees and Himroo shawls.
+Has experienced industrial growth in recent decades.
+</div><div class="card"><h3>Tourism:</h3>
+
+A significant tourism hub in Maharashtra.
+Famous for its proximity to the UNESCO World Heritage Sites of Ajanta and Ellora Caves, located on its outskirts.
+Other key tourist attractions include:
+Bibi Ka Maqbara: A mausoleum resembling the Taj Mahal, built in the 17th century.
+Daulatabad Fort (Devagiri): A historic 14th-century fort known for its strategic defenses.
+Grishneshwar Temple: One of the twelve Jyotirlingas (sacred abodes of Lord Shiva).
+Aurangabad Caves: Ancient rock-cut Buddhist shrines.
+Panchakki (Water Mill): An ancient watermill dating back to the Mughal era.
+Himayat Bagh: A garden and nursery.
+Salim Ali Lake: A serene lake named after the renowned ornithologist.
+Khuldabad (Valley of the Sufi Saints): A historical town with tombs of Sufi saints and Mughal Emperor Aurangzeb.
+Bhadra Maruti Temple: A temple dedicated to Lord Hanuman in a reclining posture.
+Siddharth Garden and Zoo: A park and zoo offering recreation.
+</div><div class="card"><h3>Culture and Education:</h3>
+
+Historically a cultural hub, known for Persian and Urdu literature during the Mughal era.
+A prominent educational center, home to Dr. Babasaheb Ambedkar Marathwada University (formerly Marathwada University), established in 1958, and numerous affiliated colleges.
+</div><div class="card"><h3>Transportation:</h3>
+
+Well-connected by road, rail, and air.
+Aurangabad Airport offers flights to major Indian cities.
+The railway station provides connectivity to various parts of India.
+Local transportation includes state-run (MSRTC) and private buses, as well as a city bus service.</div>
+
+    </div>
+
+    <div id="things" class="subpage">
+      <div class="card">
+        <h3> Historical and Architectural Wonders:</h3>
+
+<div class="card"><h3>Explore the UNESCO World Heritage Sites:</h3>
+<div class="card"><h3>Ajanta Caves:</h3> Discover the ancient rock-cut Buddhist monasteries and vibrant murals dating back to the 2nd century BCE to about 480 CE. These depict the Jataka tales and the life of Buddha. (Located approximately 100 km from Aurangabad, allow a full day for this trip).
+</div><div class="card"><h3>Ellora Caves:</h3> Marvel at the impressive rock-cut architecture representing three faiths: Buddhism, Hinduism, and Jainism. The highlight is the monolithic Kailasa Temple (Cave 16), carved out of a single rock. (Located about 30 km from Aurangabad, plan for a full day).
+</div></div><div class="card"><h3>Visit Bibi Ka Maqbara:</h3> Often called the "Taj of the Deccan," this 17th-century mausoleum was built by Prince Azam Shah in memory of his mother, Dilras Banu Begum, wife of Emperor Aurangzeb. Its resemblance to the Taj Mahal is striking.
+</div><div class="card"><h3>Discover Daulatabad Fort (Devagiri):</h3> Explore this 14th-century fort city perched on a conical hill. Known for its strategic defenses and historical significance as the capital of the Tughlaq dynasty for a brief period. Don't miss the Chand Minar and the intricate water management system.
+</div><div class="card"><h3>Wander through Aurangabad Caves:</h3> These 12 rock-cut Buddhist shrines dating back to the 6th and 7th centuries offer a glimpse into the region's Buddhist heritage and provide panoramic city views.
+</div><div class="card"><h3>Step back in time at Khuldabad (Valley of the Sufi Saints):</h3> Visit the tombs of several Sufi saints and Mughal emperor Aurangzeb in this historical town, showcasing significant Islamic architecture.
+</div><div class="card"><h3>Admire the Panchakki (Water Mill):</h3> See this 17th-century water mill, an ingenious engineering feat that once ground grain for pilgrims. The complex includes a mosque, a madrasa, and other structures.
+</div><div class="card"><h3>Explore Soneri Mahal:</h3> Once adorned with golden paintings, this palace now serves as a museum showcasing artifacts and remnants of the Rajput and Mughal eras.
+</div><div class="card"><h3>Visit the Chhatrapati Shivaji Maharaj Museum:</h3> Learn about the life and achievements of the great Maratha warrior king through its collection of artifacts, weapons, and historical documents.
+</div><div class="card"><h3>See the Chand Minar:</h3> This impressive medieval tower is located within the Daulatabad Fort complex and was erected in 1445 CE to commemorate a victory.
+</div><div class="card"><h3>Explore the Naukhanda Palace:</h3> Built by Malik Ambar in the 17th century, this palace showcases nine apartments reflecting Mughal architecture.
+</div><div class="card"><h3>Visit the Tomb of Aurangzeb:</h3> Located in Khuldabad, this simple grave reflects the last Mughal emperor's wish for a humble burial.
+</div><div class="card"><h3>Discover the Aurangabad Jain Temple:</h3> Admire the architecture and intricate carvings of this Jain temple.
+</div><div class="card"><h3>Explore the Pitalkhora Caves:</h3> These ancient Buddhist caves, dating back to the 1st century BCE to the 5th century CE, showcase early rock-cut architecture.
+</div></div><div class="card"><h3>Religious and Spiritual Experiences:</h3>
+
+Seek blessings at Grishneshwar Temple: One of the twelve Jyotirlingas (abodes of Lord Shiva), this ancient temple is located near Ellora.
+Visit Bhadra Maruti Temple: This temple in Khuldabad is unique as it depicts Lord Hanuman in a reclining posture.
+Explore the Dargah of Pir Ismail: A revered Sufi shrine in Khuldabad, attracting devotees and spiritual seekers.
+Visit the Jama Masjid: A beautiful mosque in the heart of Aurangabad, known for its elegant architecture.
+Explore the Kali Masjid: Another historical mosque built by Malik Ambar.
+</div><div class="card"><h3>Nature and Relaxation:</h3>
+
+Relax at Salim Ali Lake: Enjoy the serene atmosphere of this lake and its surrounding bird sanctuary, named after the famous ornithologist. It's a great spot for birdwatching and boating.
+Stroll through Himayat Bagh: This vast garden, dating back to the Mughal era, offers a peaceful retreat.
+Visit Siddharth Garden and Zoo: A well-maintained garden with a zoo, aquarium, and musical fountain, ideal for families.
+Enjoy Jnaneshwar Udyan: Located near the Jayakwadi Dam, this garden offers scenic views and a relaxing environment.
+Explore Bani Begum Garden: A beautiful Mughal-style garden with fountains, pillars, and domes.
+Consider a trip to Jayakwadi Dam: One of the largest irrigation projects in Maharashtra, the surrounding area also has a garden and bird sanctuary.
+</div><div class="card"><h3>Other Activities:</h3>
+
+Shopping at Gul Mandi: Experience the local hustle and bustle at Aurangabad's largest market. Look for Paithani sarees, Himroo shawls, and local handicrafts.
+Enjoy local cuisine: Sample Aurangabadi specialties like Naan Qaliya, Biryani, and Tahri.
+Visit Prozone Mall: If you enjoy modern shopping and entertainment, this is a large mall with various retail outlets and dining options.
+Explore nearby hill stations like Mhaismal: Enjoy the pleasant climate and scenic views from this small hill station.
+Experience adventure activities at Adrenaline the Adventure Camp (near Sharnapur): Try ATV rides, parasailing, and other adventure sports.
+      </div>
+    </div>
+
+    <div id="when" class="subpage">
+      <div class="card">
+        <h3>Tourist Patterns</h3>
+        <div class="year-buttons">
+          <button onclick="updateCharts('2020')">2020</button>
+          <button onclick="updateCharts('2021')">2021</button>
+          <button onclick="updateCharts('2022')">2022</button>
+          <button onclick="updateCharts('2023')">2023</button>
+        </div>
+        <div class="chart-container">
+          <canvas id="visitsChart"></canvas>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Temperature Trends</h3>
+        <div class="chart-container">
+          <canvas id="temperatureChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div id="precautions" class="subpage">
+      <div class="card">
+        <h3>Health and Safety:</h3>
+
+Stay hydrated: Aurangabad can get quite hot, especially during the summer months (March to June). Carry a reusable water bottle and refill it whenever possible.
+Food safety: Opt for eateries popular among locals or well-established restaurants to minimize the risk of foodborne illnesses. Drink bottled or purified water. Be cautious with street food.
+Basic first-aid: Carry a small first-aid kit with essentials like band-aids, pain relievers, antiseptic wipes, and any personal medications.1   
+Mosquito repellent: Especially during the monsoon season (June to September), use mosquito repellent to protect yourself from insect bites.
+Sun protection: Use sunscreen with a high SPF, wear a hat, and sunglasses to protect yourself from the strong sun.
+Stay aware of your surroundings: Be mindful of your belongings, especially in crowded areas, to avoid pickpocketing and petty theft.
+Avoid walking alone at night: If you need to travel at night, use reputable transportation services like known taxi services or ride-sharing apps. Stick to well-lit and populated areas.
+Secure your accommodations: Ensure your hotel room has proper locks, and use them. Keep valuables in a safe place within your accommodation.
+Be cautious with strangers: Avoid engaging in lengthy conversations with unknown people, and politely decline any unsolicited invitations or offers.
+Emergency contacts: Keep important contact numbers handy, including local police (100 or 112), your hotel, and your country's embassy or consulate.
+</div><div class="card"><h3>Transportation:</h3>
+
+Use reputable transportation: Opt for government-run buses, known taxi services, or ride-sharing apps like Uber or Ola. Negotiate fares for auto-rickshaws beforehand.
+Plan your routes: If using public transport, familiarize yourself with the routes. GPS apps like Google Maps can be helpful for navigation. Downloading offline maps can be useful if you have connectivity issues.
+Be aware in crowded transport: Public transport can get crowded; be mindful of your belongings.
+</div><div class="card"><h3>Cultural Sensitivity:</h3>
+
+Dress modestly at religious sites: When visiting temples, mosques, or other religious places, dress respectfully. Women should cover their shoulders and knees, and men should avoid wearing shorts. You may also be required to cover your head at some places.
+Respect local customs: Be mindful of local traditions and avoid public displays of affection, which may be considered inappropriate in Indian culture.
+Remove footwear: It is customary to remove your shoes before entering temples and mosques.
+Use your right hand: When giving or receiving money or items, it's polite to use your right hand or both hands.
+</div><div class="card"><h3>General Tips:</h3>
+
+Best time to visit: The winter months (October to February) generally offer the most pleasant weather for sightseeing.
+Stay informed: Check for any local events or festivals happening during your visit.
+Bargaining: In local markets, bargaining is common.
+Photography: Be respectful when taking photos of people and religious sites. Ask for permission if you are unsure.
+Money: Be cautious when handling money in public places. Use ATMs or authorized money exchange services. Keep a record of your important documents and credit card numbers.
+Learn a few local phrases: Knowing a few basic Marathi or Hindi phrases can enhance your interactions with locals.
+    </div>
+  </div>
+
+  <script>
+    // Chart Data
+    const dataByYear = {
+      "2020": [1145320,	1194256,	752530,	1373124,	591680,	1177924,	247879,	139120,	109989,	932375,	1230460,	788346],
+      "2021": [1026830,	834828,	582496,	1430225,	1073133,	1494615,	272527,	148764,	124135,	917754,	1157606,	1323815],
+      "2022": [1457204,	1103096,	1042501,	1081238,	1006978,	1390549,	313467,	127586,	118179,	807328,	970876,	1345111],
+      "2023": [1099891,	1000219,	688458,	1728323,	1079171,	1019327,	286890,	108172,	106473,	1011182,	1098698,	830721]
+    };
+
+    const temperatureDataByYear = {
+      "2020": {
+        max: [28.53, 36.07, 34.75, 37.28, 31.11, 39.51, 29.92, 34.22, 32.49, 45.12, 38.06, 30.3],
+        min: [15.94, 5.83, 26.8, 10.43, 25.32, 14.24, 26.7, 24.94, 11.11, 14.56, 9.33, 3.5]
+      },
+      "2021": {
+        max: [30.65, 36.47, 35.41, 38.7, 32.8, 42.03, 28.35, 33.61, 31.63, 45.81, 38.92, 30.05],
+        min: [17.73, 6.1, 26.74, 10.27, 26.3, 15.19, 25.39, 24.92, 11.92, 15.98, 9.75, 3.17]
+      },
+      "2022": {
+        max: [33.43, 27.69, 45.54, 34.12, 46.67, 30.28, 36.62, 40.99, 29.49, 32.26, 42.71, 25.8],
+        min: [16.91, 5.73, 21.5, 16.74, 16.48, 25.31, 24.35, 24.86, 25.66, 21.51, 4.95, 21]
+      },
+      "2023": {
+        max: [30.91, 36.8, 37.17, 39.1, 34.13, 42.87, 30.12, 36.98, 32.64, 46.12, 41.85, 33.03],
+        min: [18.16, 6.59, 28.28, 10.68, 28.05, 15.56, 27.69, 25.95, 12.7, 15.49, 11.15, 4.7]
+      }
+    };
+
+    // Initialize Charts
+    let visitsChart = new Chart(document.getElementById('visitsChart'), {
+      type: 'line',
+      data: {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        datasets: [{
+          label: 'Tourist Visits',
+          data: dataByYear["2023"],
+          borderColor: '#3366cc',
+          backgroundColor: 'rgba(51, 102, 204, 0.1)',
+          fill: true
+        }]
+      }
+    });
+
+    let tempChart = new Chart(document.getElementById('temperatureChart'), {
+      type: 'line',
+      data: {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        datasets: [{
+          label: 'Max Temp (°C)',
+          data: temperatureDataByYear["2023"].max,
+          borderColor: '#ff6384',
+          backgroundColor: 'rgba(255, 99, 132, 0.1)',
+          fill: true
+        }, {
+          label: 'Min Temp (°C)',
+          data: temperatureDataByYear["2023"].min,
+          borderColor: '#4bc0c0',
+          backgroundColor: 'rgba(75, 192, 192, 0.1)',
+          fill: true
+        }]
+      }
+    });
+
+    // Update Charts
+    function updateCharts(year) {
+      visitsChart.data.datasets[0].data = dataByYear[year];
+      tempChart.data.datasets[0].data = temperatureDataByYear[year].max;
+      tempChart.data.datasets[1].data = temperatureDataByYear[year].min;
+      visitsChart.update();
+      tempChart.update();
+    }
+
+    // Navigation
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const page = e.target.dataset.page;
+        document.querySelectorAll('.subpage').forEach(div => div.classList.remove('active'));
+        document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+        document.getElementById(page).classList.add('active');
+        e.target.classList.add('active');
+      });
+    });
+  </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+

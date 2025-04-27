@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmednagar Tourism</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e7e6e6;;
+        }
+        header {
+            background-color: #3366cc;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #e0e0e0;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        nav a:hover {
+            background-color: #3366cc;
+            color: white;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .subpage {
+            display: none;
+        }
+        .subpage.active {
+            display: block;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .card h3 {
+            color: #3366cc;
+            margin-top: 0;
+        }
+        .chart-container {
+            width: 100%;
+            height: 400px;
+            margin: 20px 0;
+        }
+        .year-buttons {
+            text-align: center;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #3366cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ahmednagar Tourism Guide</h1>
+        <p>Discover the Historic Heart of Maharashtra</p>
+    </header>
+
+    <nav>
+        <a href="#" data-page="overview" class="active">Overview</a>
+        <a href="#" data-page="things">Things to Do</a>
+        <a href="#" data-page="when">When to Visit</a>
+        <a href="#" data-page="precautions">Precautions</a>
+    </nav>
+
+    <div class="container">
+        <!-- Overview Subpage -->
+        <div id="overview" class="subpage active">
+            <div class="card">
+                <h3>Geographical Regions</h3>
+                <ul>
+                    <li><strong>Deccan Plateau:</strong> Semi-arid region with plains and small hills</li>
+                    <li><strong>Konkan:</strong> Western coastal plains with lush greenery</li>
+                    <li><strong>Godavari Basin:</strong> Fertile agricultural lands along the Godavari River</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Water Resources</h3>
+                <p>Key features include the Godavari River, Pimpalgaon Joga Dam, and other irrigation systems</p>
+            </div>
+
+            <div class="card">
+                <h3>Urban Development</h3>
+                <p>Growing town with a focus on agriculture-based industries and urban planning</p>
+            </div>
+        </div>
+
+        <!-- Things to Do Subpage -->
+        <div id="things" class="subpage">
+            <div class="card">
+                <h3>Cultural Experiences</h3>
+                <ul>
+                    <li>Shirdi Sai Baba Temple</li>
+                    <li>Aurangabad Caves</li>
+                    <li>Ahmednagar Fort</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Outdoor Adventures</h3>
+                <ul>
+                    <li>Trekking at Anwa Fort</li>
+                    <li>Boating at Pimpalgaon Joga Dam</li>
+                    <li>Visit to Khandoba Temple</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Food & Entertainment</h3>
+                <ul>
+                    <li>Street food: Misal Pav, Sabudana Khichdi</li>
+                    <li>Local markets: Bazar Peth</li>
+                    <li>Nightlife in Ahmednagar city</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- When to Visit Subpage -->
+        <div id="when" class="subpage">
+            <div class="card">
+                <h3>Tourist Patterns</h3>
+                <div class="year-buttons">
+                    <button onclick="updateCharts('2020')">2020</button>
+                    <button onclick="updateCharts('2021')">2021</button>
+                    <button onclick="updateCharts('2022')">2022</button>
+                    <button onclick="updateCharts('2023')">2023</button>
+                </div>
+                <div class="chart-container">
+                    <canvas id="visitsChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Temperature Trends</h3>
+                <div class="chart-container">
+                    <canvas id="temperatureChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Insights from the Data</h3>
+                <p>The tourist visits chart shows fluctuations in visitor numbers throughout the year. Typically, the highest number of tourists visit Ahmednagar in <span id="best-month"></span>, indicating it as the best time to explore the city.</p>
+                <p>The temperature chart helps travelers plan their visit based on weather conditions. The summer months (March - May) experience higher temperatures, while the winter months (November - February) offer a cooler climate for sightseeing.</p>
+            </div>
+        </div>
+
+        <!-- Precautions Subpage -->
+        <div id="precautions" class="subpage">
+            <div class="card">
+                <h3>General Safety</h3>
+                <ul>
+                    <li>Use registered transportation</li>
+                    <li>Keep documents secure</li>
+                    <li>Stay hydrated</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Health Precautions</h3>
+                <ul>
+                    <li>Carry essential medications</li>
+                    <li>Use mosquito repellent</li>
+                    <li>Wear sunscreen</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Cultural Etiquette</h3>
+                <ul>
+                    <li>Dress modestly at temples</li>
+                    <li>Ask before taking photos</li>
+                    <li>Respect local customs</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Chart Data
+        const dataByYear = {
+            "2020": [1366032, 1300770, 1484136, 1604271, 1458809, 1393216, 430560, 727685, 886840, 1022727, 1347434, 799697],
+            "2021": [1940441, 2007157, 1692463, 1587430, 1462269, 2359374, 414504, 639683, 861490, 1262590, 1214423, 965474],
+            "2022": [1673171, 2350890, 1376707, 1872798, 1274344, 2201469, 468518, 1129735, 1010498, 1202468, 1663113, 1454086],
+            "2023": [2110114, 2045940, 1514414, 2272138, 1603170, 1807917, 402762, 725244, 1124928, 1366243, 1332577, 1094366]
+        };
+
+        const temperatureDataByYear = {
+            "2020": { max: [33.22, 29.03, 39.06, 31.17, 40.02, 34.69, 28.28, 25.99, 39.09, 32.24, 24.63, 40.23], min: [5.53, 12.25, 15.72, 15.26, 10.55, 18.14, 7.89, 24.89, 6.43, 24.56, 3.73, 18.15] },
+            "2021": { max: [31.92, 28.9, 39.22, 30.29, 40.71, 36.84, 28.65, 26.25, 40.45, 32.55, 26.19, 41.96], min: [5.8, 11.19, 15.05, 14.9, 11.01, 18.77, 7.89, 25.76, 6.58, 25.53, 3.96, 18.34] },
+            "2022": { max: [34.08, 29.11, 40.27, 31.01, 42.98, 36.47, 29.38, 27.74, 41.19, 32.18, 26.89, 42.61], min: [6.04, 12.92, 15.87, 15.68, 12.11, 19.24, 9.35, 24.25, 7.01, 25.27, 4.67, 18.43] },
+            "2023": { max: [34.25, 29.56, 40.2, 31.32, 41.61, 37.7, 29.46, 27.82, 40.68, 33.4, 25.57, 43.22], min: [7.3, 12.88, 15.72, 16.06, 12.57, 19.62, 10.24, 25.04, 8.47, 25.48, 5.67, 18.88] }
+        };
+
+        // Initialize Charts
+        let visitsChart = new Chart(document.getElementById('visitsChart'), {
+            type: 'line',
+            data: {
+                labels: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+                datasets: [{
+                    label: 'Tourist Visits',
+                    data: dataByYear["2023"],
+                    borderColor: '#3366cc',
+                    backgroundColor: 'rgba(51, 102, 204, 0.1)',
+                    fill: true
+                }]
+            }
+        });
+
+        let tempChart = new Chart(document.getElementById('temperatureChart'), {
+            type: 'line',
+            data: {
+                labels: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+                datasets: [{
+                    label: 'Max Temp (°C)',
+                    data: temperatureDataByYear["2023"].max,
+                    borderColor: '#ff6384',
+                    backgroundColor: 'rgba(255, 99, 132, 0.1)',
+                    fill: true
+                }, {
+                    label: 'Min Temp (°C)',
+                    data: temperatureDataByYear["2023"].min,
+                    borderColor: '#4bc0c0',
+                    backgroundColor: 'rgba(75, 192, 192, 0.1)',
+                    fill: true
+                }]
+            }
+        });
+
+        // Update Charts
+        function updateCharts(year) {
+            const visitData = dataByYear[year];
+            const maxVisits = Math.max(...visitData);
+            const bestMonthIndex = visitData.indexOf(maxVisits);
+            const bestMonth = ["January","February","March","April","May","June","July","August","September","October","November","December"][bestMonthIndex];
+
+            document.getElementById("best-month").textContent = bestMonth;
+
+            // visitsChart.options.plugins = {
+            //     title: {
+            //         display: true,
+            //         text: Best Month to Visit: ${bestMonth},
+            //         font: {
+            //             size: 16
+            //         }
+            //     }
+            // };
+
+            visitsChart.data.datasets[0].data = visitData;
+            tempChart.data.datasets[0].data = temperatureDataByYear[year].max;
+            tempChart.data.datasets[1].data = temperatureDataByYear[year].min;
+
+            visitsChart.update();
+            tempChart.update();
+        }
+
+        // Navigation
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const page = e.target.dataset.page;
+                document.querySelectorAll('.subpage').forEach(div => div.classList.remove('active'));
+                document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+                document.getElementById(page).classList.add('active');
+                e.target.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

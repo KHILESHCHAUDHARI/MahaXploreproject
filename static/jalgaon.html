@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jalgaon Tourism</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e7e6e6;;
+        }
+        header {
+            background-color: #3366cc;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            background-image: url('https://img.freepik.com/premium-photo/close-up-plants-against-blue-sky_1048944-8938336.jpg?ga=GA1.1.625326605.1745432147&semt=ais_hybrid&w=740');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        nav {
+            background-color:  #cbc7c7;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        nav a:hover {
+            background-color: #3366cc;
+            color: white;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .subpage {
+            display: none;
+        }
+        .subpage.active {
+            display: block;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .card h3 {
+            color: #3366cc;
+            margin-top: 0;
+        }
+        .chart-container {
+            width: 100%;
+            height: 400px;
+            margin: 20px 0;
+        }
+        .year-buttons {
+            text-align: center;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #3366cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jalgaon Tourism Guide</h1>
+        <p>Explore the Heart of Khandesh</p>
+    </header>
+
+    <nav>
+        <a href="#" data-page="overview" class="active">Overview</a>
+        <a href="#" data-page="things">Things to Do</a>
+        <a href="#" data-page="when">When to Visit</a>
+        <a href="#" data-page="precautions">Precautions</a>
+    </nav>
+
+    <div class="container">
+        <!-- Overview Subpage -->
+        <div id="overview" class="subpage active">
+            <div class="card">
+                <h3>Geographical Regions</h3>
+                <ul>
+                    <li><strong>Khandesh Plateau:</strong> The central plateau region known for its agricultural significance</li>
+                    <li><strong>Tapti River:</strong> The river flowing through the district, enhancing its irrigation capacity</li>
+                    <li><strong>Bhagwanpuri Hills:</strong> Scenic hills known for trekking and picturesque views</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Water Resources</h3>
+                <p>Major water bodies include the Tapi River, Purna, and various dams like the Girna and Ranjangaon</p>
+            </div>
+
+            <div class="card">
+                <h3>Urban Development</h3>
+                <p>Significant growth in industrial sectors and agriculture-based developments, along with an expanding road network</p>
+            </div>
+        </div>
+
+        <!-- Things to Do Subpage -->
+        <div id="things" class="subpage">
+            <div class="card">
+                <h3>Cultural Experiences</h3>
+                <ul>
+                    <li>Shree Akraneshwar Temple</li>
+                    <li>Shirdi Sai Baba Temple</li>
+                    <li>Jalgaon District Museum</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Outdoor Adventures</h3>
+                <ul>
+                    <li>Trekking at Bhagwanpuri Hills</li>
+                    <li>Safari at Yawal Wildlife Sanctuary</li>
+                    <li>Boating in Girna Dam</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Food & Entertainment</h3>
+                <ul>
+                    <li>Street food: Samosa, Sabudana Khichdi</li>
+                    <li>Local cuisines in Jalgaon Bazaar</li>
+                    <li>Visit to the local markets for textiles and handlooms</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- When to Visit Subpage -->
+        <div id="when" class="subpage">
+            <div class="card">
+                <h3>Tourist Patterns</h3>
+                <div class="year-buttons">
+                    <button onclick="updateCharts('2020')">2020</button>
+                    <button onclick="updateCharts('2021')">2021</button>
+                    <button onclick="updateCharts('2022')">2022</button>
+                    <button onclick="updateCharts('2023')">2023</button>
+                </div>
+                <div class="chart-container">
+                    <canvas id="visitsChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Temperature Trends</h3>
+                <div class="chart-container">
+                    <canvas id="temperatureChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Insights from the Data</h3>
+                <p>The tourist visits chart shows fluctuations in visitor numbers throughout the year. The best time to visit Jalgaon is typically during <span id="best-month"></span>.</p>
+                <p>Summer (April to June) is hot, while the winter months (November to February) are much cooler and ideal for sightseeing.</p>
+            </div>
+        </div>
+
+        <!-- Precautions Subpage -->
+        <div id="precautions" class="subpage">
+            <div class="card">
+                <h3>General Safety</h3>
+                <ul>
+                    <li>Use registered transportation</li>
+                    <li>Keep important documents safe</li>
+                    <li>Stay hydrated in summer</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Health Precautions</h3>
+                <ul>
+                    <li>Carry necessary medications</li>
+                    <li>Use mosquito repellents, especially near water</li>
+                    <li>Wear sunscreen</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Cultural Etiquette</h3>
+                <ul>
+                    <li>Respect local traditions, especially during religious visits</li>
+                    <li>Dress modestly while visiting temples</li>
+                    <li>Ask before taking photos of people</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Chart Data
+        const dataByYear = {
+            "2020": [329744, 284201,231029,268596,305774,395306,49248,290799,173966,357519,287993,209030],
+            "2021": [253933,411172,332919,295029,450719,320178,61493,340128,253524,401016,358266,249462],
+            "2022": [335713,428127,414929,238897,434653,472105,73280,248717,270953,360212,380847,332510],
+            "2023": [426132, 359863, 482124, 252461, 519844, 511485, 50604, 247820, 192141, 319827, 318774, 280206]
+        };
+
+        const temperatureDataByYear = {
+            "2020": { max: [24.05, 36.08, 48.84, 41.23, 37.41, 40.8, 41.11, 25.87, 39.51, 38.56, 42.68, 28.68], min: [23.89, 5.13, 28.17, 27.36, 13.2, 14.27, 24.94, 27.32, 20.62, 10.63, 23.26, 11.04] },
+            "2021": { max: [24.3, 36.62, 47.46, 40.16, 36.46, 39.66, 39.3, 25.45, 37.01, 37.23, 41.28, 26.51], min: [23.55, 3.68, 25.88, 26.13, 13.28, 13.04, 23.93, 26.09, 19.33, 10.03, 23.29, 9.82] },
+            "2022": { max: [25.43, 36.81, 46.62, 39.47, 36.51, 39.12, 39.23, 25.24, 39.77, 38.09, 40.61, 28.26], min: [23.78, 3.39, 26.8, 26.88, 14.25, 13.93, 24.02, 25.03, 20.85, 10.92, 23.45, 9.81] },
+            "2023": { max: [22.34, 35.12, 46.41, 38.34, 37.25, 39.28, 37.98, 24.87, 37.71, 37.75, 39.13, 25.93], min: [22.68, 4.69, 26.18, 25.42, 12.08, 13.47, 23.62, 25.77, 19.35, 10.2, 21.98, 8.92] }
+        };
+
+        // Initialize Charts
+        let visitsChart = new Chart(document.getElementById('visitsChart'), {
+            type: 'line',
+            data: {
+                labels: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+                datasets: [{
+                    label: 'Tourist Visits',
+                    data: dataByYear["2023"],
+                    borderColor: '#3366cc',
+                    backgroundColor: 'rgba(51, 102, 204, 0.1)',
+                    fill: true
+                }]
+            }
+        });
+
+        let tempChart = new Chart(document.getElementById('temperatureChart'), {
+            type: 'line',
+            data: {
+                labels: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+                datasets: [{
+                    label: 'Max Temp (°C)',
+                    data: temperatureDataByYear["2023"].max,
+                    borderColor: '#ff6384',
+                    backgroundColor: 'rgba(255, 99, 132, 0.1)',
+                    fill: true
+                }, {
+                    label: 'Min Temp (°C)',
+                    data: temperatureDataByYear["2023"].min,
+                    borderColor: '#4bc0c0',
+                    backgroundColor: 'rgba(75, 192, 192, 0.1)',
+                    fill: true
+                }]
+            }
+        });
+
+        // Update Charts
+        function updateCharts(year) {
+            const visitData = dataByYear[year];
+            const maxVisits = Math.max(...visitData);
+            const bestMonthIndex = visitData.indexOf(maxVisits);
+            const bestMonth = ["January","February","March","April","May","June","July","August","September","October","November","December"][bestMonthIndex];
+
+            document.getElementById("best-month").textContent = bestMonth;
+
+            // visitsChart.options.plugins = {
+            //     title: {
+            //         display: true,
+            //         text: Best Month to Visit: ${bestMonth},
+            //         font: {
+            //             size: 16
+            //         }
+            //     }
+            // };
+
+            visitsChart.data.datasets[0].data = visitData;
+            tempChart.data.datasets[0].data = temperatureDataByYear[year].max;
+            tempChart.data.datasets[1].data = temperatureDataByYear[year].min;
+
+            visitsChart.update();
+            tempChart.update();
+        }
+
+        // Navigation
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const page = e.target.dataset.page;
+                document.querySelectorAll('.subpage').forEach(div => div.classList.remove('active'));
+                document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+                document.getElementById(page).classList.add('active');
+                e.target.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

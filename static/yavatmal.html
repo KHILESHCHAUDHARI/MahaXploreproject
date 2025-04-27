@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yavatmal Tourism</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        header {
+            background-color: #3366cc;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            background-image: url('https://img.freepik.com/premium-photo/close-up-plants-against-blue-sky_1048944-8938336.jpg?ga=GA1.1.625326605.1745432147&semt=ais_hybrid&w=740');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        nav {
+            background-color: #cbc7c7;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        nav a:hover {
+            background-color: #3366cc;
+            color: white;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .subpage {
+            display: none;
+        }
+        .subpage.active {
+            display: block;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .card h3 {
+            color: #3366cc;
+            margin-top: 0;
+        }
+        .chart-container {
+            width: 100%;
+            height: 400px;
+            margin: 20px 0;
+        }
+        .year-buttons {
+            text-align: center;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #3366cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Yavatmal Tourism Guide</h1>
+        <p> "Embrace the Essence of Rural Maharashtra!" </p>
+    </header>
+
+    <nav>
+        <a href="#" data-page="overview" class="active">Overview</a>
+        <a href="#" data-page="things">Things to Do</a>
+        <a href="#" data-page="when">When to Visit</a>
+        <a href="#" data-page="precautions">Precautions</a>
+    </nav>
+
+    <div class="container">
+        <!-- Overview Subpage -->
+        <div id="overview" class="subpage active">
+            <div class="card">
+                <h3> Geography & Climate </h3>
+                <ul>
+                    <li> Topography includes hilly terrain, forests, and fertile black soil. </li>
+                    <li> Temperature Range:
+Summer: 25°C to 45°C,
+Winter: 10°C to 28°C,
+Monsoon: June to September with ~950 mm rainfall annually.
+</li>
+                   
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3> Tourism & Attractions </h3>
+                <ul>
+                    <li> Tipeshwar Wildlife Sanctuary – Spread over 148 sq. km, famous for tigers and leopards. </li>
+                    <li> Painganga Wildlife Sanctuary – Situated along the Painganga River, home to diverse flora and fauna.</li>
+                    <li> Ghanti Baba Hill – Known for scenic views, trekking, and spiritual importance.</li>
+                    <li> Mahadev Temple, Wani – A revered Shiva temple attracting thousands of devotees.</li>
+              </ul>
+            </div>
+
+            <div class="card">
+                <h3>Industries and Development:</h3>
+                
+                <ul>
+                    <li> Cotton-based industries: Ginning, pressing, and textile manufacturing.</li>
+                    <li>Emerging sectors: Agro-processing, small-scale industries, and renewable energy.</li>
+                    <li>Government initiatives to promote micro and small enterprises.</li>
+
+                </ul>
+            </div>
+                       <div class="card">
+                <h3>Historical Significance:</h3>
+                
+                <ul>
+                    <li> Ruled by Satavahanas, Vakatakas, Chalukyas, and Rashtrakutas.</li>
+                    <li> influenced by Mughals and Marathas before British control.</li>
+                    <li>integrated into Hyderabad State and later merged with Maharashtra post-independence. </li>
+
+                </ul>
+            </div>
+           <div class="card">
+                <h3>Local Cuisine:</h3>
+                
+                <ul>
+                    <li>Jowar Bhakri – Staple food served with vegetables and curries.</li>
+                    <li>Pithla and Thecha – Spicy traditional dish served with bhakri.</li>
+                    <li>Puran Poli and Modak – Favorite sweet delicacies.</li>
+
+                </ul>
+            </div>
+
+
+        </div>
+
+        <!-- Things to Do Subpage -->
+        <div id="things" class="subpage">
+            <div class="card">
+                <h3>Nature and Wildlife</h3>
+                <ul>
+                    <li>Tipeshwar Wildlife Sanctuary – Explore the rich biodiversity and spot tigers, leopards, and exotic birds.</li>
+                    <li>Painganga Wildlife Sanctuary – Perfect for birdwatching, nature trails, and eco-tourism.</li>
+                    <li>Pandharkawda Forests – Ideal for birdwatching, photography, and nature lovers.
+</li>
+
+                  
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Adventure and Trekking</h3>
+                <ul>
+                    <li>Ghanti Baba Hill – Enjoy trekking and panoramic views of the surrounding landscape.</li>
+                    <li>Kalamb Fort – Explore the historical fort and hike up for scenic vistas.</li>
+      <li>Nature Trails and Eco-Tours – Perfect for adventure seekers and outdoor enthusiasts.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Religious and Spiritual Sites</h3>
+                <ul>
+                    <li>Mahadev Temple, Wani – Ancient Shiva temple known for its spiritual significance.</li>
+                    <li>Chintamani Temple, Kalamb – Popular Ganesh temple, especially during Ganesh Chaturthi.</li>
+       <li>Shree Datta Mandir, Gunj – A peaceful site for meditation and reflection.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Leisure and Relaxation</h3>
+                <ul>
+                    <li>Kapeshwar Lake – Ideal for boating, picnics, and relaxation.</li>
+                    <li>Painganga River Banks – Enjoy fishing and serene moments by the river.
+</li>
+                   <li>Photography and Sightseeing – Capture the scenic beauty, wildlife, and heritage.
+</li>
+
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- When to Visit Subpage -->
+        <div id="when" class="subpage">
+    <div class="card">
+        <h3>Tourist Patterns</h3>
+        <div class="year-buttons">
+            <button onclick="updateCharts('2020')">2020</button>
+            <button onclick="updateCharts('2021')">2021</button>
+            <button onclick="updateCharts('2022')">2022</button>
+            <button onclick="updateCharts('2023')">2023</button>
+        </div>
+        <div class="chart-container">
+            <canvas id="visitsChart"></canvas>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Temperature Trends</h3>
+        <div class="chart-container">
+            <canvas id="temperatureChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Move this section inside the 'when' subpage -->
+    <div class="card">
+        <h3>Insights from the Data</h3>
+        <p>The tourist visits chart shows fluctuations in visitor numbers throughout the year. Typically, the highest number of tourists visit Yavatmal in <span id="best-month"></span>, indicating it as the best time to explore the city.</p>
+        <p>The temperature chart helps travelers plan their visit based on weather conditions. The summer months (April - June) generally experience higher temperatures, while the winter months (November - February) offer a cooler and more comfortable climate for sightseeing.</p>
+    </div>
+</div>
+
+        <!-- Precautions Subpage -->
+        <div id="precautions" class="subpage">
+            <div class="card">
+                <h3>General Safety</h3>
+                <ul>
+                    <li>Summers (March–June) are extremely hot, with temperatures reaching 45°C. Carry light cotton clothes, sunscreen, sunglasses, and stay hydrated.</li>
+                    <li>Monsoons (July–September) can cause waterlogging in some areas. Check weather updates before traveling</li>
+                    <li>Winters (November–February) are pleasant, but mornings and nights can be slightly chilly, so carry light woolens.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Health Precautions</h3>
+                <ul>
+                    <li>Drink bottled or filtered water to avoid waterborne diseases.</li>
+                    <li>Be cautious of street food hygiene; choose clean, well-reviewed places for local delicacies</li>
+                    <li>Wear sunscreen</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Cultural Etiquette</h3>
+                <ul>
+                    <li>Dress modestly at temples</li>
+                    <li>Ask before taking photos</li>
+                    <li>Respect local customs</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Wildlife & Outdoor Precautions </h3>
+                <ul>
+                    <li>Do not feed or disturb animals—maintain a safe distance.</li>
+                    <li>Wear trekking shoes and avoid visiting during heavy rains</li>
+                    <li>Avoid venturing alone at night.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Travel & Transportation Safety</h3>
+                <ul>
+                    <li>Drive cautiously as rural roads can have potholes.</li>
+                    <li>Avoid night travel on highways due to limited lighting</li>
+                    <li>Auto-rickshaws & buses are available, but confirm fares in advance.</li>
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Navigation
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const page = e.target.dataset.page;
+                document.querySelectorAll('.subpage').forEach(div => div.classList.remove('active'));
+                document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+                document.getElementById(page).classList.add('active');
+                e.target.classList.add('active');
+            });
+        });
+
+        // Chart Data
+        const dataByYear = {
+    "2020": [156120, 222782, 103086, 138975, 225369, 92424, 27492, 186058, 66725, 197941, 183607, 187765],
+    "2021": [174019, 230996, 179336, 168618, 176141, 160188, 30816, 140732, 77814, 188190, 199609, 147187],
+    "2022": [230971, 314258, 164428, 153387, 234854, 172901, 35620, 235897, 77355, 210890, 202687, 196956],
+    "2023": [226560, 339218, 141988, 159672, 232195, 143324, 43611, 237617, 114024, 171494, 216528, 157846]
+};
+        const temperatureDataByYear = {
+    "2020": {
+        "max": [42.35, 23.05, 42.73, 38.54, 35.07, 39.9, 25.92, 25.75, 30.48, 41.77, 27.49, 23.48],
+        "min": [12.49, 3.67, 18.4, 9.24, 14.18, 22.51, 20.92, 13.97, 19.49, 19.78, 8.66, 6.5]
+    },
+    "2021": {
+        "max": [43.02, 23.82, 44.78, 39.43, 36.03, 40.84, 25.05, 26.48, 30.22, 40.81, 27.82, 25.85],
+        "min": [12.76, 3.88, 18.18, 10.77, 15.18, 22.56, 21.31, 14.13, 20.12, 18.72, 9.6, 7.15]
+    },
+    "2022": {
+        "max": [42.99, 25.0, 44.88, 40.66, 35.61, 42.54, 25.01, 27.19, 31.92, 42.72, 28.56, 26.54],
+        "min": [13.34, 3.69, 19.69, 9.7, 15.75, 22.51, 21.5, 15.06, 19.67, 18.81, 10.22, 8.28]
+    },
+    "2023": {
+        "max": [44.54, 26.79, 45.56, 41.26, 37.7, 40.82, 27.07, 26.66, 33.42, 43.11, 28.99, 25.85],
+        "min": [14.54, 4.63, 19.65, 10.22, 16.45, 23.65, 22.37, 14.39, 20.24, 20.58, 10.23, 8.03]
+    }
+};
+        // Initialize Charts
+        let visitsChart = new Chart(document.getElementById('visitsChart'), {
+            type: 'line',
+            data: {
+                labels: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+                datasets: [{
+                    label: 'Tourist Visits',
+                    data: dataByYear["2023"],
+                    borderColor: '#3366cc',
+                    backgroundColor: 'rgba(51, 102, 204, 0.1)',
+                    fill: true
+                }]
+            }
+        });
+
+        let tempChart = new Chart(document.getElementById('temperatureChart'), {
+            type: 'line',
+            data: {
+                labels: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+                datasets: [{
+                    label: 'Max Temp (°C)',
+                    data: temperatureDataByYear["2023"].max,
+                    borderColor: '#ff6384',
+                    backgroundColor: 'rgba(255, 99, 132, 0.1)',
+                    fill: true
+                }, {
+                    label: 'Min Temp (°C)',
+                    data: temperatureDataByYear["2023"].min,
+                    borderColor: '#4bc0c0',
+                    backgroundColor: 'rgba(75, 192, 192, 0.1)',
+                    fill: true
+                }]
+            }
+        });
+
+        // Expose updateCharts globally
+        window.updateCharts = function(year) {
+            const visitData = dataByYear[year];
+            const maxVisits = Math.max(...visitData);
+            const bestMonthIndex = visitData.indexOf(maxVisits);
+            const bestMonth = ["January","February","March","April","May","June","July","August","September","October","November","December"][bestMonthIndex];
+
+            document.getElementById("best-month").textContent = bestMonth;
+
+            visitsChart.options.plugins = {
+                title: {
+                    display: true,
+                    text: `Best Month to Visit: ${bestMonth}`,
+                    font: {
+                        size: 16
+                    }
+                }
+            };
+
+            visitsChart.data.datasets[0].data = visitData;
+            tempChart.data.datasets[0].data = temperatureDataByYear[year].max;
+            tempChart.data.datasets[1].data = temperatureDataByYear[year].min;
+
+            visitsChart.update();
+            tempChart.update();
+        };
+
+        // Add event listeners to buttons
+        document.querySelectorAll('.year-buttons button').forEach(button => {
+            button.addEventListener('click', () => {
+                updateCharts(button.textContent);
+            });
+        });
+
+    });
+</script>
+
+</body>
+</html>

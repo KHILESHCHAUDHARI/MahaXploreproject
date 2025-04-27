@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jalna Tourism</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e7e6e6;;
+        }
+        header {
+            background-color: #3366cc;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            background-image: url('https://img.freepik.com/premium-photo/close-up-plants-against-blue-sky_1048944-8938336.jpg?ga=GA1.1.625326605.1745432147&semt=ais_hybrid&w=740');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        nav {
+            background-color:  #cbc7c7;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        nav a:hover {
+            background-color: #3366cc;
+            color: white;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .subpage {
+            display: none;
+        }
+        .subpage.active {
+            display: block;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .card h3 {
+            color: #3366cc;
+            margin-top: 0;
+        }
+        .chart-container {
+            width: 100%;
+            height: 400px;
+            margin: 20px 0;
+        }
+        .year-buttons {
+            text-align: center;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #3366cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jalna Tourism Guide</h1>
+        <p>Explore the Heart of Marathwada</p>
+    </header>
+
+    <nav>
+        <a href="#" data-page="overview" class="active">Overview</a>
+        <a href="#" data-page="things">Things to Do</a>
+        <a href="#" data-page="when">When to Visit</a>
+        <a href="#" data-page="precautions">Precautions</a>
+    </nav>
+
+    <div class="container">
+        <!-- Overview Subpage -->
+        <div id="overview" class="subpage active">
+            <div class="card">
+                <h3>Geographical Regions</h3>
+                <ul>
+                    <li><strong>Godavari Basin:</strong> Fertile lands along the river</li>
+                    <li><strong>Plateau Region:</strong> Rolling landscapes with farming communities</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Water Resources</h3>
+                <p>Key features include Kundalika River and dams like Ghanewadi Dam, Sultanpur Dam, and Matgaon Dam</p>
+            </div>
+
+            <div class="card">
+                <h3>Urban Development</h3>
+                <p>Jalna is experiencing growth with industrial expansion, road improvements, and urban development projects such as the Jalna-Dhamangaon Railway line and Smart City initiatives, enhancing connectivity and infrastructure</p>
+            </div>
+        </div>
+
+        <!-- Things to Do Subpage -->
+        <div id="things" class="subpage">
+            <div class="card">
+                <h3>Historical & Cultural Spots</h3>
+                <ul>
+                    <li>Jalna Fort</li>
+                    <li>Moti Talab</li>
+                    <li>Shri Ganesha Temple, Rajur</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Outdoor Adventures</h3>
+                <ul>
+                    <li>Trekking at Jamb Samarth Hill </li>
+                    <li>Boating at Ghanewadi Lake </li>
+                    <li>Moti Lake Garden</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Food & Entertainment</h3>
+                <ul>
+                    <li><strong>Nightlife in local hubs:</strong> Small cafes and eateries around Shivaji Chowk and Gandhi Nagar</li>
+                    <li><strong>Matsyodari Devi Fair:</strong> A grand annual event combining food, entertainment, and cultural festivities.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- When to Visit Subpage -->
+        <div id="when" class="subpage">
+    <div class="card">
+        <h3>Tourist Patterns</h3>
+        <div class="year-buttons">
+            <button onclick="updateCharts('2020')">2020</button>
+            <button onclick="updateCharts('2021')">2021</button>
+            <button onclick="updateCharts('2022')">2022</button>
+            <button onclick="updateCharts('2023')">2023</button>
+        </div>
+        <div class="chart-container">
+            <canvas id="visitsChart"></canvas>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Temperature Trends</h3>
+        <div class="chart-container">
+            <canvas id="temperatureChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Move this section inside the 'when' subpage -->
+    <div class="card">
+        <h3>Insights from the Data</h3>
+        <p>The tourist visits chart shows fluctuations in visitor numbers throughout the year. Typically, the highest number of tourists visit Pune in <span id="best-month"></span>, indicating it as the best time to explore the city.</p>
+        <p>The temperature chart helps travelers plan their visit based on weather conditions. The summer months (April - June) generally experience higher temperatures, while the winter months (November - February) offer a cooler and more comfortable climate for sightseeing.</p>
+    </div>
+</div>
+
+        <!-- Precautions Subpage -->
+        <div id="precautions" class="subpage">
+            <div class="card">
+                <h3>General Safety</h3>
+                <ul>
+                    <li>Use registered transportation</li>
+                    <li>Keep documents secure</li>
+                    <li>Stay hydrated</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Health Precautions</h3>
+                <ul>
+                    <li>Carry essential medications</li>
+                    <li>Use mosquito repellent</li>
+                    <li>Wear sunscreen</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Cultural Etiquette</h3>
+                <ul>
+                    <li>Dress modestly at temples</li>
+                    <li>Ask before taking photos</li>
+                    <li>Respect local customs</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Chart Data
+        const dataByYear = {
+            "2020": [276132, 266539, 218206, 207637, 176516, 146505, 124762, 126571, 235306, 190270, 80416, 126316],
+            "2021": [260867, 239002, 192977, 237669, 216879, 234414, 231692, 225813, 230924, 181327, 108880, 149841],
+            "2022": [225248, 287442, 251310, 194342, 215535, 210570, 223794, 227400, 241921, 250870, 80511, 205645],
+            "2023": [320060, 331239, 230969, 285046, 217493, 173291, 181016, 225250, 249588, 232380, 109841, 165044]
+        };
+
+        const temperatureDataByYear = {
+            "2020": { max: [42,35,38,41,40,34,39,31,32,27,33,35], min: [15,18,10,8,25,21,17,7,10,10,17,15] },
+            "2021": { max: [43,33,38,41,41,35,39,30,33,27,36,35], min: [16,19,10,17,25,20,17,6,10,10,17,14] },
+            "2022": { max: [42,35,30,41,42,36,41,30,34,28,35,30], min: [15,19,10,9,16,11,17,7,11,11,17,15] },
+            "2023": { max: [43,37,31,42,40,37,42,31,35,39,37,35], min: [16,20,11,9,18,12,17,8,11,11,17,16] }
+        };
+
+        // Initialize Charts
+        let visitsChart = new Chart(document.getElementById('visitsChart'), {
+            type: 'line',
+            data: {
+                labels: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+                datasets: [{
+                    label: 'Tourist Visits',
+                    data: dataByYear["2023"],
+                    borderColor: '#3366cc',
+                    backgroundColor: 'rgba(51, 102, 204, 0.1)',
+                    fill: true
+                }]
+            }
+        });
+
+        let tempChart = new Chart(document.getElementById('temperatureChart'), {
+            type: 'line',
+            data: {
+                labels: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+                datasets: [{
+                    label: 'Max Temp (°C)',
+                    data: temperatureDataByYear["2023"].max,
+                    borderColor: '#ff6384',
+                    backgroundColor: 'rgba(255, 99, 132, 0.1)',
+                    fill: true
+                }, {
+                    label: 'Min Temp (°C)',
+                    data: temperatureDataByYear["2023"].min,
+                    borderColor: '#4bc0c0',
+                    backgroundColor: 'rgba(75, 192, 192, 0.1)',
+                    fill: true
+                }]
+            }
+        });
+
+        // Update Charts
+function updateCharts(year) {
+    const visitData = dataByYear[year];
+    const maxVisits = Math.max(...visitData);
+    const bestMonthIndex = visitData.indexOf(maxVisits);
+    const bestMonth = ["January","February","March","April","May","June","July","August","September","October","November","December"][bestMonthIndex];
+
+    document.getElementById("best-month").textContent = bestMonth;
+
+    visitsChart.options.plugins = {
+        title: {
+            display: true,
+            text: `Best Month to Visit: ${bestMonth}`,
+            font: {
+                size: 16
+            }
+        }
+    };
+
+    visitsChart.data.datasets[0].data = visitData;
+    tempChart.data.datasets[0].data = temperatureDataByYear[year].max;
+    tempChart.data.datasets[1].data = temperatureDataByYear[year].min;
+
+    visitsChart.update();
+    tempChart.update();
+}
+        // Navigation
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const page = e.target.dataset.page;
+                document.querySelectorAll('.subpage').forEach(div => div.classList.remove('active'));
+                document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+                document.getElementById(page).classList.add('active');
+                e.target.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

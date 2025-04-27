@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhandara Tourism Guide</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e7e6e6;;
+        }
+
+        header {
+            background-color: #3366cc;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            background-image: url('https://img.freepik.com/premium-photo/close-up-plants-against-blue-sky_1048944-8938336.jpg?ga=GA1.1.625326605.1745432147&semt=ais_hybrid&w=740');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        nav {
+            background-color:  #cbc7c7;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #3366cc;
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .subpage {
+            display: none;
+        }
+
+        .subpage.active {
+            display: block;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            color: #3366cc;
+            margin-top: 0;
+        }
+
+        .chart-container {
+            width: 100%;
+            height: 400px;
+            margin: 20px 0;
+        }
+
+        .year-buttons {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #3366cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Bhandara Tourism Guide</h1>
+        <p>Explore the Rice Bowl of Maharashtra</p>
+    </header>
+
+    <nav>
+        <a href="#" data-page="overview" class="active">Overview</a>
+        <a href="#" data-page="things">Things to Do</a>
+        <a href="#" data-page="when">When to Visit</a>
+        <a href="#" data-page="precautions">Precautions</a>
+    </nav>
+
+    <div class="container">
+        <div id="overview" class="subpage active">
+            <div class="card">
+                <h3> Location:</h3> Part of the Nagpur Division, sharing borders with Madhya Pradesh to the north and the Gondia, Nagpur, and Chandrapur districts of Maharashtra.
+            </div>
+            <div class="card">
+                <h3>History:</h3> The name Bhandara is believed to be derived from "Bhannara," with references found in inscriptions dating back to the 11th century. It has been under the rule of various dynasties and became a district of Maharashtra in 1960 after the reorganization of states. In 1999, the erstwhile Bhandara district was bifurcated to form the new Gondia district.
+            </div>
+            <div class="card">
+                <h3>Geography:</h3> The terrain is generally flat with a gentle slope, except for the northern part which has the Satpura mountain range. The Wainganga River is the principal river, along with its tributaries. The district is rich in minor minerals like manganese and iron ore and has significant forest cover.
+            </div>
+            <div class="card">
+                <h3>Economy:</h3> Agriculture, primarily rice cultivation, is a major contributor. The district also has industries, including rice mills, brass product manufacturing (leading to the nickname "Brass City" for Bhandara town), and forest-based activities. An Ordnance Factory is also located here.
+            </div>
+            <div class="card">
+                <h3>Administration:</h3> The district is divided into three subdivisions (Bhandara, Tumsar, and Sakoli) and further into seven talukas: Bhandara, Mohadi, Tumsar, Lakhani, Sakoli, Pauni, and Lakhandur. The district headquarters is located in Bhandara city.
+            </div>
+            <div class="card">
+                <h3>Culture:</h3> Marathi is the widely spoken language. The district has a rich cultural heritage with various festivals celebrated throughout the year.
+            </div>
+            <div class="card">
+                <h3>Tourism:</h3> Bhandara offers a mix of natural beauty, historical sites, and religious places. Some popular attractions include:
+                <div class="card">
+                    <h3>Umred Karhandla Wildlife Sanctuary:</h3> Known for tigers, leopards, and diverse birdlife.
+                </div>
+                <div class="card">
+                    <h3>Gosekhurd Dam (Indirasagar Dam):</h3> A significant irrigation project with scenic surroundings.
+                </div>
+                <div class="card">
+                    <h3>Rawanwadi Dam:</h3> Another important irrigation project and a picnic spot.
+                </div>
+                <div class="card">
+                    <h3>Ambagad Fort:</h3> A historical site offering panoramic views.
+                </div>
+                <div class="card">
+                    <h3>Korambhi Devi Temple:</h3> A revered religious site.
+                </div>
+                <div class="card">
+                    <h3>Brahmi:</h3> Known for ancient temples.
+                </div>
+                <div class="card">
+                    <h3>Koka Wildlife Sanctuary:</h3> A newer sanctuary with diverse flora and fauna.
+                </div>
+                <div class="card">
+                    <h3>Navegaon National Park (nearby):</h3> Offers scenic landscapes and biodiversity.
+                </div>
+                <div class="card">
+                    <h3>Mahasamadhi Bhumi, Sindpuri:</h3> A significant Buddhist pilgrimage site.
+                </div>
+                <div class="card">
+                    <h3>Pawan Raja Fort, Pauni:</h3> An ancient fort with historical importance.
+                </div>
+            </div>
+        </div>
+
+        <div id="things" class="subpage">
+            <div class="card">
+                <h3> Nature and Wildlife:</h3>
+
+                Umred Karhandla Wildlife Sanctuary: Located about 60 km from Bhandara, this sanctuary is home to tigers, leopards, Indian Gaur, wild dogs, and various bird species. It's a significant wildlife corridor and great for wildlife enthusiasts and photographers. You can enjoy jeep safaris here.
+                Koka Wildlife Sanctuary: Situated closer to Bhandara (around 20 km), this newer sanctuary boasts diverse flora and fauna, making it ideal for nature walks and bird watching.
+                Gosekhurd Dam (Indirasagar Dam): This major irrigation project not only serves agricultural purposes but also offers scenic beauty and can be a peaceful place to visit.
+                Rawanwadi Dam: Another important dam that provides irrigation and is also a pleasant spot for picnics and enjoying the waterside.
+                Bhandara Lake: Enjoy a leisurely stroll around this serene lake in Bhandara city. Boating activities might also be available.
+                Navegaon National Park (nearby): While not directly in Bhandara district, it's close enough to consider for a day trip. It offers beautiful landscapes and diverse biodiversity.
+            </div>
+            <div class="card">
+                <h3>Historical and Religious Sites:</h3>
+
+                Ambagad Fort: This historical fort offers panoramic views of the surrounding landscape and provides a glimpse into the region's past.
+                Korambhi Devi Temple: A significant religious site in the Bhandara district, attracting devotees and those interested in the local culture.
+                Brahmi: Known for its ancient temples, this place holds historical and religious significance.
+                Mahasamadhi Bhumi, Sindpuri: A historically and religiously important site linked to Buddhism's past in India, featuring Buddhist sculptures.
+                Pawan Raja Fort, Pauni: Located in the ancient city of Pauni, the remains of this fort and its large gate offer a historical insight.
+                Waijeshwar Mandir, Pauni: An ancient Hindu temple in Pauni with a good rating from visitors.
+            </div>
+            <div class="card">
+                <h3>Other Activities:</h3>
+
+                Explore Bhandara Town: Visit the local markets to experience the vibrant culture and perhaps buy some local handicrafts or brass items, as Bhandara is known as "Brass City."
+                Attend Local Festivals: Check the local calendar for festivals and events to immerse yourself in the traditions and customs of the region.
+                Picnics: Several dams and natural spots like Rawanwadi Dam offer opportunities for picnics.
+                Photography: The natural landscapes, wildlife, and historical sites offer ample opportunities for photography.
+            </div>
+            <div class="card">
+                <h3>Nearby Excursions (within a reasonable distance):</h3>
+
+                Nagzira Wildlife Sanctuary: Located on the boundary of Bhandara, it's another important habitat for wildlife and offers tiger sightings and safari tours.
+                Ramdham: A popular religious and recreational place near Nagpur, which can be combined with a trip to Bhandara.
+                Tadoba-Andhari Tiger Reserve: While a bit further, it can be considered for a more extended wildlife-focused trip as it's connected to Umred Karhandla through forest corridors.
+            </div>
+        </div>
+
+        <div id="when" class="subpage">
+            <div class="card">
+                <h3>Tourist Patterns</h3>
+                <div class="year-buttons">
+                    <button onclick="updateCharts('2020')">2020</button>
+                    <button onclick="updateCharts('2021')">2021</button>
+                    <button onclick="updateCharts('2022')">2022</button>
+                    <button onclick="updateCharts('2023')">2023</button>
+                </div>
+                <div class="chart-container">
+                    <canvas id="visitsChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Temperature Trends</h3>
+                <div class="chart-container">
+                    <canvas id="temperatureChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div id="precautions" class="subpage">
+            <div class="card">
+                <h3>Health and Safety:</h3>
+
+Stay Hydrated: Bhandara can experience hot weather, especially during the summer months (March to May). Carry a reusable water bottle and refill it frequently.
+Food Safety: Opt for well-established restaurants or eateries popular among locals. Drink bottled or purified water. Be cautious with street food to avoid any stomach-related issues.
+Basic First-Aid: Carry a small first-aid kit with essentials like band-aids, antiseptic wipes, pain relievers, and any personal medications you might need.1   
+
+Mosquito Repellent: Bhandara has forested areas and water bodies, increasing the risk of mosquito bites, especially during the monsoon season (June to September). Use a good mosquito repellent to protect yourself from diseases like malaria and dengue.
+Sun Protection: Wear sunscreen with a high SPF, a hat, and sunglasses, especially when outdoors during the day, to protect yourself from the strong sun.
+Wildlife Safety: If you plan to visit wildlife sanctuaries like Umred Karhandla or Koka, follow the guidelines provided by the forest department. Maintain a safe distance from animals and do not feed them. Stay inside designated vehicles during safaris.
+Awareness of Surroundings: Be mindful of your belongings, especially in crowded areas, to prevent theft.
+Avoid Walking Alone at Night: If possible, avoid walking alone in unfamiliar or poorly lit areas at night. Use reliable transportation.
+Secure Accommodations: Ensure your hotel or guesthouse has proper security measures. Keep your valuables secure.
+Be Cautious with Strangers: Avoid engaging in lengthy conversations with unknown people and be wary of unsolicited offers.
+Emergency Contacts: Keep important contact numbers handy, such as local police, your accommodation, and any emergency contacts back home.
+</div><div class="card"><h3>Transportation:</h3>
+
+Use Reputable Transportation: Opt for government-run buses, known taxi services, or ride-sharing apps if available. Negotiate fares for auto-rickshaws beforehand.
+Plan Your Routes: If using public transport, familiarize yourself with the routes. GPS apps can be helpful for navigation.
+Be Aware in Crowded Transport: Public transport can get crowded; be mindful of your belongings.
+Driving Precautions: If you are driving, be aware of local traffic rules and road conditions. Roads in some rural areas might not be well-maintained.
+</div><div class="card"><h3>Cultural Sensitivity:</h3>
+
+Dress Modestly at Religious Sites: When visiting temples or other religious places, dress respectfully. Women should cover their shoulders and knees, and men should avoid wearing shorts. You might be asked to remove footwear before entering.
+Respect Local Customs: Be mindful of local traditions and avoid public displays of affection that might be considered inappropriate.
+Remove Footwear: It is customary to remove your shoes before entering temples and some traditional homes.
+Use Your Right Hand: When giving or receiving items or money, it's generally considered polite to use your right hand.
+</div><div class="card"><h3>General Tips:</h3>
+
+Best Time to Visit: The winter months (October to February) generally offer the most pleasant weather for sightseeing. Summers can be very hot, and the monsoon brings heavy rainfall.
+Stay Informed: Check for any local news or advisories before and during your visit.
+Bargaining: In local markets, bargaining is common. Be polite and reasonable.
+Photography: Be respectful when taking photos of people or religious sites. Ask for permission if you are unsure.
+Money: Carry sufficient cash, especially if you plan to visit rural areas where card payments might not be widely accepted. Be cautious when handling money in public.
+Learn a Few Local Phrases: Knowing a few basic Marathi phrases can enhance your interactions with locals.
+
+        </div>
+    </div>
+
+    <script>
+        // Chart Data
+        const dataByYear = {
+            "2020": [7753,	6096,	7482,	5530,	6644,	6086,	5466,	128017,	69235,	127608,	10137,	9997],
+            "2021": [7197,	7865,	5367,	4533,	4255,	6937,	8123,	149162,	68293,	137162,	17910,	9390],
+            "2022": [5866,	7321,	6992,	4838,	6131,	5549,	6829,	170183,	92091,	136563,	12460,	8313],
+            "2023": [8800,	8882,	7187,	6083,	6000,	7732,	9901,	208346,	111504,	124061,	20736,	10867]
+        };
+
+        const temperatureDataByYear = {
+      "2020": {
+        max: [36.81, 34.42, 41.86, 28.81, 33.73, 30.73, 28.43, 28.87, 28.87, 35.05, 27.87, 33.37],
+        min: [20.43, 14.24, 19.22, 7.86, 12.94, 6.89, 7.92, 18.5, 22.39, 23.68, 21.8, 7.52]
+      },
+            
+      "2021": {
+        max: [38.63, 33.5, 41.67, 29.29, 34.72, 29.54, 28.05, 29.74, 31.17, 36.2, 27.98, 32.46],
+        min: [21.96, 14.23, 18.64, 8.06, 14.04, 7.25, 7.62, 19.78, 22.91, 23.76, 21, 8.29]
+      },
+      "2022": {
+        max: [38.53, 33.64, 42.93, 28.67, 33.93, 31.76, 30.41, 29.66, 30.69, 35.42, 27.37, 33.08],
+        min: [22.08, 14.77, 18.61, 8.3, 13.58, 6.48, 6.87, 18.77, 23.18, 23.53, 21.98, 8.7]
+      },
+      "2023": {
+        max: [37.88, 36.38, 42.54, 30.04, 35.43, 31.75, 30.28, 30.03, 31.3, 35.79, 29.15, 34.1],
+        min: [22.49, 15.24, 19.98, 9.27, 15.41, 8.1, 7.5, 20.68, 23.21, 24.37, 23.44, 9.97]
+      }
+    };
+
+    // Initialize Charts
+    let visitsChart = new Chart(document.getElementById('visitsChart'), {
+      type: 'line',
+      data: {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        datasets: [{
+          label: 'Tourist Visits',
+          data: dataByYear["2023"],
+          borderColor: '#3366cc',
+          backgroundColor: 'rgba(51, 102, 204, 0.1)',
+          fill: true
+        }]
+      }
+    });
+
+    let tempChart = new Chart(document.getElementById('temperatureChart'), {
+      type: 'line',
+      data: {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        datasets: [{
+          label: 'Max Temp (°C)',
+          data: temperatureDataByYear["2023"].max,
+          borderColor: '#ff6384',
+          backgroundColor: 'rgba(255, 99, 132, 0.1)',
+          fill: true
+        }, {
+          label: 'Min Temp (°C)',
+          data: temperatureDataByYear["2023"].min,
+          borderColor: '#4bc0c0',
+          backgroundColor: 'rgba(75, 192, 192, 0.1)',
+          fill: true
+        }]
+      }
+    });
+
+    // Update Charts
+    function updateCharts(year) {
+      visitsChart.data.datasets[0].data = dataByYear[year];
+      tempChart.data.datasets[0].data = temperatureDataByYear[year].max;
+      tempChart.data.datasets[1].data = temperatureDataByYear[year].min;
+      visitsChart.update();
+      tempChart.update();
+    }
+
+    // Navigation
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const page = e.target.dataset.page;
+        document.querySelectorAll('.subpage').forEach(div => div.classList.remove('active'));
+        document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+        document.getElementById(page).classList.add('active');
+        e.target.classList.add('active');
+      });
+    });
+  </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+

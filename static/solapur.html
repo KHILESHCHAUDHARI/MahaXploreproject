@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solapur Tourism</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #e7e6e6;
+    }
+
+    header {
+      background-color: #3366cc;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      background-image: url('https://img.freepik.com/premium-photo/close-up-plants-against-blue-sky_1048944-8938336.jpg?ga=GA1.1.625326605.1745432147&semt=ais_hybrid&w=740');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+    }
+
+    nav {
+      background-color: #cbc7c7;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      padding: 10px;
+      border-radius: 5px;
+      transition: all 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #3366cc;
+      color: white;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+
+    .subpage {
+      display: none;
+    }
+
+    .subpage.active {
+      display: block;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 15px 0;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h3 {
+      color: #3366cc;
+      margin-top: 0;
+    }
+
+    .chart-container {
+      width: 100%;
+      height: 400px;
+      margin: 20px 0;
+    }
+
+    .year-buttons {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      background-color: #3366cc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Solapur Tourism Guide</h1>
+    <p>Explore the Blankets Capital Maharashtra</p>
+  </header>
+
+  <nav>
+    <a href="#" data-page="overview" class="active">Overview</a>
+    <a href="#" data-page="things">Things to Do</a>
+    <a href="#" data-page="when">When to Visit</a>
+    <a href="#" data-page="precautions">Precautions</a>
+  </nav>
+
+  <div class="container">
+    <div id="overview" class="subpage active">
+      <div class="card">
+        <h3> Geography and Location</h3>
+Location: Solapur is located in the southeastern part of Maharashtra, close to the border with Karnataka. The city lies about 355 km from Mumbai and approximately 250 km from Pune. It is well-connected to other parts of the state and neighboring regions via road and rail networks.
+
+Climate: Solapur has a hot semi-arid climate with extremely hot summers. The average temperature in the summer months can reach up to 40°C or higher, while winters are generally mild and pleasant.
+
+</div><div class="card"><h3> History</h3>
+Solapur has a rich historical past, with a blend of Maratha, Bahamani Sultanate, and Mughal influences. The region was part of various dynasties, and its Solapur Fort and temples are testament to its historical significance.
+
+The city has been a site of major political and social movements, particularly during India's struggle for independence.
+
+</div><div class="card"><h3> Economy</h3>
+Textiles: The backbone of Solapur’s economy is its textile industry. The city is famous for its power loom industry, producing cotton textiles, particularly chaddars (blankets) and towels. These products are distributed across India and abroad. The power loom and handloom sectors provide employment to a significant portion of the local population.
+
+Agriculture: Solapur is an important agricultural center, known for the cultivation of crops like cotton, sugarcane, groundnuts, pulses, and sunflower. Irrigation from the Bhima and Sina rivers supports the region’s agrarian economy.
+
+Trade and Industry: The city also thrives on its trade and commercial activities, particularly in the agricultural and textile sectors. Several handloom industries, small-scale manufacturing units, and power loom factories contribute to its economic development.
+
+</div><div class="card"><h3> Tourism and Culture</h3>
+Religious Sites: Solapur is home to several important religious landmarks, including the Shri Siddheshwar Temple, a significant pilgrimage site. The Solapur Fort and numerous other temples add to the city’s cultural and spiritual richness.
+
+Festivals: The city celebrates various festivals with enthusiasm, including Gudi Padwa, Diwali, Ganesh Chaturthi, and Makar Sankranti. Local traditions and folk art are an important part of these celebrations.
+
+Handicrafts and Textiles: Solapur is also known for its textile handicrafts, including Solapur Chaddars, bedspreads, and towels. The intricate designs and high-quality fabric make these products highly sought after.
+
+</div><div class="card"><h3> Education</h3>
+Solapur is home to Solapur University, which offers a wide range of undergraduate and postgraduate programs. The educational landscape of Solapur is diverse, with numerous schools, colleges, and vocational institutions contributing to its growth as an educational hub.
+
+</div><div class="card"><h3> Transportation</h3>
+Railways: Solapur is a major railway junction, connecting to key cities in Maharashtra, Karnataka, and Andhra Pradesh. It has regular train services to cities like Pune, Mumbai, Hyderabad, and Bangalore.
+
+Roadways: The city is well-connected through a network of highways and roads. The Solapur Pune Highway, Solapur Bangalore Highway, and Solapur Hyderabad Highway make it accessible by road from various regions.
+
+Air Connectivity: While Solapur doesn’t have an airport, the nearest airport is in Pune, about 250 km away.
+
+</div><div class="card"><h3> Notable Landmarks</h3>
+Shri Siddheshwar Temple: Located on an island in the Siddheshwar Lake, this temple is dedicated to Lord Siddheshwar and is a significant religious and tourist site in Solapur.
+
+Nannaj Blackbuck Sanctuary: Located around 40 km from the city, this sanctuary is home to the endangered blackbuck, along with other wildlife species. It is an important destination for nature lovers and wildlife enthusiasts.
+
+Solapur Fort: Though in ruins, this historical fort, built during the reign of the Bahamani Sultanate, is a significant landmark representing Solapur's historical heritage.
+
+</div><div class="card"><h3> Cuisine</h3>
+Solapur’s cuisine is a blend of Maharashtrian and South Indian influences, with staple dishes like Puran Poli, Thalipeeth, and Misal Pav being popular. Solapur Pithla Bhakri, a traditional dish made from gram flour, is also widely enjoyed. The city is also known for its sweet treats like Kunda, a popular sweet made from milk.
+
+</div><div class="card"><h3> Key Points of Interest</h3>
+Bhima River: The river flows near the city and is an important source of irrigation for the agricultural lands in Solapur.
+
+Solapur Lake and Gardens: Offering a calm and scenic environment, these spots are perfect for picnics and outings with family and friends.
+
+</div><div class="card"><h3>Precautions and Travel Tips</h3>
+Climate: Due to its hot and dry climate, it is important to stay hydrated and wear appropriate clothing while visiting Solapur, especially in the summer months.
+
+Cultural Sensitivity: While Solapur is a vibrant city, visitors should respect local customs and traditions, particularly in religious places.</p>
+      </div>
+
+    </div>
+
+    <div id="things" class="subpage">
+      <div class="card">
+        <h3> Visit Shri Siddheshwar Temple</h3>
+What to do: Located on an island in Siddheshwar Lake, this temple is dedicated to Lord Siddheshwar and is one of the most important religious sites in Solapur. The serene surroundings and the peaceful atmosphere make it an ideal place for reflection and spiritual connection.
+
+Why visit: It's a popular pilgrimage site, and the beautiful lake surrounding the temple adds to its charm.
+
+</div><div class="card"><h3> Explore Solapur Fort</h3>
+What to do: The Solapur Fort is a historical landmark built during the Bahamani Sultanate. While it is in ruins, visiting the fort will take you back to the rich history of the region.
+
+Why visit: The fort offers a glimpse into the past and provides a panoramic view of the city.
+
+</div><div class="card"><h3> Tour the Nannaj Blackbuck Sanctuary</h3>
+What to do: About 40 km from Solapur, the Nannaj Blackbuck Sanctuary is home to the endangered blackbuck and other wildlife species. Visitors can enjoy a safari or nature walks in the sanctuary.
+
+Why visit: It’s an excellent place for wildlife enthusiasts and nature lovers to see blackbucks and various bird species in their natural habitat.
+
+</div><div class="card"><h3> Relax at Solapur Lake and Gardens</h3>
+What to do: The Solapur Lake and its surrounding gardens are perfect for a day out with family or friends. The tranquil environment offers a place to relax and enjoy the beauty of nature.
+
+Why visit: Ideal for picnics, evening strolls, or simply unwinding amidst nature.
+
+</div><div class="card"><h3>Explore the Local Markets</h3>
+What to do: Solapur is known for its vibrant markets, particularly those selling handloom textiles, Solapur chaddars, bedspreads, and towels. Take a stroll through the markets and shop for these traditional items.
+
+Why visit: The city's textile industry is one of its key attractions, and shopping for local products gives you a glimpse into Solapur's craftsmanship.
+
+</div><div class="card"><h3> Visit the Bhuikot Fort</h3>
+What to do: Another historical landmark in Solapur is the Bhuikot Fort, believed to have been constructed during the Maratha period. Though much of the fort is in ruins, the remaining structure provides insight into the region's history.
+
+Why visit: For history enthusiasts, the Bhuikot Fort adds another layer to understanding Solapur's role in Indian history.
+
+</div><div class="card"><h3> Take a Trip to the Historical Bhima River</h3>
+What to do: The Bhima River, which flows through Solapur, holds historical and religious significance. The river provides a backdrop to several temples and is a key source of irrigation for the region’s agriculture.
+
+Why visit: It’s perfect for a peaceful visit, and you can also explore nearby temples that are situated along the river.
+
+</div><div class="card"><h3> Check Out the Solapur Science Center</h3>
+What to do: The Solapur Science Center is a fun and educational spot, especially for families and school groups. It features interactive exhibits on science and technology.
+
+Why visit: It’s a great place to engage young minds and learn about various scientific phenomena in an enjoyable way.
+
+</div><div class="card"><h3> Participate in Local Festivals</h3>
+What to do: Solapur celebrates several festivals with great zeal, including Gudi Padwa, Diwali, Ganesh Chaturthi, and Makar Sankranti. If you're visiting during any of these times, take part in the festivities, watch the local processions, and enjoy traditional sweets.
+
+Why visit: The vibrant cultural atmosphere during these festivals provides a deep insight into the traditions and customs of the region.
+
+</div><div class="card"><h3> Visit the Renuka Devi Temple</h3>
+What to do: Located on the outskirts of Solapur, the Renuka Devi Temple is a serene and peaceful place dedicated to the goddess Renuka. It is a prominent religious site for the locals.
+
+Why visit: It offers a spiritual experience and a peaceful environment away from the bustling city.
+
+</div><div class="card"><h3> Discover the History at Solapur Museum</h3>
+What to do: The Solapur Museum showcases artifacts, sculptures, and historical items that highlight the region's cultural and historical heritage.
+
+Why visit: A visit to this museum will give you an understanding of Solapur's past and its contribution to Maharashtra's history.
+
+</div><div class="card"><h3> Trek to Jangli Maharaj Temple</h3>
+What to do: This temple is located on a small hillock and requires a short trek to reach the top. The temple is dedicated to the sage Jangli Maharaj, a revered figure in the region.
+
+Why visit: The trek is an exciting adventure for nature lovers and those seeking a peaceful place of worship.
+
+</div><div class="card"><h3> Enjoy Local Cuisine</h3>
+What to do: Solapur’s cuisine features a blend of Maharashtrian and South Indian influences. Be sure to try local specialties like Puran Poli, Thalipeeth, Misal Pav, and Solapur Pithla Bhakri.
+
+Why visit: Savoring the local food will give you an authentic taste of Solapur's culinary culture.
+
+</div><div class="card"><h3> Explore the Rural Life Around Solapur</h3>
+What to do: Solapur is surrounded by vast agricultural lands. A visit to nearby villages will give you a glimpse into the rural life and farming practices in Maharashtra.
+
+Why visit: It's an opportunity to connect with the local way of life and see the agricultural backbone of the region.
+
+
+          
+</p>
+      </div>
+    </div>
+
+    <div id="when" class="subpage">
+      <div class="card">
+        <h3>Tourist Patterns</h3>
+        <div class="year-buttons">
+          <button onclick="updateCharts('2020')">2020</button>
+          <button onclick="updateCharts('2021')">2021</button>
+          <button onclick="updateCharts('2022')">2022</button>
+          <button onclick="updateCharts('2023')">2023</button>
+        </div>
+        <div class="chart-container">
+          <canvas id="visitsChart"></canvas>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Temperature Trends</h3>
+        <div class="chart-container">
+          <canvas id="temperatureChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div id="precautions" class="subpage">
+      <div class="card">
+        <h3> Weather Considerations</h3>
+Summer Heat: Solapur can get extremely hot, especially during the summer months (March to June), with temperatures often exceeding 40°C (104°F).
+
+Precaution: Wear light, breathable clothing, use sunscreen, and carry a water bottle to stay hydrated. Avoid outdoor activities during peak midday heat.
+
+Monsoon: The monsoon season (June to September) brings heavy rainfall.
+
+Precaution: Check weather forecasts before traveling, and carry an umbrella or raincoat. Be cautious of slippery roads and potential flooding in some areas.
+
+</div><div class="card"><h3> Water Safety</h3>
+Drinking Water: Tap water in Solapur may not be safe to drink directly.
+
+Precaution: Always drink bottled or filtered water. Avoid consuming ice in drinks from street vendors unless you're sure it's made from purified water.
+
+Swimming: If you plan to visit lakes or rivers, such as Siddheshwar Lake or the Bhima River, be cautious about water quality and depth.
+
+Precaution: Only swim in designated safe areas, and ensure you're aware of the local conditions.
+
+</div><div class="card"><h3>Local Health Considerations</h3>
+Mosquitoes: The presence of mosquitoes can be a concern, especially during the monsoon season, which can lead to diseases like malaria or dengue.
+
+Precaution: Use insect repellent and wear long-sleeved clothing, particularly in the evening and early morning when mosquitoes are most active.
+
+Allergies: Due to the rural and agricultural surroundings, pollen and dust might cause allergies to some visitors.
+
+Precaution: Carry antihistamines if you're prone to allergies.
+
+</div><div class="card"><h3> Travel Safety</h3>
+Road Conditions: Roads in and around Solapur can vary in condition. Rural roads might be poorly maintained, especially during the rainy season.
+
+Precaution: If you're driving, ensure your vehicle is in good condition and carry essential tools for minor repairs. If traveling by public transport, confirm the routes and travel with reliable operators.
+
+Traffic: While Solapur is not as congested as larger cities, traffic can still be a challenge during peak hours.
+
+Precaution: Drive cautiously and be mindful of local traffic rules.
+
+</div><div class="card"><h3> Respecting Local Culture</h3>
+Religious Sensitivity: Solapur is home to many temples and is a city with strong religious sentiments. Always be respectful when visiting religious places like the Siddheshwar Temple and Renuka Devi Temple.
+
+Precaution: Dress modestly when visiting temples and avoid public displays of affection. Follow local customs and traditions while at religious sites.
+
+Public Behavior: While the city is generally welcoming, public displays of behavior considered inappropriate (e.g., loud talking, arguing, or disrespecting elders) may be frowned upon.
+
+Precaution: Be courteous, polite, and respectful of local traditions and customs.
+
+</div><div class="card"><h3> Food and Hygiene</h3>
+Street Food: Solapur is known for its local delicacies like Misal Pav and Puran Poli, but street food may sometimes cause foodborne illnesses if not prepared in hygienic conditions.
+
+Precaution: Choose food from clean, busy stalls or reputable restaurants. Avoid raw or undercooked food and unwashed fruits.
+
+Food Allergies: If you have food allergies, always communicate them clearly when ordering at restaurants.
+
+</div><div class="card"><h3> Wildlife Safety</h3>
+Blackbucks in Nannaj Sanctuary: While visiting the Nannaj Blackbuck Sanctuary, be cautious while observing wildlife.
+
+Precaution: Do not approach or disturb animals. Follow the guidelines provided by local authorities or tour guides to avoid any risk.
+
+Snakes and Insects: If exploring rural or forested areas, be cautious of snakes or other wildlife.
+
+Precaution: Wear sturdy footwear and long pants when walking in grassy or wooded areas. Be alert and avoid touching unknown plants or animals.
+
+</div><div class="card"><h3> Safety During Festivals</h3>
+Crowds: Festivals like Ganesh Chaturthi or Makar Sankranti bring large crowds, which can be overwhelming for some visitors.
+
+Precaution: If visiting during a festival, be mindful of large crowds. Keep an eye on your belongings to prevent theft, and try to avoid congested areas during processions.
+
+</div><div class="card"><h3>Personal Belongings</h3>
+Theft or Pickpocketing: While Solapur is generally safe, like any city, petty theft or pickpocketing can happen, especially in crowded areas or markets.
+
+Precaution: Keep your valuables in a secure place, such as a hotel safe or hidden money belt. Stay alert in crowded areas and markets.
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Chart Data
+    const dataByYear = {
+      "2020": [440410,	487140,	394175,	554330,	388649,	586285,	237269,	280345,	186011,	339175,	300232,	368270],
+      "2021": [360169,	445469,	404958,	514389,	358279,	431983,	220748,	359958,	149595,	326168,	502042,	474020],
+      "2022": [448058,	530257,	393584,	514172,	534529,	373332,	265641,	394198,	165126,	340700,	444941,	691134],
+      "2023": [448058,	530257,	393584,	514172,	534529,	373332,	265641,	394198,	165126,	340700,	444941,	691134]
+    };
+
+    const temperatureDataByYear = {
+      "2020": {
+        max: [41.49,22.21,43.72,40.02,26.91,42.05,28.37,42.6,30.04,44.78,41.59,40.95],
+        min: [16.05,15.78,23.77,22.04,23.08,23.59,16.29,19.09,25.29,18.93,10.66,12.51]
+      },
+      "2021": {
+        max: [42.18,24.07,43.3,42,27,42,30.7,42.09,28.82,43.85,41.31,42.77],
+        min: [17.21,16.97,24.37,22.39,23.04,24.15,17.06,19.46,25.31,17.8,10.38,11.39]
+      },
+      "2022": {
+        max: [43.3,24.82,43.48,41.26,28.16,42.89,30.33,43.02,30.67,45.6,42.33,44.17],
+        min: [16.33,17.25,25.88,23.96,22.94,24.96,17.26,18.47,25.75,18.61,11.84,12.69]
+      },
+      "2023": {
+        max: [42.84,25.84,45.16,42.39,30.13,42.05,30.81,44.04,31.85,46.06,44.03,43.17],
+        min: [18.36,17.77,26.35,24.29,23.93,23.98,18.64,20.31,26.4,18.9,11.38,13.82]
+      }
+    };
+
+    // Initialize Charts
+    let visitsChart = new Chart(document.getElementById('visitsChart'), {
+      type: 'line',
+      data: {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        datasets: [{
+          label: 'Tourist Visits',
+          data: dataByYear["2023"],
+          borderColor: '#3366cc',
+          backgroundColor: 'rgba(51, 102, 204, 0.1)',
+          fill: true
+        }]
+      }
+    });
+
+    let tempChart = new Chart(document.getElementById('temperatureChart'), {
+      type: 'line',
+      data: {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        datasets: [{
+          label: 'Max Temp (°C)',
+          data: temperatureDataByYear["2023"].max,
+          borderColor: '#ff6384',
+          backgroundColor: 'rgba(255, 99, 132, 0.1)',
+          fill: true
+        }, {
+          label: 'Min Temp (°C)',
+          data: temperatureDataByYear["2023"].min,
+          borderColor: '#4bc0c0',
+          backgroundColor: 'rgba(75, 192, 192, 0.1)',
+          fill: true
+        }]
+      }
+    });
+
+    // Update Charts
+    function updateCharts(year) {
+      visitsChart.data.datasets[0].data = dataByYear[year];
+      tempChart.data.datasets[0].data = temperatureDataByYear[year].max;
+      tempChart.data.datasets[1].data = temperatureDataByYear[year].min;
+      visitsChart.update();
+      tempChart.update();
+    }
+
+    // Navigation
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const page = e.target.dataset.page;
+        document.querySelectorAll('.subpage').forEach(div => div.classList.remove('active'));
+        document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+        document.getElementById(page).classList.add('active');
+        e.target.classList.add('active');
+      });
+    });
+  </script>
+</body>
+
+</html>
+
+
+
+
+
+

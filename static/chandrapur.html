@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chandrapur Tourism</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e7e6e6;;
+        }
+        header {
+            background-color: #3366cc;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            background-image: url('https://img.freepik.com/premium-photo/close-up-plants-against-blue-sky_1048944-8938336.jpg?ga=GA1.1.625326605.1745432147&semt=ais_hybrid&w=740');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        nav {
+            background-color:  #cbc7c7;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        nav a:hover {
+            background-color: #3366cc;
+            color: white;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .subpage {
+            display: none;
+        }
+        .subpage.active {
+            display: block;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .card h3 {
+            color: #3366cc;
+            margin-top: 0;
+        }
+        .chart-container {
+            width: 100%;
+            height: 400px;
+            margin: 20px 0;
+        }
+        .year-buttons {
+            text-align: center;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #3366cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Chandrapur Tourism Guide</h1>
+        <p> "Discover Chandrapur: The Land of Tigers and Temples!"</p>
+    </header>
+
+    <nav>
+        <a href="#" data-page="overview" class="active">Overview</a>
+        <a href="#" data-page="things">Things to Do</a>
+        <a href="#" data-page="when">When to Visit</a>
+        <a href="#" data-page="precautions">Precautions</a>
+    </nav>
+
+    <div class="container">
+        <!-- Overview Subpage -->
+        <div id="overview" class="subpage active">
+            <div class="card">
+                <h3>  Geography and Natural Beauty</h3>
+                <ul>
+                    <li> Tadoba-Andhari Tiger Reserve (TATR): One of India’s oldest and most famous tiger reserves, home to a thriving population of Bengal tigers and diverse wildlife. </li>
+                    <li>Erai Dam: A picturesque reservoir offering a tranquil escape and perfect for picnics and birdwatching.</li>
+                    <li>Fossil Park: A unique site showcasing plant fossils dating back millions of years.</li>
+                   
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Religious and Spiritual Sites</h3>
+                <ul>
+                    <li> Mahakali Temple: A revered temple dedicated to Goddess Mahakali, attracting thousands of devotees during festivals.</li>
+                    <li>Anchaleshwar Temple: An ancient Shiva temple known for its intricate architecture and religious significance.</li>
+                    <li>Bhadrawati Jain Temples: Historically important Jain pilgrimage sites with detailed carvings and sculptures.</li>
+               </ul>
+            </div>
+
+            <div class="card">
+                <h3>Historical Significance</h3>
+                
+                <ul>
+                    <li> Ancient Roots: Chandrapur was the capital of the Gond dynasty in the 13th century, ruled by King Khandkya Ballal Shah. The city is adorned with historic forts, temples, and remnants of Gond-era architecture.</li>
+                    <li>British Influence: The region witnessed British colonial influence during the 19th century due to its rich coal deposits.</li>
+                                    </ul>
+            </div>
+                       <div class="card">
+                <h3>Industrial and Economic Importance</h3>
+                
+                <ul>
+                 <b>  Coal Mining Hub:</b>
+
+<li>Chandrapur is referred to as the “Coal Capital of India” due to its rich reserves of coal.</li>
+
+<li>The Western Coalfields Limited (WCL) has a significant presence in the region, contributing to India’s power generation.</li>
+
+
+                </ul>
+                <ul>
+                <b>  Thermal Power Stations:</b>
+
+<li>Chandrapur Super Thermal Power Station (CSTPS), one of Maharashtra’s largest thermal plants, plays a key role in power production.
+
+</li>
+
+
+                </ul>
+
+            </div>
+           <div class="card">
+                <h3>Art and Handicrafts</h3>   
+           <p><b>Warli Paintings:</b><br/>
+
+Traditional tribal art, depicting daily life, nature, and rituals. These artworks make for wonderful souvenirs.<br/>
+
+<b>Wooden Craft and Bamboo Art:</b><br/>
+
+Local artisans create intricate wooden and bamboo products that reflect the culture and craftsmanship of the region.</p>
+
+              
+            </div>
+           </div>
+
+        <!-- Things to Do Subpage -->
+        <div id="things" class="subpage">
+            <div class="card">
+                <h3>Adventure and Outdoor Activities</h3>
+                <ul>
+                    <li>Jungle Safari at Tadoba – An adrenaline-pumping wildlife adventure.</li>
+                    <li>Trekking and Nature Walks – Explore scenic trails and hidden gems.</li>
+                    <li>Kayaking and Boating at Junona Lake – Enjoy water-based activities and relaxation.</li>
+                    <li>Photography Expeditions – Capture stunning landscapes and wildlife.</li>
+
+
+                  
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3> Wildlife and Nature Exploration</h3>
+                <ul>
+                    <li>Tadoba-Andhari Tiger Reserve (TATR) – Spot majestic tigers and diverse wildlife.</li>
+                    <li>Junona Lake – Ideal for birdwatching and peaceful nature walks.</li>
+      <li>Forest Trails to Bhadranag Temple – Trek through dense forests and enjoy nature.</li>
+      <li>Erai Dam and Backwaters – Perfect for sunset views, boating, and relaxation.</li>
+
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3> Historical and Heritage Sites</h3>
+                <ul>
+                    <li>Chandrapur Fort – Explore the grandeur of this 13th-century fort.</li>
+                    <li>Gond Raja’s Samadhi – Pay homage to the rulers who shaped Chandrapur’s history.</li>
+       <li>Sati Pillars and Memorials – Witness ancient cultural practices and their significance.</li>
+          <li>Ballalpur Fort – A historical marvel with insights into the Gond dynasty.</li>
+                </ul>
+
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Religious and Spiritual Sites</h3>
+                <ul>
+                    <li>  Anchaleshwar Temple – A serene Shiva temple by the Zarpat River.</li>
+                    <li>Bhadrawati Jain Temples – Marvel at intricate carvings and sculptures.</li>
+                   <li>Bhadranag Temple – A spiritual retreat amidst dense forests.
+</li>
+                  <li>Vitthal Mandir – Dedicated to Lord Vitthal, a hub for local devotees.</li>
+
+
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Food and Culinary Delights</h3>
+                
+                <ul>
+                    <li> Savor Saoji Cuisine – Taste fiery and flavorful local dishes.</li>
+                    <li>Try Zunka Bhakar – Enjoy a traditional Maharashtrian meal.</li>
+                    <li>Pithla Bhakri – Relish this comforting local delicacy.</li>
+
+                </ul>
+            </div>
+           </div>
+
+        <!-- When to Visit Subpage -->
+        <div id="when" class="subpage">
+    <div class="card">
+        <h3>Tourist Patterns</h3>
+        <div class="year-buttons">
+            <button onclick="updateCharts('2020')">2020</button>
+            <button onclick="updateCharts('2021')">2021</button>
+            <button onclick="updateCharts('2022')">2022</button>
+            <button onclick="updateCharts('2023')">2023</button>
+        </div>
+        <div class="chart-container">
+            <canvas id="visitsChart"></canvas>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Temperature Trends</h3>
+        <div class="chart-container">
+            <canvas id="temperatureChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Move this section inside the 'when' subpage -->
+    <div class="card">
+        <h3>Insights from the Data</h3>
+        <p>The tourist visits chart shows fluctuations in visitor numbers throughout the year. Typically, the highest number of tourists visit Chandrapur in <span id="best-month"></span>, indicating it as the best time to explore the city.</p>
+        <p>The temperature chart helps travelers plan their visit based on weather conditions. The summer months (April - June) generally experience higher temperatures, while the winter months (November - February) offer a cooler and more comfortable climate for sightseeing.</p>
+    </div>
+</div>
+
+        <!-- Precautions Subpage -->
+        <div id="precautions" class="subpage">
+            <div class="card">
+                <h3>General Safety</h3>
+                <ul>
+                    <li>Summers (March–June) are extremely hot, with temperatures reaching 45°C. Carry light cotton clothes, sunscreen, sunglasses, and stay hydrated.</li>
+                    <li>Monsoons (July–September) can cause waterlogging in some areas. Check weather updates before traveling</li>
+                    <li>Winters (November–February) are pleasant, but mornings and nights can be slightly chilly, so carry light woolens.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Health Precautions</h3>
+                <ul>
+                    <li>Drink bottled or filtered water to avoid waterborne diseases.</li>
+                    <li>Be cautious of street food hygiene; choose clean, well-reviewed places for local delicacies</li>
+                    <li>Wear sunscreen</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Cultural Etiquette</h3>
+                <ul>
+                    <li>Dress modestly at temples</li>
+                    <li>Ask before taking photos</li>
+                    <li>Respect local customs</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Wildlife & Outdoor Precautions </h3>
+                <ul>
+                    <li>Do not feed or disturb animals—maintain a safe distance.</li>
+                    <li>Wear trekking shoes and avoid visiting during heavy rains</li>
+                    <li>Avoid venturing alone at night.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Travel & Transportation Safety</h3>
+                <ul>
+                    <li>Drive cautiously as rural roads can have potholes.</li>
+                    <li>Avoid night travel on highways due to limited lighting</li>
+                    <li>Auto-rickshaws & buses are available, but confirm fares in advance.</li>
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Navigation
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const page = e.target.dataset.page;
+                document.querySelectorAll('.subpage').forEach(div => div.classList.remove('active'));
+                document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+                document.getElementById(page).classList.add('active');
+                e.target.classList.add('active');
+            });
+        });
+
+        // Chart Data
+        const dataByYear = {
+    "2020": [262551, 133726, 248096, 126355, 241798, 203653, 16159, 377302, 131180, 170835, 172330, 150869],
+    "2021": [202804, 173841, 241225, 211362, 381901, 215692, 25062, 395794, 116482, 267240, 261846, 142958],
+    "2022": [263752, 256512, 204252, 146239, 390400, 187663, 32881, 313107, 128493, 177750, 226207, 172659],
+    "2023": [209724, 229408, 292548, 201059, 273954, 290811, 25277, 476646, 109589, 214902, 239500, 238889]
+};
+        const temperatureDataByYear = {
+    "2020": {
+      "max": [40.89, 40.62, 38.94, 37.71, 27.10, 42.35, 27.49, 35.98, 38.74, 34.33, 40.25, 39.99],
+      "min": [16.82, 18.44, 19.01, 14.66, 22.75, 12.20, 22.79, 17.01, 11.27, 19.76, 18.56, 14.14]
+    },
+    "2021": {
+      "max": [42.47, 42.18, 40.40, 37.07, 27.82, 42.77, 27.61, 36.96, 39.55, 34.16, 38.44, 41.78],
+      "min": [17.25, 18.79, 18.20, 14.86, 22.67, 12.16, 23.01, 18.68, 10.99, 20.05, 18.88, 14.00]
+    },
+    "2022": {
+      "max": [41.34, 43.32, 41.62, 38.34, 29.68, 43.16, 27.98, 35.60, 39.71, 34.79, 41.07, 41.28],
+      "min": [18.30, 17.26, 18.95, 15.42, 23.07, 13.02, 23.21, 18.92, 12.15, 20.94, 19.65, 13.76]
+    },
+    "2023": {
+      "max": [41.60, 43.95, 41.37, 40.09, 27.75, 42.94, 28.16, 37.47, 40.69, 35.64, 40.95, 42.71],
+      "min": [18.48, 18.32, 19.56, 15.90, 22.63, 12.58, 22.81, 19.10, 12.51, 20.77, 19.74, 15.58]
+    }
+  
+};
+        // Initialize Charts
+        let visitsChart = new Chart(document.getElementById('visitsChart'), {
+            type: 'line',
+            data: {
+                labels: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+                datasets: [{
+                    label: 'Tourist Visits',
+                    data: dataByYear["2023"],
+                    borderColor: '#3366cc',
+                    backgroundColor: 'rgba(51, 102, 204, 0.1)',
+                    fill: true
+                }]
+            }
+        });
+
+        let tempChart = new Chart(document.getElementById('temperatureChart'), {
+            type: 'line',
+            data: {
+                labels: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+                datasets: [{
+                    label: 'Max Temp (°C)',
+                    data: temperatureDataByYear["2023"].max,
+                    borderColor: '#ff6384',
+                    backgroundColor: 'rgba(255, 99, 132, 0.1)',
+                    fill: true
+                }, {
+                    label: 'Min Temp (°C)',
+                    data: temperatureDataByYear["2023"].min,
+                    borderColor: '#4bc0c0',
+                    backgroundColor: 'rgba(75, 192, 192, 0.1)',
+                    fill: true
+                }]
+            }
+        });
+
+        // Expose updateCharts globally
+        window.updateCharts = function(year) {
+            const visitData = dataByYear[year];
+            const maxVisits = Math.max(...visitData);
+            const bestMonthIndex = visitData.indexOf(maxVisits);
+            const bestMonth = ["January","February","March","April","May","June","July","August","September","October","November","December"][bestMonthIndex];
+
+            document.getElementById("best-month").textContent = bestMonth;
+
+            visitsChart.options.plugins = {
+                title: {
+                    display: true,
+                    text: `Best Month to Visit: ${bestMonth}`,
+                    font: {
+                        size: 16
+                    }
+                }
+            };
+
+            visitsChart.data.datasets[0].data = visitData;
+            tempChart.data.datasets[0].data = temperatureDataByYear[year].max;
+            tempChart.data.datasets[1].data = temperatureDataByYear[year].min;
+
+            visitsChart.update();
+            tempChart.update();
+        };
+
+        // Add event listeners to buttons
+        document.querySelectorAll('.year-buttons button').forEach(button => {
+            button.addEventListener('click', () => {
+                updateCharts(button.textContent);
+            });
+        });
+
+    });
+</script>
+
+</body>
+</html>

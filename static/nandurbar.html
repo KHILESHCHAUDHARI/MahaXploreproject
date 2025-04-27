@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nandurbar Tourism</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e7e6e6;
+        }
+        header {
+            background-color: #3366cc;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            background-image: url('https://img.freepik.com/premium-photo/close-up-plants-against-blue-sky_1048944-8938336.jpg?ga=GA1.1.625326605.1745432147&semt=ais_hybrid&w=740');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        nav {
+            background-color:  #cbc7c7;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        nav a:hover {
+            background-color: #3366cc;
+            color: white;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .subpage {
+            display: none;
+        }
+        .subpage.active {
+            display: block;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .card h3 {
+            color: #3366cc;
+            margin-top: 0;
+        }
+        .chart-container {
+            width: 100%;
+            height: 400px;
+            margin: 20px 0;
+        }
+        .year-buttons {
+            text-align: center;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #3366cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nandurbar Tourism Guide</h1>
+        <p>Explore the Hidden Gems of Maharashtra</p>
+    </header>
+
+    <nav>
+        <a href="#" data-page="overview" class="active">Overview</a>
+        <a href="#" data-page="things">Things to Do</a>
+        <a href="#" data-page="when">When to Visit</a>
+        <a href="#" data-page="precautions">Precautions</a>
+    </nav>
+
+    <div class="container">
+        <!-- Overview Subpage -->
+        <div id="overview" class="subpage active">
+            <div class="card">
+                <h3>Geographical Regions</h3>
+                <ul>
+                    <li><strong>Satpura Range:</strong> Western part with hilly terrain and forests</li>
+                    <li><strong>Desh:</strong> Eastern plains for agricultural activities</li>
+                    <li><strong>Hills and Forests:</strong> Rich biodiversity, home to wildlife sanctuaries</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Water Resources</h3>
+                <p>Key rivers include the Tapi and its tributaries, providing water to the region.</p>
+            </div>
+
+            <div class="card">
+                <h3>Urban Development</h3>
+                <p>Despite its rural charm, Nandurbar is growing with better infrastructure and connectivity.</p>
+            </div>
+        </div>
+
+        <!-- Things to Do Subpage -->
+        <div id="things" class="subpage">
+            <div class="card">
+                <h3>Cultural Experiences</h3>
+                <ul>
+                    <li>Rishabhdev Temple</li>
+                    <li>Rukmini Temple</li>
+                    <li>Trimbakeshwar Temple</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Outdoor Adventures</h3>
+                <ul>
+                    <li>Trekking in Satpura Hills</li>
+                    <li>Exploring Wildlife at Nandurbar Forest Reserve</li>
+                    <li>Boating at Narmada River</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Food & Entertainment</h3>
+                <ul>
+                    <li>Local delicacies: Bhakri, Jowar, and Bajri</li>
+                    <li>Street food: Misal Pav, Vada Pav</li>
+                    <li>Explore local markets and fairs for handicrafts</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- When to Visit Subpage -->
+        <div id="when" class="subpage">
+            <div class="card">
+                <h3>Tourist Patterns</h3>
+                <div class="year-buttons">
+                    <button onclick="updateCharts('2020')">2020</button>
+                    <button onclick="updateCharts('2021')">2021</button>
+                    <button onclick="updateCharts('2022')">2022</button>
+                    <button onclick="updateCharts('2023')">2023</button>
+                </div>
+                <div class="chart-container">
+                    <canvas id="visitsChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Temperature Trends</h3>
+                <div class="chart-container">
+                    <canvas id="temperatureChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Insights from the Data</h3>
+                <p>The tourist visits chart shows fluctuations in visitor numbers throughout the year. Typically, the highest number of tourists visit Nandurbar in <span id="best-month"></span>, indicating it as the best time to explore the district.</p>
+                <p>The temperature chart helps travelers plan their visit based on weather conditions. The summer months (April - June) generally experience higher temperatures, while the winter months (November - February) offer a cooler and more comfortable climate for sightseeing.</p>
+            </div>
+        </div>
+
+        <!-- Precautions Subpage -->
+        <div id="precautions" class="subpage">
+            <div class="card">
+                <h3>General Safety</h3>
+                <ul>
+                    <li>Use registered transportation</li>
+                    <li>Keep documents secure</li>
+                    <li>Stay hydrated</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Health Precautions</h3>
+                <ul>
+                    <li>Carry essential medications</li>
+                    <li>Use mosquito repellent</li>
+                    <li>Wear sunscreen</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Cultural Etiquette</h3>
+                <ul>
+                    <li>Dress modestly at temples</li>
+                    <li>Ask before taking photos</li>
+                    <li>Respect local customs</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Chart Data
+        const dataByYear = {
+            "2020": [365335,175108,332100,232735,310801,269345,36529,220828,169198,150260,276813,393109],
+            "2021": [450146,204178,260254,248822,294169,329375,33779,226412,110249,216316,270065,355161],
+            "2022": [467975,282686,459535,327072,356150,335795,58917,244947,167537,189386,307638,410630],
+            "2023": [325000,231671,398570,246709,350292,404700,53199,328164,182141,275718,347330,313643]
+        };
+
+        const temperatureDataByYear = {
+            "2020": { max: [30.48,28.76,30.8,45.8,28.91,25.54,24.94,28.5,38.55,30.05,26.99,31.61], min: [4.49,21.83,22.71,15.55,22.85,25.45,6.98,7.67,16.11,6.21,16.56,20.41] },
+            "2021": { max: [30.48,28.76,30.8,45.8,28.91,25.54,24.94,28.5,38.55,30.05,26.99,31.61], min: [3.93,22.64,23.38,15.18,22.13,26.91,8.36,6.56,17.02,5.09,15.87,21.53] },
+            "2022": { max: [30.63,29.41,32.74,46.3,27.33,26.14,25.65,27.52,37.07,32.25,27.19,31.51], min: [5.68,22.2,24.43,15.38,23.63,25.46,7.82,7.88,16.22,6.17,17.52,21.95] },
+            "2023": { max: [29.93,29.82,32.63,47.57,29.09,26.3,26.72,29.72,39.18,33.39,28.38,31.59], min: [4.87,21.91,23.98,15.9,23.61,27.07,8.08,7.84,17.47,7.15,16.87,22.1] }
+        };
+
+        // Initialize Charts
+        let visitsChart = new Chart(document.getElementById('visitsChart'), {
+            type: 'line',
+            data: {
+                labels: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+                datasets: [{
+                    label: 'Tourist Visits',
+                    data: dataByYear["2023"],
+                    borderColor: '#3366cc',
+                    backgroundColor: 'rgba(51, 102, 204, 0.1)',
+                    fill: true
+                }]
+            }
+        });
+
+        let tempChart = new Chart(document.getElementById('temperatureChart'), {
+            type: 'line',
+            data: {
+                labels: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+                datasets: [{
+                    label: 'Max Temp (°C)',
+                    data: temperatureDataByYear["2023"].max,
+                    borderColor: '#ff6384',
+                    backgroundColor: 'rgba(255, 99, 132, 0.1)',
+                    fill: true
+                }, {
+                    label: 'Min Temp (°C)',
+                    data: temperatureDataByYear["2023"].min,
+                    borderColor: '#4bc0c0',
+                    backgroundColor: 'rgba(75, 192, 192, 0.1)',
+                    fill: true
+                }]
+            }
+        });
+
+        // Update Charts
+        function updateCharts(year) {
+            const visitData = dataByYear[year];
+            const maxVisits = Math.max(...visitData);
+            const bestMonthIndex = visitData.indexOf(maxVisits);
+            const bestMonth = ["January","February","March","April","May","June","July","August","September","October","November","December"][bestMonthIndex];
+
+            document.getElementById("best-month").textContent = bestMonth;
+
+            // visitsChart.options.plugins = {
+            //     title: {
+            //         display: true,
+            //         text: Best Month to Visit: ${bestMonth},
+            //         font: {
+            //             size: 16
+            //         }
+            //     }
+            // };
+
+            visitsChart.data.datasets[0].data = visitData;
+            tempChart.data.datasets[0].data = temperatureDataByYear[year].max;
+            tempChart.data.datasets[1].data = temperatureDataByYear[year].min;
+
+            visitsChart.update();
+            tempChart.update();
+        }
+
+        // Navigation
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const page = e.target.dataset.page;
+                document.querySelectorAll('.subpage').forEach(div => div.classList.remove('active'));
+                document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+                document.getElementById(page).classList.add('active');
+                e.target.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

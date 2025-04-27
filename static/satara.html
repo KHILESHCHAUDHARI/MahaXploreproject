@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sataraq Tourism</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e7e6e6;
+        }
+        header {
+            background-color: #3366cc;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            background-image: url('https://img.freepik.com/premium-photo/close-up-plants-against-blue-sky_1048944-8938336.jpg?ga=GA1.1.625326605.1745432147&semt=ais_hybrid&w=740');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        nav {
+            background-color: #cbc7c7;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        nav a:hover {
+            background-color: #3366cc;
+            color: white;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .subpage {
+            display: none;
+        }
+        .subpage.active {
+            display: block;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .card h3 {
+            color: #3366cc;
+            margin-top: 0;
+        }
+        .chart-container {
+            width: 100%;
+            height: 400px;
+            margin: 20px 0;
+        }
+        .year-buttons {
+            text-align: center;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #3366cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Satara Tourism Guide</h1>
+        <p>Explore the Former Capital Of The Maharatha Kingdom</p>
+    </header>
+
+    <nav>
+        <a href="#" data-page="overview" class="active">Overview</a>
+        <a href="#" data-page="things">Things to Do</a>
+        <a href="#" data-page="when">When to Visit</a>
+        <a href="#" data-page="precautions">Precautions</a>
+    </nav>
+
+    <div class="container">
+        <!-- Overview Subpage -->
+        <div id="overview" class="subpage active">
+            <div class="card">
+                <h3>Historical Significance</h3>
+                <ul>
+                    <h3>Maratha Heritage</h3><li> Satara served as the capital of the Maratha Kingdom, leaving behind a legacy of forts and historical sites.</li>
+<li>It holds a prominent place in the history of Chhatrapati Shivaji Maharaj and the subsequent Maratha rulers.</li>
+<li>Sites like Ajinkyatara Fort and Pratapgad Fort stand as testaments to its historical importance.</li>
+<h3>Ancient Roots</h3>
+<li>The district's history dates back to ancient times, with evidence of settlements from the Mauryan and Satavahana periods.</li>
+
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Geographical and Natural Features</h3>
+                <p><h3>Western Ghats:</h3>
+The Sahyadri mountain range, part of the Western Ghats, runs along the district's western edge, contributing to its diverse topography.
+This results in varying climate and rainfall patterns across the district.
+<h3>Plateaus and Waterfalls:</h3>
+The district is home to the renowned Kaas Plateau, a UNESCO World Natural Heritage Site, known for its vibrant wildflowers.
+It also features scenic waterfalls like Thoseghar and Vajrai.
+<h3>River Basins:</h3>
+The district lies within the basins of the Krishna and Bhima rivers.
+<h3>Hill Stations:</h3>
+Satara district contains popular hill stations like Mahabaleshwar, and Panchgani, that are famous for their scenic views, and strawberry production.
+</p>
+            </div>
+
+            <div class="card">
+                <h3>Cultural and Economic Aspects</h3>
+<h3>Agriculture:</h3>
+The district is known for its agricultural produce, particularly strawberries from Mahabaleshwar.
+<h3>Tourism:</h3>
+Satara attracts tourists with its historical forts, natural landscapes, and hill stations.
+<h3>Cultural Heritage:</h3>
+The district has a rich cultural heritage, with numerous temples and historical landmarks.
+            </div>
+            
+            <div class="card">
+                <h3>Key Points</h3>
+Satara district is characterized by its blend of historical importance and natural beauty.
+It plays a significant role in the history of Maharashtra, particularly in relation to the Maratha Empire.
+The district contains a diverse geography, that ranges from mountainous regions, to flatter areas.
+It is a popular tourist destination.
+ </div>
+            
+        </div>
+
+        <!-- Things to Do Subpage -->
+        <div id="things" class="subpage">
+            <div class="card">
+                <h3>Historical Exploration:</h3>
+                <ul>
+                    <li>Ajinkyatara Fort:
+Enjoy panoramic views of Satara city from this historic fort.
+Explore the fort's architecture and learn about its significance in Maratha history.
+</li>
+                    <li>Pratapgad Fort:
+Visit the site of the famous battle between Chhatrapati Shivaji Maharaj and Afzal Khan.
+Immerse yourself in the fort's historical atmosphere.
+</li>
+                    <li>Sajjangad Fort:
+A place of spiritual importance, this fort is the final resting place of Saint Ramdas.
+Experience the serene atmosphere and historical significance.
+</li>
+<li>Sangam Mahuli and Kshetra Mahuli:
+Explore ancient temples with Maratha architecture at the confluence of the Krishna and Venna rivers.
+</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Natural Wonders:</h3>
+                <ul>
+                    <li>Kaas Plateau:
+Witness the breathtaking beauty of this UNESCO World Natural Heritage Site, especially during the monsoon season when it's covered in wildflowers.
+</li>
+                    <li>Thoseghar Waterfalls:
+Marvel at the cascading waterfalls and enjoy the lush green surroundings.
+</li>
+                    <li>Vajrai Waterfall:
+One of India's tallest waterfalls, it provides a very scenic view.
+</li>
+<li>Mahabaleshwar & Panchgani:
+Enjoy the hill stations, with scenic points, and strawberry farms.
+</li>
+<li>Shivsagar Lake:
+Enjoy boating and the scenic water views.
+</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Spiritual and Cultural Experiences:</h3>
+                <ul>
+                    <li>Shri Uttar Chidambaram Nataraja Mandir:
+Visit this temple, a replica of the famous Chidambaram temple in Tamil Nadu.
+</li>
+                    <li>Pateshwar Temple:
+An ancient temple dedicated to Lord Shiva.
+</li>
+                   
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Other Activities:</h3>
+                <ul>
+                    <li>Trekking and Hiking:
+Explore the Sahyadri mountain range through various trekking trails.</li>
+<li>Bird Watching:
+Visit the Mayani Bird Sanctuary.</li>
+<li>Enjoy local cuisine:
+Experience authentic Maharashtrian food.</li>
+<li>Shopping:
+Explore local markets.
+</li>
+                   
+                </ul>
+            </div>
+        </div>
+
+        <!-- When to Visit Subpage -->
+        <div id="when" class="subpage">
+            <div class="card">
+                <h3>Tourist Patterns</h3>
+                <div class="year-buttons">
+                    <button onclick="updateCharts('2020')">2020</button>
+                    <button onclick="updateCharts('2021')">2021</button>
+                    <button onclick="updateCharts('2022')">2022</button>
+                    <button onclick="updateCharts('2023')">2023</button>
+                </div>
+                <div class="chart-container">
+                    <canvas id="visitsChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Temperature Trends</h3>
+                <div class="chart-container">
+                    <canvas id="temperatureChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Precautions Subpage -->
+        <div id="precautions" class="subpage">
+            <div class="card">
+                <h3>General Safety:</h3>
+                <ul>
+                    <li>Awareness of Surroundings:
+Be mindful of your belongings, especially in crowded areas.
+Stay alert and aware of your surroundings at all times.</li>
+<li>Respect for Local Customs:
+Respect local traditions and customs, particularly when visiting religious sites.
+Dress modestly when visiting temples and other places of worship.</li>
+<li>Travel Documents:
+Carry copies of your important travel documents, such as your ID and any necessary permits.</li>
+<li>Emergency Contacts:
+Keep a list of emergency contact numbers, including local police and medical services. The Satara Police website is a good resource for this.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Nature and Trekking Precautions</h3>
+                <ul>
+                    <li>Weather Conditions:
+Check the weather forecast before your trip, especially during the monsoon season.
+Be prepared for sudden changes in weather, particularly in the hilly areas.</li>
+<li>Trekking Safety:
+If you plan to trek, wear appropriate footwear and clothing.
+Carry sufficient water and snacks.
+Inform someone of your trekking plans and expected return time.
+If possible, trek with a local guide, especially in unfamiliar areas.
+Especially when visiting the Kaas plateau, stay on marked paths.</li>
+<li>Wildlife Awareness:
+Be aware of local wildlife and take precautions to avoid encounters.
+Do not disturb or feed wild animals.</li>
+<li>Kaas Plateau Specifics:
+Book your visit to Kaas Plateau in advance, especially during peak season.
+Follow the guidelines for visitors to protect the fragile ecosystem.
+Be aware of slippery conditions during the monsoon.
+</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Health Precautions:</h3>
+                <ul>
+                    <li>Hygiene:
+Practice good hygiene, especially when eating and drinking.
+Drink bottled or purified water.</li>
+<li>Medical Kit:
+Carry a basic medical kit with essentials like pain relievers, antiseptic wipes, and band-aids.
+If you have any pre-existing medical conditions, carry your necessary medications.</li>
+<li>Insect Repellent:
+Especially during the monsoon season, use insect repellent to protect against mosquito bites.</li>
+                </ul>
+            </div>
+            
+             <div class="card">
+                <h3>Road Safety:</h3>
+                <ul>
+                    <li>Road Conditions:
+Be aware that road conditions can vary, especially in rural areas.
+Drive carefully and follow traffic rules.</li>
+<li>Transportation:
+Use reputable transportation services.
+If hiring a vehicle, ensure it is in good condition.
+</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Chart Data
+        const dataByYear = {
+            "2020": [289626, 181968, 235391, 159579, 269480, 243965, 101153, 78128, 88585, 67509, 94279, 201664],
+            "2021": [325870,224228,	209381,	164761,	203595,	254284,	107069,	71276,	75734,	88971,	138164,	178106],
+            "2022": [214241,	254812,	174795,	132064,	275388,	284452,	115492,	78988,	81896,	77692,	128536	,175406],
+            "2023": [320605,	202769,	225110,	195080,	204387,	177086,	85760,	90859,	67754	,90932,	127460	,220122]
+        };
+
+        const temperatureDataByYear = {
+            "2020": { max: [27,23,41,34,31,32,27,43,30,32,42,41], min: [20,12,24,15,18,17,8,17,15,22,4,9] },
+            "2021": { max: [27,24,42,34,32,33,28,43,31,32,43,43], min: [21,13,25,16,19,17,9,16,14,22,4,8] },
+            "2022": { max: [27,24,42,35,33,33,28,44,31,32,43,43], min: [22,13,25,15,18,16,9,17,14,21,4,9] },
+            "2023": { max: [28,24,43,36,34,33,28,44,32,32,43,44], min: [22,14,26,15,19,16,10,17,15,22,4,10] }
+        };
+
+        // Initialize Charts
+        let visitsChart = new Chart(document.getElementById('visitsChart'), {
+            type: 'line',
+            data: {
+                labels: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+                datasets: [{
+                    label: 'Tourist Visits',
+                    data: dataByYear["2023"],
+                    borderColor: '#3366cc',
+                    backgroundColor: 'rgba(51, 102, 204, 0.1)',
+                    fill: true
+                }]
+            }
+        });
+
+        let tempChart = new Chart(document.getElementById('temperatureChart'), {
+            type: 'line',
+            data: {
+                labels: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+                datasets: [{
+                    label: 'Max Temp (°C)',
+                    data: temperatureDataByYear["2023"].max,
+                    borderColor: '#ff6384',
+                    backgroundColor: 'rgba(255, 99, 132, 0.1)',
+                    fill: true
+                }, {
+                    label: 'Min Temp (°C)',
+                    data: temperatureDataByYear["2023"].min,
+                    borderColor: '#4bc0c0',
+                    backgroundColor: 'rgba(75, 192, 192, 0.1)',
+                    fill: true
+                }]
+            }
+        });
+
+        // Update Charts
+        function updateCharts(year) {
+            visitsChart.data.datasets[0].data = dataByYear[year];
+            tempChart.data.datasets[0].data = temperatureDataByYear[year].max;
+            tempChart.data.datasets[1].data = temperatureDataByYear[year].min;
+            visitsChart.update();
+            tempChart.update();
+        }
+
+        // Navigation
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const page = e.target.dataset.page;
+                document.querySelectorAll('.subpage').forEach(div => div.classList.remove('active'));
+                document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+                document.getElementById(page).classList.add('active');
+                e.target.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

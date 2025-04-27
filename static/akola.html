@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akola Tourism</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e7e6e6;;
+            ;
+        }
+        header {
+            background-color: #3366cc;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            background-image: url('https://img.freepik.com/premium-photo/close-up-plants-against-blue-sky_1048944-8938336.jpg?ga=GA1.1.625326605.1745432147&semt=ais_hybrid&w=740');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        nav {
+            background-color: #cbc7c7;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        nav a:hover {
+            background-color: #3366cc;
+            color: white;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .subpage {
+            display: none;
+        }
+        .subpage.active {
+            display: block;
+        }
+        .card {
+            background: rgb(247, 245, 245);
+            ;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .card h3 {
+            color: #3366cc;
+            margin-top: 0;
+        }
+        .chart-container {
+            width: 100%;
+            height: 400px;
+            margin: 20px 0;
+        }
+        .year-buttons {
+            text-align: center;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #3366cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Akola Tourism Guide</h1>
+        <p> Explore the Cotton City of Maharashtra </p>
+    </header>
+
+    <nav>
+        <a href="#" data-page="overview" class="active">Overview</a>
+        <a href="#" data-page="things">Things to Do</a>
+        <a href="#" data-page="when">When to Visit</a>
+        <a href="#" data-page="precautions">Precautions</a>
+    </nav>
+
+    <div class="container">
+        <!-- Overview Subpage -->
+        <div id="overview" class="subpage active">
+            <div class="card">
+                <h3> Geography & Climate </h3>
+                <ul>
+                    <li> Located in western Vidarbha, Akola has a semi-arid climate with hot summers and moderate winters. </li>
+                    <li> The district is bordered by Amravati, Buldhana, Washim, and Hingoli districts. </li>
+                    <li> Major rivers: Purna, Morna, and Katepurna </li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3> Tourism & Attractions </h3>
+                <ul>
+                    <li> Narnala Fort – A historical fort built during the Bahmani and Mughal eras</li>
+                    <li> Raj Rajeshwar Temple – A famous Shiva temple with religious significance</li>
+                    <li> Balapur Fort – A well-preserved Mughal-era fort near the Purna River.</li>
+                    <li> Katepurna Wildlife Sanctuary – A natural habitat for various species of birds and animals. </li>
+              </ul>
+            </div>
+
+            <div class="card">
+                <h3>Economy & Agriculture</h3>
+                
+                <ul>
+                    <li> Akola is a major producer of cotton, pulses, and oilseeds, contributing to Maharashtra’s agricultural economy.</li>
+                    <li> The city is known as the "Cotton City of India" due to its significant cotton production.</li>
+                    <li>It has emerging industries related to textiles, food processing, and trade.</li>
+
+                </ul>
+            </div>
+                       <div class="card">
+                <h3>Connectivity & Transportation</h3>
+                
+                <ul>
+                    <li> Rail: Well-connected to Mumbai, Pune, Nagpur, and other major cities.</li>
+                    <li> Road: Lies on National Highway 6 (NH-6),State-run buses and private transport services available.</li>
+                    <li>Air: Akola Airport (Shioni Airport): Not operational for commercial flights, Nearest Major Airport: Dr. Babasaheb Ambedkar International Airport, Nagpur (~250 km away).</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Things to Do Subpage -->
+        <div id="things" class="subpage">
+            <div class="card">
+                <h3>Explore Historical Forts </h3>
+                <ul>
+                    <li>Narnala Fort – A majestic fort located in the Satpura ranges, built during the Bahmani and Mughal periods. Offers stunning views and historical significance.</li>
+                    <li>Balapur Fort – Situated near the Purna River, this fort showcases Mughal-era architecture and is a great spot for history enthusiasts</li>
+                  
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Visit Religious & Spiritual Sites </h3>
+                <ul>
+                    <li>Raj Rajeshwar Temple – An ancient Shiva temple known for its divine atmosphere and religious significance.</li>
+                    <li>Birla Mandir (Shri Ram Temple) – A beautifully built temple dedicated to Lord Ram, attracting devotees and tourists alike.</li>
+      <li>Shegaon (Nearby) – Home to Shri Gajanan Maharaj Temple, a major pilgrimage site just a short drive from Akola.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Try Local Food & Cuisine</h3>
+                <ul>
+                    <li>Patodi & Bhakri – A must-try Maharashtrian delicacy.</li>
+                    <li>Misal Pav – Famous spicy street food, widely available in local eateries</li>
+                    <li>Shrikhand & Puran Poli – Traditional sweets worth tasting.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Wildlife & Nature Experiences</h3>
+                <ul>
+                    <li>Katepurna Wildlife Sanctuary.</li>
+                    <li>Narnala Wildlife Sanctuary</li>
+                    <li>Katepurna Dam & Reservoir</li>
+
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- When to Visit Subpage -->
+        <div id="when" class="subpage">
+    <div class="card">
+        <h3>Tourist Patterns</h3>
+        <div class="year-buttons">
+            <button onclick="updateCharts('2020')">2020</button>
+            <button onclick="updateCharts('2021')">2021</button>
+            <button onclick="updateCharts('2022')">2022</button>
+            <button onclick="updateCharts('2023')">2023</button>
+        </div>
+        <div class="chart-container">
+            <canvas id="visitsChart"></canvas>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Temperature Trends</h3>
+        <div class="chart-container">
+            <canvas id="temperatureChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Move this section inside the 'when' subpage -->
+    <div class="card">
+        <h3>Insights from the Data</h3>
+        <p>The tourist visits chart shows fluctuations in visitor numbers throughout the year. Typically, the highest number of tourists visit Akola in <span id="best-month"></span>, indicating it as the best time to explore the city.</p>
+        <p>The temperature chart helps travelers plan their visit based on weather conditions. The summer months (April - June) generally experience higher temperatures, while the winter months (November - February) offer a cooler and more comfortable climate for sightseeing.</p>
+    </div>
+</div>
+
+        <!-- Precautions Subpage -->
+        <div id="precautions" class="subpage">
+            <div class="card">
+                <h3>General Safety</h3>
+                <ul>
+                    <li>Summers (March–June) are extremely hot, with temperatures reaching 45°C. Carry light cotton clothes, sunscreen, sunglasses, and stay hydrated.</li>
+                    <li>Monsoons (July–September) can cause waterlogging in some areas. Check weather updates before traveling</li>
+                    <li>Winters (November–February) are pleasant, but mornings and nights can be slightly chilly, so carry light woolens.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Health Precautions</h3>
+                <ul>
+                    <li>Drink bottled or filtered water to avoid waterborne diseases.</li>
+                    <li>Be cautious of street food hygiene; choose clean, well-reviewed places for local delicacies</li>
+                    <li>Wear sunscreen</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Cultural Etiquette</h3>
+                <ul>
+                    <li>Dress modestly at temples</li>
+                    <li>Ask before taking photos</li>
+                    <li>Respect local customs</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Wildlife & Outdoor Precautions </h3>
+                <ul>
+                    <li>Do not feed or disturb animals—maintain a safe distance.</li>
+                    <li>Wear trekking shoes and avoid visiting during heavy rains</li>
+                    <li>Avoid venturing alone at night.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Travel & Transportation Safety</h3>
+                <ul>
+                    <li>Drive cautiously as rural roads can have potholes.</li>
+                    <li>Avoid night travel on highways due to limited lighting</li>
+                    <li>Auto-rickshaws & buses are available, but confirm fares in advance.</li>
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Navigation
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const page = e.target.dataset.page;
+                document.querySelectorAll('.subpage').forEach(div => div.classList.remove('active'));
+                document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+                document.getElementById(page).classList.add('active');
+                e.target.classList.add('active');
+            });
+        });
+
+        // Chart Data
+        const dataByYear = {
+            "2020": [9870, 8167, 7894, 8285, 14159, 10141, 28985, 6126, 6754 , 13144, 9299, 9066],
+            "2021": [8921,8654,8579,9567,8622,11929,19955,8247,8612,11596,6380,14267],
+            "2022": [10329,12552,9662,10965,12674,8223,26307,7877,11063,11908,9770,11902],
+            "2023": [9424,10451,9760,10827,9682,8157,21725,9544,6794,13654,11167,12250]
+        };
+
+        const temperatureDataByYear = {
+            "2020": { max:[37.19, 36.21, 33.8, 34.38, 46.59, 32.73, 28.44, 40.09, 41.22, 32.71, 26.51, 40.87], min: [4.09, 3.4, 10.57, 15.37, 26.08, 11.25, 23.77, 26.53, 9.22, 20.82, 16.7, 20.18] },
+            "2021": { max: [38.08, 35.54, 33.88, 34.05, 46.44, 34.14, 29.67, 40.51, 40.55, 34.11, 26.82, 41.5], min:[4.3, 4.88, 10.48, 16.57, 26.85, 12.67, 24.34, 25.05, 9.72, 20.57, 15.4, 21.88] },
+            "2022": { max: [37.71, 36.35, 32.78, 36.96, 46.63, 34.24, 29.9, 42.38, 42.71, 34.11, 28.27, 41.63], min: [3.3, 4.23, 12.12, 15.87, 27.18, 12.8, 23.76, 27.05, 10.11, 20.85, 16.11, 20.44]},
+            "2023": { max: [38.15, 37.88, 34.98, 36.46, 48.22, 35.98, 29.19, 41.33, 42.85, 34.93, 28.88, 43.54], min: [4.24, 4.87, 12.59, 15.95, 27.5, 12.76, 24.48, 27.16, 10.32, 21.35, 16.73, 22.16]}
+        };
+
+        // Initialize Charts
+        let visitsChart = new Chart(document.getElementById('visitsChart'), {
+            type: 'line',
+            data: {
+                labels: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+                datasets: [{
+                    label: 'Tourist Visits',
+                    data: dataByYear["2023"],
+                    borderColor: '#3366cc',
+                    backgroundColor: 'rgba(51, 102, 204, 0.1)',
+                    fill: true
+                }]
+            }
+        });
+
+        let tempChart = new Chart(document.getElementById('temperatureChart'), {
+            type: 'line',
+            data: {
+                labels: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+                datasets: [{
+                    label: 'Max Temp (°C)',
+                    data: temperatureDataByYear["2023"].max,
+                    borderColor: '#ff6384',
+                    backgroundColor: 'rgba(255, 99, 132, 0.1)',
+                    fill: true
+                }, {
+                    label: 'Min Temp (°C)',
+                    data: temperatureDataByYear["2023"].min,
+                    borderColor: '#4bc0c0',
+                    backgroundColor: 'rgba(75, 192, 192, 0.1)',
+                    fill: true
+                }]
+            }
+        });
+
+        // Expose updateCharts globally
+        window.updateCharts = function(year) {
+            const visitData = dataByYear[year];
+            const maxVisits = Math.max(...visitData);
+            const bestMonthIndex = visitData.indexOf(maxVisits);
+            const bestMonth = ["January","February","March","April","May","June","July","August","September","October","November","December"][bestMonthIndex];
+
+            document.getElementById("best-month").textContent = bestMonth;
+
+            visitsChart.options.plugins = {
+                title: {
+                    display: true,
+                    text: `Best Month to Visit: ${bestMonth}`,
+                    font: {
+                        size: 16
+                    }
+                }
+            };
+
+            visitsChart.data.datasets[0].data = visitData;
+            tempChart.data.datasets[0].data = temperatureDataByYear[year].max;
+            tempChart.data.datasets[1].data = temperatureDataByYear[year].min;
+
+            visitsChart.update();
+            tempChart.update();
+        };
+
+        // Add event listeners to buttons
+        document.querySelectorAll('.year-buttons button').forEach(button => {
+            button.addEventListener('click', () => {
+                updateCharts(button.textContent);
+            });
+        });
+
+    });
+</script>
+
+</body>
+</html>

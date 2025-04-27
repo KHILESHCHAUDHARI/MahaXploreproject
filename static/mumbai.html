@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mumbai Tourism</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e7e6e6;
+        }
+        header {
+            background-color: #3366cc;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            background-image: url('https://img.freepik.com/premium-photo/close-up-plants-against-blue-sky_1048944-8938336.jpg?ga=GA1.1.625326605.1745432147&semt=ais_hybrid&w=740');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        nav {
+            background-color:  #cbc7c7;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        nav a:hover {
+            background-color: #3366cc;
+            color: white;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .subpage {
+            display: none;
+        }
+        .subpage.active {
+            display: block;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .card h3 {
+            color: #3366cc;
+            margin-top: 0;
+        }
+        .chart-container {
+            width: 100%;
+            height: 400px;
+            margin: 20px 0;
+        }
+        .year-buttons {
+            text-align: center;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #3366cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mumbai Tourism Guide</h1>
+        <p>"Explore the Heartbeat of India"</p>
+    </header>
+
+    <nav>
+        <a href="#" data-page="overview" class="active">Overview</a>
+        <a href="#" data-page="things">Things to Do</a>
+        <a href="#" data-page="when">When to Visit</a>
+        <a href="#" data-page="precautions">Precautions</a>
+    </nav>
+
+    <div class="container">
+        <!-- Overview Subpage -->
+        <div id="overview" class="subpage active">
+            <div class="card">
+                <h3>Geography and Climate:</h3>
+                <ul>
+                    <li>Location: Mumbai is situated on the Arabian Sea coast and is part of the Konkan coastal region. It consists of a series of islands that were once separate, which were later connected through land reclamation.</li>
+                    <li>Climate: Mumbai has a tropical climate, characterized by hot, humid summers and moderate winters. The monsoon season, which lasts from June to September, brings heavy rainfall to the city.</li>
+      <li>Topography: The city’s landscape is made up of low hills and flat coastal plains, with significant land reclamation over the years to expand the city’s boundaries.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Historical Significance</h3>
+            <ul>
+                    <li>Pre-British Rule: Mumbai's history can be traced back to its original inhabitants, the Koli fishermen. Over time, it was influenced by various empires such as the Maurya Empire, the Chola dynasty, and the Mughal Empire.
+
+</li>
+                    <li>British East India Company: Under the British, Mumbai became a major port and commercial center. The British East India Company set up trade in the area, laying the foundation for the city's urbanization.
+
+</li>
+      <li>Post-Independence Growth: After independence, Mumbai underwent rapid industrialization and became a major hub for migrants looking for better economic opportunities, especially from rural areas across India.
+
+</li>
+            </ul>
+          </div>
+
+            <div class="card">
+                <h3>Economy :</h3>
+            <ul>
+                    <li>Financial Services: Mumbai is home to major financial institutions, including the Bombay Stock Exchange (BSE), National Stock Exchange (NSE), and Reserve Bank of India (RBI). It also hosts several banks, insurance companies, and investment firms.
+
+</li>
+                    <li>Real Estate: Mumbai has one of the most expensive real estate markets in the world, with prime areas like South Mumbai, Bandra, and Worli being high-value zones.</li>
+               <li>Information Technology (IT) and Startups: While traditionally known for its finance and entertainment industries, Mumbai is also a growing center for IT companies and startups, particularly in areas like Andheri and Powai.
+
+</li>
+            </ul>
+            </div>
+            <div class="card">
+                <h3>Culture and Society:</h3>
+            <ul>
+                    <li>language Diversity: Mumbai is linguistically diverse, with Marathi being the official state language. Hindi and English are also widely spoken, and many people speak regional languages like Gujarati, Urdu, and South Indian languages.</li>
+                    <li>Festivals: Mumbai is known for its grand celebrations of festivals such as Ganesh Chaturthi, Diwali, Eid, and Christmas. The city comes alive with processions, lights, and decorations.</li>
+               <li>Nightlife: Mumbai boasts a vibrant nightlife scene, with numerous bars, pubs, nightclubs, and live music venues, particularly in areas like Colaba, Lower Parel, and Bandra.
+
+</li>
+            </ul>
+            </div>
+            <div class="card">
+                <h3>Challenges:</h3>
+            <ul>
+                    <li>Water Scarcity: Despite being located by the sea, Mumbai faces periodic water shortages due to inadequate water distribution systems and an ever-growing population.</li>
+                    <li>Housing Shortages and Slums: A large proportion of Mumbai’s population lives in slums, such as Dharavi, which is one of the most densely populated areas in the world. Affordable housing remains a major issue.</li>
+                    <li>Folk arts and traditional Maharashtrian music thrive in the city.Corruption and Governance: Like many large cities, Mumbai faces challenges in governance, with corruption often seen in both public and private sectors.</li>
+            </ul>
+            </div>
+
+
+        </div>
+
+        <!-- Things to Do Subpage -->
+        <div id="things" class="subpage">
+            <div class="card">
+                <h3> Cultural and Heritage Experiences:
+</h3>
+                <ul>
+                    <li>Visit the Gateway of India: A historic monument and one of Mumbai’s most iconic landmarks, it was built to commemorate the visit of King George V and Queen Mary in 1911.
+
+</li>
+                    <li>Explore Elephanta Caves: A UNESCO World Heritage Site, these ancient rock-cut caves feature intricate sculptures and temples dedicated to Hindu gods.</li>
+                    <li>Chhatrapati Shivaji Maharaj Terminus (CST): Admire the Victorian Gothic architecture of this UNESCO World Heritage railway station, a Mumbai landmark.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Nature & Wildlife</h3>
+                <ul>
+                    <li>Colaba Causeway: A bustling street market where you can find everything from souvenirs to fashion. Popular for its vibrant street shopping experience.
+
+.</li>
+                    <li>Crawford Market (Now Mahatma Jyotiba Phule Mandai): A historic market for fresh produce, spices, and unique finds, it’s a must-visit for those looking to explore local life.
+
+ </li>
+                    <li>Linking Road and Hill Road (Bandra): A great destination for street shopping, offering everything from trendy clothes to accessories at affordable prices.
+
+</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3> Food and Dining:</h3>
+                <ul>
+                    <li>Street Food Tour: Indulge in Mumbai’s iconic street food like vada pav, pav bhaji, bhel puri, pani puri, and more in areas like Juhu Beach, Girgaon Chowpatty, or Byculla.</li>
+                    <li>Bamboo Garden – A unique attraction showcasing various species of bamboo and eco-friendly practices.</li>
+                  
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Adventure & Trekking</h3>
+                <ul>
+                    <li>Chikhaldara Hill Station – Perfect for trekking, sightseeing, and nature exploration.</li>
+                    <li>Dine at the Taj Mahal Palace Hotel: A Mumbai institution offering world-class dining options with historic significance and stunning views of the Gateway of India.
+.</li>
+                  
+                </ul>
+            </div>
+            <div class="card">
+                <h3> Arts and Entertainment:</h3>
+                <ul>
+                    <li>Watch a Bollywood Movie: Visit one of Mumbai’s iconic cinemas like Regal, Eros, or Maratha Mandir for a unique Bollywood movie experience..</li>
+                    <li>Attend a Live Performance or Theatre Show: Check out the National Centre for Performing Arts (NCPA) or Prithvi Theatre for live plays, classical music concerts, or dance performances.</li>
+                  
+                </ul>
+            </div>
+
+
+        </div>
+
+        <!-- When to Visit Subpage -->
+        <div id="when" class="subpage">
+    <div class="card">
+        <h3>Tourist Patterns</h3>
+        <div class="year-buttons">
+            <button onclick="updateCharts('2020')">2020</button>
+            <button onclick="updateCharts('2021')">2021</button>
+            <button onclick="updateCharts('2022')">2022</button>
+            <button onclick="updateCharts('2023')">2023</button>
+        </div>
+        <div class="chart-container">
+            <canvas id="visitsChart"></canvas>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Temperature Trends</h3>
+        <div class="chart-container">
+            <canvas id="temperatureChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Move this section inside the 'when' subpage -->
+    <div class="card">
+        <h3>Insights from the Data</h3>
+        <p>The tourist visits chart shows fluctuations in visitor numbers throughout the year. Typically, the highest number of tourists visit Mumbai in <span id="best-month"></span>, indicating it as the best time to explore the city.</p>
+        <p>The temperature chart helps travelers plan their visit based on weather conditions. The summer months (April - June) generally experience higher temperatures, while the winter months (November - February) offer a cooler and more comfortable climate for sightseeing.</p>
+    </div>
+</div>
+
+        <!-- Precautions Subpage -->
+        <div id="precautions" class="subpage">
+            <div class="card">
+                <h3>Weather Precautions</h3>
+                <ul>
+                    <li>Summer (March–June): Temperatures can rise above 45°C. Wear light, breathable clothes, stay hydrated, and avoid outdoor activities during peak afternoon hours.</li>
+                    <li> Monsoon (July–September): Heavy rainfall can cause waterlogging. Carry an umbrella, raincoat, and waterproof footwear. Be cautious while traveling on slippery roads.</li>
+                    <li>Winter (November–February): Nights can get chilly. Carry warm clothes, especially if visiting rural areas.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Safety Precautions:</h3>
+                <ul>
+                    <li>Crowded Areas: Be cautious in busy places like markets and public gatherings to prevent pickpocketing.</li>
+                    <li>Solo Travelers: Avoid isolated areas after dark and always inform someone about your whereabouts.</li>
+                    <li>Local Transport: Prefer registered taxis or ridesharing apps over unregulated auto-rickshaws.
+</li>
+                </ul>
+            </div>
+            
+
+            <div class="card">
+                <h3>Cultural Etiquette</h3>
+                <ul>
+                    <li>Dress modestly at temples</li>
+                    <li>Ask before taking photos</li>
+                    <li>Respect local customs</li>
+                </ul>
+            </div>
+           <div class="card">
+                <h3>Food and Water Safety:</h3>
+                <ul>
+                    <li>Street Food: While Amravati offers tasty street food, ensure it's freshly prepared and served hot.</li>
+
+ <li>Water: Avoid tap water. Always prefer bottled or filtered water to prevent waterborne diseases.
+</li>
+                </ul>
+            </div>
+
+        </div>
+    <script>
+        // Chart Data
+        const dataByYear = {
+    "2020": [2216585, 4553112, 4480934, 3003842, 2406706, 2826933, 2305991, 1883889, 2850954, 2651189, 2219348, 2978789],
+    "2021": [4134507, 4271350, 3464678, 2990819, 2311848, 2113195, 2959885, 1171933, 2440897, 2714961, 2266834, 3784765],
+    "2022": [4447671, 4301633, 3591327, 2674752, 2558712, 2880789, 2609610, 1391731, 2995146, 1951379, 2675453, 4576813],
+    "2023": [4448577, 5877936, 4930310, 4065802, 2801545, 2334859, 2132227, 2142012, 3850264, 2909633, 3735400, 5003100]
+};
+
+        const temperatureDataByYear = {
+    "2020": {
+        "max": [24.2, 34.0, 37.53, 41.56, 45.89, 39.96, 36.95, 24.55, 26.62, 29.05, 33.61, 35.84],
+        "min": [10.65, 17.54, 16.45, 20.13, 17.31, 19.12, 25.87, 6.99, 8.16, 9.42, 21.56, 13.42]
+    },
+    "2021": {
+        "max": [23.61, 34.36, 37.26, 42.46, 46.33, 41.21, 36.62, 24.68, 26.87, 28.62, 35.03, 36.33],
+        "min": [10.87, 17.14, 16.65, 19.86, 18.59, 18.75, 25.8, 7.12, 8.16, 9.3, 23.09, 13.74]
+    },
+    "2022": {
+        "max": [24.24, 34.24, 37.41, 43.85, 47.13, 41.42, 37.32, 25.69, 26.48, 30.47, 35.0, 35.44],
+        "min": [11.97, 17.37, 15.35, 20.85, 17.53, 19.49, 26.27, 6.38, 9.84, 9.92, 21.88, 12.91]
+    },
+    "2023": {
+        "max": [25.81, 34.73, 38.23, 42.88, 47.63, 41.43, 38.93, 25.77, 26.38, 30.36, 36.13, 36.5],
+        "min": [12.89, 17.16, 16.94, 20.54, 19.13, 20.14, 25.7, 6.61, 9.36, 9.66, 23.4, 14.27]
+    }
+
+};
+        // Initialize Charts
+        let visitsChart = new Chart(document.getElementById('visitsChart'), {
+            type: 'line',
+            data: {
+                labels: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+                datasets: [{
+                    label: 'Tourist Visits',
+                    data: dataByYear["2023"],
+                    borderColor: '#3366cc',
+                    backgroundColor: 'rgba(51, 102, 204, 0.1)',
+                    fill: true
+                }]
+            }
+        });
+
+        let tempChart = new Chart(document.getElementById('temperatureChart'), {
+            type: 'line',
+            data: {
+                labels: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+                datasets: [{
+                    label: 'Max Temp (°C)',
+                    data: temperatureDataByYear["2023"].max,
+                    borderColor: '#ff6384',
+                    backgroundColor: 'rgba(255, 99, 132, 0.1)',
+                    fill: true
+                }, {
+                    label: 'Min Temp (°C)',
+                    data: temperatureDataByYear["2023"].min,
+                    borderColor: '#4bc0c0',
+                    backgroundColor: 'rgba(75, 192, 192, 0.1)',
+                    fill: true
+                }]
+            }
+        });
+
+        // Update Charts
+function updateCharts(year) {
+    const visitData = dataByYear[year];
+    const maxVisits = Math.max(...visitData);
+    const bestMonthIndex = visitData.indexOf(maxVisits);
+    const bestMonth = ["January","February","March","April","May","June","July","August","September","October","November","December"][bestMonthIndex];
+
+    document.getElementById("best-month").textContent = bestMonth;
+
+    visitsChart.options.plugins = {
+        title: {
+            display: true,
+            text: `Best Month to Visit: ${bestMonth}`,
+            font: {
+                size: 16
+            }
+        }
+    };
+
+    visitsChart.data.datasets[0].data = visitData;
+    tempChart.data.datasets[0].data = temperatureDataByYear[year].max;
+    tempChart.data.datasets[1].data = temperatureDataByYear[year].min;
+
+    visitsChart.update();
+    tempChart.update();
+}
+        // Navigation
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const page = e.target.dataset.page;
+                document.querySelectorAll('.subpage').forEach(div => div.classList.remove('active'));
+                document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+                document.getElementById(page).classList.add('active');
+                e.target.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
+

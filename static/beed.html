@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beed Tourism</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e7e6e6;
+        }
+        header {
+            background-color: #3366cc;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            background-image: url('https://img.freepik.com/premium-photo/close-up-plants-against-blue-sky_1048944-8938336.jpg?ga=GA1.1.625326605.1745432147&semt=ais_hybrid&w=740');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        nav {
+            background-color: #cbc7c7;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        nav a:hover {
+            background-color: #3366cc;
+            color: white;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .subpage {
+            display: none;
+        }
+        .subpage.active {
+            display: block;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .card h3 {
+            color: #3366cc;
+            margin-top: 0;
+        }
+        .chart-container {
+            width: 100%;
+            height: 400px;
+            margin: 20px 0;
+        }
+        .year-buttons {
+            text-align: center;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #3366cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Beed Tourism Guide</h1>
+        <p>Explore the Historical Heart of Maharashtra</p>
+    </header>
+
+    <nav>
+        <a href="#" data-page="overview" class="active">Overview</a>
+        <a href="#" data-page="things">Things to Do</a>
+        <a href="#" data-page="when">When to Visit</a>
+        <a href="#" data-page="precautions">Precautions</a>
+    </nav>
+
+    <div class="container">
+        <!-- Overview Subpage -->
+        <div id="overview" class="subpage active">
+            <div class="card">
+                <h3>Historical Significance</h3>
+                <ul>
+                    <li><strong>Ancient Roots:</strong> Beed has roots in ancient dynasties like the Yadavas and Satavahanas.</li>
+                    <li><strong>Medieval Period:</strong> Later ruled by Delhi Sultanate, Nizam of Hyderabad, and Marathas.</li>
+                    <li><strong>Nizam Era Influence:</strong>Architectural remnants and Sufi shrines reflect its Hyderabadi legacy.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3> Religious and Spiritual Sites</h3>
+                <ul>
+                    <li><strong>Kankaleshwar Temple:</strong> A stunning 12th-century Hemadpanthi-style Shiva temple surrounded by a water tank.</li>
+                    <li><strong>Shri Yogeshwari Temple, Ambejogai:</strong> A highly revered Shakti Peeth dedicated to Goddess Yogeshwari.</li>
+                    <li><strong>Shahinshah Wali Dargah:</strong> Prominent Sufi dargah, known for its Urs celebration</li>
+                    <li><strong>Ambejogai Jain Caves:</strong> Ancient rock-cut caves that show Beed's diverse religious history.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Geographical Regions</h3>
+                <ul>
+                    <li><strong>Balaghat Range:</strong>This range features rugged hilly terrain with scenic landscapes, providing a natural habitat for diverse flora and fauna. These hills also influence local climate and water flow patterns, playing a key role in the district’s ecology.</li>
+                    <li><strong>Godavari Basin:</strong> The Basin encompasses fertile plains that are ideal for agriculture, supporting the cultivation of crops like sugarcane, cotton, and pulses. The basin's rich alluvial soil and access to water make it the agricultural backbone of the district.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Agriculture</h3>
+                <ul>
+                    <li><strong>Major Crops:</strong>Cotton, sugarcane, soybean, tur (pigeon pea), bajra, and jowar dominate agriculture.</li>
+                    <li><strong>Horticulture:</strong>Growth in custard apple, pomegranate, and guava production.</li>
+                    <li><strong>Agro-Industries:</strong>Home to sugar mills, oil extraction plants, and cotton ginning units.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Water Resources</h3>
+                <p>Beed district is nourished by key rivers such as the Godavari, Sindphana, and Bindusara, which are essential for irrigation and daily water needs. Major dams like Majalgaon and Manjra store and distribute water, supporting agriculture, drinking supply, and groundwater recharge. </p>
+            </div>
+        </div>
+
+        <!-- Things to Do Subpage -->
+        <div id="things" class="subpage">
+            <div class="card">
+                <h3>Religious and Spiritual Activities</h3>
+                <ul>
+                    <li><strong>Visit Yogeshwari Temple:</strong> Participate in early morning aartis and festivals.</li>
+                    <li><strong>Join Shahinshah Wali Urs:</strong> Celebrate Sufi traditions and spiritual harmony.</li>
+                    <li><strong>Pilgrimage to Datta Mandir, Kaij:</strong> Seek blessings and experience spiritual peace.</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Adventure and Outdoor Activities</h3>
+                <ul>
+                    <li><strong>Trekking to Balaghat Hills:</strong>Explore forest trails and hilltop views.</li>
+                    <li><strong>Nature Walks near Bindusara River:</strong>Perfect for morning strolls and spotting flora.</li>
+                    <li><strong>Rural Cycling Routes:</strong>Ride through scenic fields and traditional villages.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Photography and Sightseeing</h3>
+                <ul>
+                    <li><strong>Sunrise at Khandoba Tekadi:</strong>A great spot for landscape photography.</li>
+                    <li><strong>Explore Ambejogai Caves & Artifacts:</strong> Document ancient art and architecture.</li>
+                    <li><strong>Photographing Bindusara Dam:</strong>Especially scenic during monsoon.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Unique Experiences </h3>
+                <ul>
+                    <li><strong>Witness Bullock Cart Races:</strong> An exciting and culturally rich rural event.</li>
+                    <li><strong>Farm Tourism:</strong> Engage in seasonal farming activities.</li>
+                    <li><strong>Rural Homestays:</strong> Live with locals and enjoy home-cooked Maharashtrian meals.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- When to Visit Subpage -->
+        <div id="when" class="subpage">
+    <div class="card">
+        <h3>Tourist Patterns</h3>
+        <div class="year-buttons">
+            <button onclick="updateCharts('2020')">2020</button>
+            <button onclick="updateCharts('2021')">2021</button>
+            <button onclick="updateCharts('2022')">2022</button>
+            <button onclick="updateCharts('2023')">2023</button>
+        </div>
+        <div class="chart-container">
+            <canvas id="visitsChart"></canvas>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Temperature Trends</h3>
+        <div class="chart-container">
+            <canvas id="temperatureChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Move this section inside the 'when' subpage -->
+    <div class="card">
+        <h3>Insights from the Data</h3>
+        <p>The tourist visits chart shows fluctuations in visitor numbers throughout the year. Typically, the highest number of tourists visiting in <strong>Beed</strong> is <span id="best-month"></span>, indicating it as the best time to explore the city.</p>
+        <p>The temperature chart helps travelers plan their visit based on weather conditions. The summer months (April - June) generally experience higher temperatures, while the winter months (November - February) offer a cooler and more comfortable climate for sightseeing.</p>
+    </div>
+</div>
+
+        <!-- Precautions Subpage -->
+        <div id="precautions" class="subpage">
+            <div class="card">
+                <h3>General Safety</h3>
+                <ul>
+                    <li>Use registered transportation</li>
+                    <li>Carry sufficient water in summer</li>
+                    <li>Respect local traditions and customs</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3> Health Precautions</h3>
+                <ul>
+                    <li>Eat at clean food stalls or restaurants to avoid foodborne illnesses.</li>
+                    <li>Use sunscreen and wear light cotton clothes in summer.</li>
+                    <li>Drink bottled or purified water to avoid stomach issues.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Cultural Etiquette</h3>
+                <ul>
+                    <li>Dress modestly, especially when visiting religious sites.</li>
+                    <li>Ask for permission before photographing people or ceremonies.</li>
+                    <li>Respect local beliefs and rituals, especially during yatras and fairs.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Wildlife & Outdoor Precautions</h3>
+                <ul>
+                    <li>Do not disturb animals or natural habitats when exploring rural areas.</li>
+                    <li>Avoid isolated areas at night for safety.</li>
+                    <li>Wear proper footwear for hilly or muddy trails.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3> Travel & Transportation Safety</h3>
+                <ul>
+                    <li>Confirm auto-rickshaw or taxi fares in advance to prevent overcharging.</li>
+                    <li>Avoid traveling at night, especially in remote areas.</li>
+                    <li>Drive cautiously on rural roads that may have potholes.</li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
+        // Chart Data
+        const dataByYear = {
+            "2020": [67458, 565512, 711894, 844554, 1034153, 592188, 5489, 13322, 19522, 29984, 97357, 239267],
+            "2021": [1004364, 538843, 641769, 1244219, 1037288, 531336, 7016, 18208, 23803, 22578, 127727, 358217],
+            "2022": [967099, 763705, 547756, 796522, 802503, 757168, 9366, 11050, 19913, 26889, 153634, 230517],
+            "2023": [969361, 717867, 664250, 1375834, 1032876, 989079, 12330, 13787, 19099, 24300, 197082, 407482]
+        };
+
+        const temperatureDataByYear = {
+            "2020": { max: [33, 35, 39, 41, 43, 36, 33, 32, 36, 35, 34, 33], min: [17, 19, 21, 24, 25, 22, 22, 22, 22, 20, 16, 13] },
+            "2021": { max: [35, 38, 40, 41, 39, 37, 35, 33, 33, 35, 34, 32], min: [19, 17, 22, 22, 23, 22, 22, 22, 22, 19, 18, 11] },
+            "2022": { max: [32, 36, 41, 42, 42, 41, 32, 34, 34, 34, 34, 34], min: [15, 16, 21, 25, 24, 23, 22, 22, 22, 18, 14, 15] },
+            "2023": { max: [34, 36, 38, 41, 42, 41, 35, 35, 36, 35, 34, 32], min: [16, 16, 20, 22, 25, 23, 19, 23, 23, 19, 20, 16] }
+        };
+
+        // Initialize Charts
+        let visitsChart = new Chart(document.getElementById('visitsChart'), {
+            type: 'line',
+            data: {
+                labels: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+                datasets: [{
+                    label: 'Tourist Visits',
+                    data: dataByYear["2023"],
+                    borderColor: '#3366cc',
+                    backgroundColor: 'rgba(51, 102, 204, 0.1)',
+                    fill: true
+                }]
+            }
+        });
+
+        let tempChart = new Chart(document.getElementById('temperatureChart'), {
+            type: 'line',
+            data: {
+                labels: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+                datasets: [{
+                    label: 'Max Temp (°C)',
+                    data: temperatureDataByYear["2023"].max,
+                    borderColor: '#ff6384',
+                    backgroundColor: 'rgba(255, 99, 132, 0.1)',
+                    fill: true
+                }, {
+                    label: 'Min Temp (°C)',
+                    data: temperatureDataByYear["2023"].min,
+                    borderColor: '#4bc0c0',
+                    backgroundColor: 'rgba(75, 192, 192, 0.1)',
+                    fill: true
+                }]
+            }
+        });
+
+        // Update Charts
+function updateCharts(year) {
+    const visitData = dataByYear[year];
+    const maxVisits = Math.max(...visitData);
+    const bestMonthIndex = visitData.indexOf(maxVisits);
+    const bestMonth = ["January","February","March","April","May","June","July","August","September","October","November","December"][bestMonthIndex];
+
+    document.getElementById("best-month").textContent = bestMonth;
+
+    visitsChart.options.plugins = {
+        title: {
+            display: true,
+            text: `Best Month to Visit: ${bestMonth}`,
+            font: {
+                size: 16
+            }
+        }
+    };
+
+    visitsChart.data.datasets[0].data = visitData;
+    tempChart.data.datasets[0].data = temperatureDataByYear[year].max;
+    tempChart.data.datasets[1].data = temperatureDataByYear[year].min;
+
+    visitsChart.update();
+    tempChart.update();
+}
+        // Navigation
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const page = e.target.dataset.page;
+                document.querySelectorAll('.subpage').forEach(div => div.classList.remove('active'));
+                document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+                document.getElementById(page).classList.add('active');
+                e.target.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
